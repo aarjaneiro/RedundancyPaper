@@ -1,0 +1,209 @@
+%======================================================================
+
+
+\chapter{Introduction}\label{ch:introduction2}\label{ch:introduction}
+%======================================================================
+
+
+\section{Background}\label{sec:background}
+Enamoured by physicists for its ability to turn probabilistic behaviour into matters of determinism, Mean Field Theory (MFT) also has a place in the study of queueing systems as the number of queues become asymptotic.
+\begin{definition}[Mean Field]
+    \hfill \\
+    Over a time-filtered probability space $(\Omega, \mathcal{F}_{t},\mathcal{F},P)$, for $N \in \mathbb{N}$, a mean field describes the behaviour of any set of stochastic random variables
+    \[
+        \mathbf{X}^{(N)}(t) := \{X_{i}(t)\}_{i \leq N}
+    \]
+    that turns deterministic in law as $N \rightarrow \infty$, irrespective of if the finite-$N$ or finite-$t$ cases resulted in this set of "bodies" being dependent~\cite{mukhopadhyay_analysis_nodate}.
+\end{definition}
+
+Next, it is important to define exchangeability, a condition which provides useful properties for MFT.
+
+\begin{definition}[Exchangeability]
+    A collection of random variables $\mathbf{X}^{(N)}$ is exchangeable if for any $N$-permutation $\gamma_{N} \in \Gamma_{N}$, \[\text{Law}(\gamma_{N} \mathbf{X}^{(N)}) = \text{Law}( \mathbf{X}^{(N)}).\] de Finetti's Theorem states that exchangeability implies the collection to be conditionionally independent (in a Markovian sense) and identically distributed~\cite{austin_exchangeable_2015}.
+    Moreover, for partition $N=\bigcup_{i \leq k}N_{i}$, exchangeability over partition $\{N_{i}\}_{i\leq k }$ such that
+    \[
+        \text{Law}(\mathbf{X}^{(\gamma\{N_{i}\}_{i\leq k })}) = \text{Law}(\mathbf{X}^{(\{N_{i}\}_{i\leq k })})
+    \] is known as $(N,\Gamma)$ exchangeability (with $\gamma \in \Gamma$)~\cite{austin_exchangeable_2008}.
+\end{definition}
+With multiprocessing being employed at its current scale in server farms, society is indeed approaching a time wherein the asymptotic behaviour of parallel queueing systems can be considered realistically.
+Lately, interest has been given to queueing systems which employ job redundancy in order to lower total processing time~\cite{ayesta_unifying_2018}.
+That is, routing policies which take advantage of scenarios wherein a surplus of queues and/or servers are available, replicating each job such that it might be completed faster should it happen to make its way through a less-busy queue than the original.
+\begin{definition}[Job Redundancy]
+    \hfill \\
+    A scheduler, $\mathcal{D}$, follows a job redundancy policy if it systematically clones arriving jobs and removes all clones upon (or after a delay following) completion of any one clone.
+\end{definition}
+Prior studies have pointed towards certain redundancy policies as being inefficient or even unrealistic due to over-relying on cloning.
+Take for example \textit{Redudancy-d}, wherein $d$ servers are chosen per arrival;
+each is given a clone and upon completion of any one clone, all others are removed immediately without any cost.
+As such, implementing a threshold on when  to clone a job becomes useful for budgeting cancellation costs.
+In particular, \textit{Threshold(R,d)} has risen to prominence as a means to balance workload in queueing systems.
+\begin{definition}[Workload]
+    \hfill \\
+    \textbf{Workload} refers to the total amount of work remaining (in time) for a queue.
+    In trivial cases not involving enqueued bodies potentially leaving, this would merely be the sum of individual jobs' service times. With $w^{(i)}_{j} (t)$ denoting the (random) service time of the $j$th job in queue $X_{i}$ at time $t$, the workload of a queue would be:
+    \begin{align}
+        W_{i}(t) = \sum_{j \leq \#X_{i}(t)}w^{(i)}_{j}(t)
+    \end{align}
+    for counting measure $\#$, given that $\#(X^{-1}_{i}): t \longmapsto z$, (or that a queue has countable jobs). \textbf{System Load} refers to the amount of work remaining in the entire system,
+    \begin{align*}
+        W(t) = \sum_{i \in \psi}W_{i}(t)
+    \end{align*}
+    where $\psi \subseteq \mathbb{N}$, given that we will be considering the case of systems operating in finite time as the number of queues grows indefinitely.
+    As such, $\psi$ will refer to this more-general case from henceforth. 
+\end{definition}
+As an example, a service time in a $G/M/c$ system will be drawn from an exponential distribution. In this simple case, the mth arriving job can be given the ``marks'' $(T_{m}, S_{m})\equiv (T, S)_{m}$ where $S_{m} \overset{IID}\sim \text{EXP}(\lambda)$ and $T_{m}$ is the time of arrival; conditioning on the process $(T,S)_{m}$, $W_{i}(t)$ turns into a matter of merely adding up the enqueued service times and that remaining of the currently serviced job, which is conveniently memoryless.
+
+Altogether, Figure~\ref{fig:1} describes the behaviour which would be expected in an ideal system wherein both a mean field and asymptotic independence can be achieved~\cite{mukhopadhyay_analysis_nodate}. In particular, $P$ describes a fixed point, giving the collection a distribution of $\delta_{P}$.
+In terms of the predictability and stability of a system, needless to say, this would be a "gold-standard";
+one would be interested in their ability to achieve such a system in practice.
+
+\begin{figure}
+    \centering
+    %! suppress = EscapeAmpersand
+    \begin{tikzcd}[sep=huge]
+        \mathbf{X}^{(N)}(t)\arrow[r, "N \rightarrow \infty"]\arrow[d,"t \rightarrow \infty"]
+        & \mathbf{X}(t)\arrow[d, "t \rightarrow \infty"] \\
+        \mathbf{X}^{(N)}(\infty)\arrow[r, "N \rightarrow \infty"]
+        & \mathbf{\mathbf{\pi}}
+    \end{tikzcd}
+    \caption{Commutativity of Limits}
+    \label{fig:1}
+\end{figure}
+
+For the sake of brevity, the notation of $[n] := \{i \in \mathbb{N} | i \leq n\}$ will be used, along with the understanding of $\mathbf{X}^{[n]} \equiv \mathbf{X}^{(n)}$ for maximal element $n$.
+Moreover, accepting this set-index notation, $\mathbf{X}^{\psi}$ will refer to the general case of $[n]$, given we will also consider $[n] \overset{n\rightarrow \infty}\longrightarrow \mathbb{N}$.
+
+\begin{definition}[Threshold(R,d)]
+    \hfill \\
+    \textbf{Threshold(R,d)}, denoted $\mathcal{D}_{THRESH(R,d),Z}$ selects $d$ queues upon a job arrival.
+    Next:
+    \begin{enumerate}
+        \item For $i \leq d$ queues which have workload less than or equal to $R$, place copies in these $i$.
+        \item If $i=0$, place the original arrival in a queue from the $d$ chosen at random.
+    \end{enumerate}
+    $Z$ refers to any imposed job cancellation cost (e.g., an added temporary workload).
+\end{definition}
+
+
+One important question, however, is yet to be answered.
+It is unknown whether or not there exists sufficient arrival rate or service rate parameters such that a mean field will be observed for particular values of $R$ or $d$ in the threshold model.
+This leads us to the following conjecture for which this paper aims to prove.
+\begin{conjecture}
+    \hfill \\
+    As $N \longrightarrow \infty$, the system $\mathcal{D}_{THRESH(R,d),Z}$ becomes $(\psi, \Gamma)$-exchangeable. As $t \longrightarrow \infty$, the system becomes deterministic.
+    \label{conj}
+\end{conjecture}
+
+
+%Note, however, that in this research we focus on $Z\equiv0$, being the case of no cancellation cost. We denote the policy $\mathcal{D}_{THRESH(R,d),Z=0}= \mathcal{D}_{THRESH(R,d)}$ for brevity. As Mukhopadhyay (2015) summarizes, the process of proving a problem of form \ref{conj} amounts to the following:
+%\begin{enumerate}
+%    \item
+%    Show that the empirical distribution,
+%    \begin{align}
+%        X^{(N)}(t) = \frac{1}{N}\sum_{k=1}^{N}\mathbbm{1}_{\{\text{servers in state } E\}}
+%        \label{emp}
+%    \end{align}
+%    converges weakly as $N\longrightarrow \infty$ to some process $X(t)$.
+%    \item $X(t)$ converges to a degenerate distribution $\pi$ as $t \longrightarrow \infty$
+%    \item $X^{(N)}(t) \overset{t \longrightarrow \infty}{\longrightarrow} X^{(N)}(\infty)$ weakly.
+%    \item $X^{(N)}(\infty) \overset{N \longrightarrow \infty}{\longrightarrow} \pi$ as defined before.
+%\end{enumerate}
+%
+%
+%\section{Model Specification}
+%In modelling the problem, we draw influence from the state space studied in \cite{bramson_asymptotic_2012} which proves asymptotic independence in the case of no job replications.
+%\begin{definition}[State Space Without Redundancy]
+%    \hfill \\
+%    For $X^{*}_{n}(t)$ corresponding to the $n$th queue out of $N$,
+%    \[X_{n}^{*}(t)\in (\mathbb{N},(\mathbb{R}^{+})^{3}):=\mathcal{E}^{(N)}_{n,*}\]
+%    \[X^{*}(t) \in \{\mathcal{E}^{(N)}_{n}\}_{n \leq N} := \mathcal{E}_{*}^{(N)}\]
+%    Corresponding to
+%    \begin{enumerate}
+%        \item $z_{n}(t) \in \mathbb{N}$ for queue size
+%        \item $ w_{n}(t) \in \mathbb{R}^{+}$ for workload
+%        \item $\ell_{n}(t) \in \mathbb{R}^{+}$ amount of service time spent on job in server
+%        \item $v_{n}(t) \in \mathbb{R}^{+}$ time remaining
+%    \end{enumerate}
+%    \label{old}
+%\end{definition}
+%It was also shown in \ref{bram} that the model considered in \ref{old} can be thought of as a Piecewise Deterministic Markov Chain (PDMP); a such that, between Markovian events (arrivals and departures), only deterministic changes occur.
+%
+%In order to modify the state space described in \ref{old} to model our problem, we must address an additional problem introduced by the fact that now the dependency structure between jobs is an element of the state space which changes stochastically. In order to do so, we introduce a stochastic graph to model changes in dependence.
+%
+%\begin{definition}[Job Dependency Graph: Finite Case]
+%    \hfill \\
+%    The \textbf{Job Dependency Graph}, $G_{t}=(V,E)_{t}$ is held constant between the events of arrivals and job completions, where an edge is drawn between two nodes if and only if they are job-dependent.
+%
+%    \begin{enumerate}
+%        \item Movement in a queue requires \textit{appropriate} redrawing of graph.
+%        \item $G_{t}$ is stochastic with law in $\text{Pr}(\Omega, \mathcal{F}_{t})$.
+%        \item Maximal system queue size is bounded, $\sup_{n \in N}z_{n}(t):=\nu(t).$
+%    \end{enumerate}
+%    "Appropriate redrawing" in this case means
+%    \begin{enumerate}
+%        \item The graph is redrawn to reflect movement within each queue (moving due to job completions or arrivals).
+%        \item $G_{t}$ can depend only on $G_{s}, s <t $ and other current values of $X^{*}_{t}$ (denote these other values $\tilde X^{*}_{t}$) and is such that \[P(G_{t}|\tilde X^{*}_{t}, \{G_{a}\}_{a \in S})=P(G_{t}|\tilde X^{*}_{t}, G_{\max(S)})\]
+%        for any set $S$ such that $ S \subset [0,t)$.
+%    \end{enumerate}
+%    \label{dep1}
+%\end{definition}
+%
+%To illustrate, consider \ref{gee} as a realization at some fixed time $t$. One can, of course, describe this graph using an adjacency matrix of any labelling. For our purposes, we will employ a labelling which will segment vertices conveniently.
+%
+%\begin{definition}[Job Dependency Matrix: Finite Case]
+%    \hfill \\
+%    The \textbf{Job Dependency Matrix} is an adjacency matrix (non-unique but one-to-one) for $G_{t}$. Specifically,
+%    \begin{align}
+%        \rho(t)\equiv \rho(G_{t})=
+%        \left[  \enskip
+%        \begin{matrix}[c|c|c|c]
+%            B_{1,1}  & B_{1,2}  & \dots & B_{1,\nu}\\
+%            \hline
+%            \vdots & \vdots & \vdots &\vdots  \\
+%            \hline
+%            B_{\nu,1}  & B_{\nu,2} & \dots   & B_{\nu,\nu}\\
+%        \end{matrix} \enskip \right]
+%        \label{rho}
+%    \end{align}
+%    is a blocked matrix such that submatrix
+%    \[B_{i,j}= [b_{q,m}]_{q,m \leq N} = \begin{cases}
+%                                            1, \substack{\text{ queue } q \text{ in row } i \text{ is connected in } G_{t} \\ \text{ to queue } m \text{ in row } j}\\
+%                                            0, \text{otherwise}
+%    \end{cases}\]
+%    where connections between jobs occur if and only if the completion of one job implies the removal of all other connected jobs from the system.
+%    \label{jdf}
+%\end{definition}
+%
+%\begin{figure}[htbp]
+%    \centering
+%    \includesvg[scale=.75]{grapho.svg}
+%    \caption{Illustration of $G(t)$. Observe that the first row of vertices correspond to jobs currently being serviced.}
+%    \label{gee}
+%\end{figure}
+%
+%
+%It is useful in modelling the problem at hand to construct this graph as an \textit{infinite graph}. That is, one could view the graph described in \ref{dep1} as an embedding into a larger graph by merely considering more queues or a larger maximal queue size at any finite time $t$, corresponding to the adding of an additional column or row of vertices, respectively. Building a metric on an infinite graph space simplifies the matter of quantifying convergence in terms of $N$ significantly because all possible finite embeddings can be expressed in the same space as $N\rightarrow \infty$. Thus, let us consider \[\mathbb{E}:= \{\text{locally finite graphs}\}\]
+%\begin{definition}[State Space With Redundancy]
+%    \hfill \\
+%    For $X^{*}_{n}(t)$ corresponding to the $n$th queue out of $N$,
+%    \[X_{n}^{*}(t)\in (\mathbb{N},(\mathbb{R}^{+})^{3},\rho(\mathbb{E})):=\mathcal{E}^{(N)}_{n}\]
+%    \[X^{*}(t) \in \{\mathcal{E}^{(N)}_{n}\}_{n \leq N} := \mathcal{E}^{(N)}\]
+%    Corresponding to
+%    \begin{enumerate}
+%        \item $z_{n}(t) \in \mathbb{N}$ for queue size
+%        \item $ w_{n}(t) \in \mathbb{R}^{+}$ for workload
+%        \item $\ell_{n}(t) \in \mathbb{R}^{+}$ amount of service time spent on job in server
+%        \item $v_{n}(t) \in \mathbb{R}^{+}$ time remaining
+%        \item $A \in \rho(\mathbb{E})$ is a representation of the graph.
+%    \end{enumerate}
+%    \label{def:spec}
+%\end{definition}
+%For any element of $\mathbb{E}$, $\rho$ can be described as in \label{mohar}\ref{mohar} (pg. 246). Specifically, take $G_{t} \in \mathbb{E}$ and consider $e_{k} = (\delta_{ik}| i \in \mathbb{N})$. Graph local finiteness guarantees that for any adjacency matrix $\rho(G_{t})$,  $\rho(G_{t})e_{k}\in\ell^{2}$. Thus, using the $\ell^{2}$ inner product, $\langle \rho(G_{t})e_{k},e_{i} \rangle:=\left(\rho(G_{t})\right)_{ik}$ can be used in order to define the equivalence relation of job dependence for each $i,k$ as in \ref{jdf}, granting a bijection.
+
+
+
+
+
+
+
+
