@@ -8,7 +8,7 @@ Otherwise, all data will be loaded into memory!*
 N-Size
    |
   \/
-Repitition
+Repetition
     |
    \/
 Event(entry/exit)
