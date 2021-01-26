@@ -1,8 +1,6 @@
 #cython: language_level=3
 
-import bigjson as bj
-from numpy import nan
-
+import bigjson
 
 #NaN = nan # avoids a name error. Might need to be explicit?
 
@@ -16,7 +14,7 @@ cpdef dict retrieve(str name, int N, int rep=-1):
     """
     cpdef dict local
     with open(f"{name}.json","rb") as fs:
-        j=bj.load(fs)
+        j=bigjson.load(fs)
         if (rep < 0 ):
             local = j[str(N)].to_python()
         else:
@@ -95,3 +93,7 @@ def EcdfOverTime(dict result, int N, int rep):
             print(e)
             pass
     return vals
+
+
+    
+
