@@ -5,7 +5,6 @@
 import multiprocessing as mp
 
 from matplotlib import pyplot as plt
-import numpy as np
 from parallelqueue.base_models import *
 from parallelqueue.monitors import *
 
