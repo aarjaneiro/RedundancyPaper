@@ -57,7 +57,7 @@ cdef _EvalCarefully(target):
 
 cdef parser(dict localJson):
     cpdef dict ret = {}
-    cpdef dict v
+    cpdef dict v, newVals
     cdef str k
 
     queue = deque(localJson.items())
@@ -65,7 +65,11 @@ cdef parser(dict localJson):
     while queue:  # shrinks as iterates
         k, v = queue.popleft()
         newkey = _EvalCarefully(k)
-        newVals = {_EvalCarefully(m): r for m, r in v.items()}
+        within = deque(v.items())
+        while within:
+            newVals = {}
+            m, r = within.popleft()
+            newVals[_EvalCarefully(m)] = r
         ret[newkey] = newVals
     return ret
 
