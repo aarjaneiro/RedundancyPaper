@@ -1,8 +1,9 @@
 #cython: language_level=3
 
 import bigjson
+from collections import deque
 
-#NaN = nan # avoids a name error. Might need to be explicit?
+from bigjson.obj import Object
 
 cpdef dict retrieve(str name, int N, int rep=-1):
     """
@@ -12,14 +13,15 @@ cpdef dict retrieve(str name, int N, int rep=-1):
     -------
     Dict of form: {rep: {N: dataframe of results}}
     """
-    cpdef dict local
-    with open(f"{name}.json","rb") as fs:
-        j=bigjson.load(fs)
-        if (rep < 0 ):
-            local = j[str(N)].to_python()
+    cdef dict local
+    cdef object j
+
+    with open(f"{name}.json", "rb") as fs:
+        j = bigjson.load(fs)
+        if (rep < 0):
+            return j[str(N)].to_python()
         else:
-            local = j[str(N)][str(rep)].to_python()
-    return local
+            return j[str(N)][str(rep)].to_python()
 
 ## Methods for cleaning data
 
@@ -30,39 +32,42 @@ cpdef dict cleanIndeces(dict fromJson, int rep=-1):
     local = cleanIndeces(retrieve("Tsim",0))    
     """
     cpdef dict localJson = {}
-    
-    if (rep < 0): # case 1: parse for arbitrary number of reps
-        for key in list(fromJson.keys()):
-            localJson[_EvalCarefully(key)] = parser(fromJson[key])
-    else:
-        localJson = parser(fromJson)
-        
-    return localJson
+    if rep < 0:  # case 1: parse for arbitrary number of reps
+        queue = deque(fromJson.items())
+        del fromJson  # free memory
+        while queue:  # shrinks as iterates
+            k, v = queue.popleft()
+            localJson[_EvalCarefully(k)] = parser(v)
+        return localJson
 
-        
+    else:
+        return parser(fromJson)
+
 cdef _EvalCarefully(target):
     """
     type-inferred evaluation which assigns NaNs 0
     """
-    try: 
+    try:
         ret = eval(target)
     except Exception as e:
         ret = 0
         print(e)
-        
-    return ret # can be either int or float (auto)
-        
-    
+
+    return ret  # can be either int or float (auto)
+
 cdef parser(dict localJson):
     cpdef dict ret = {}
     cpdef dict v
     cdef str k
-    for k, v in localJson.items():
+
+    queue = deque(localJson.items())
+    del localJson  # free memory
+    while queue:  # shrinks as iterates
+        k, v = queue.popleft()
         newkey = _EvalCarefully(k)
-        newVals = {_EvalCarefully(m): r for m,r in v.items()}
+        newVals = {_EvalCarefully(m): r for m, r in v.items()}
         ret[newkey] = newVals
     return ret
-        
 
 # Preferable over manual iteration out of scope
 cpdef dict FullImport(str name, int N, int rep=-1):
@@ -71,7 +76,7 @@ cpdef dict FullImport(str name, int N, int rep=-1):
     """
     return cleanIndeces(retrieve(name, N, rep))
 
-## Plotting tools
+## Plotting tools -- Already quite fast
 
 cpdef dict getPerN(dict result, int rep):
     return result[rep]
@@ -85,7 +90,7 @@ def EcdfOverTime(dict result, int N, int rep):
         try:
             zeroes = (N - len(value)) / N
 
-            def Ecdf(m, zeroes=zeroes, Tslice=value): # appends an ecdf function
+            def Ecdf(m, zeroes=zeroes, Tslice=value):  # appends an ecdf function
                 return zeroes + sum([1 for i in Tslice.values() if i <= m]) / N
 
             vals[key] = Ecdf
@@ -93,7 +98,3 @@ def EcdfOverTime(dict result, int N, int rep):
             print(e)
             pass
     return vals
-
-
-    
-
