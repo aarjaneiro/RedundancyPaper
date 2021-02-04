@@ -88,7 +88,7 @@ cpdef dict FullImport(str name, int N, int rep=-1):
 cpdef dict getPerN(dict result, int rep):
     return result[rep]
 
-cdef EcdfOverTime(dict result, int N, int rep):
+def EcdfOverTime(dict result, int N, int rep):
     """
     Returns ECDF values in a list for some rep and N. N here is the literal value in ToOrder vs index of the value as prior.
     """
