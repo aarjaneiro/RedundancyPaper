@@ -5,6 +5,7 @@ import numpy as np
 import pandas as pd
 from collections import deque
 import sys
+
 sys.path.append(".")
 
 cpdef dict retrieve(str name, int N, int rep=-1):
@@ -87,7 +88,7 @@ cpdef dict FullImport(str name, int N, int rep=-1):
 cpdef dict getPerN(dict result, int rep):
     return result[rep]
 
-def EcdfOverTime(dict result, int N, int rep):
+cdef EcdfOverTime(dict result, int N, int rep):
     """
     Returns ECDF values in a list for some rep and N. N here is the literal value in ToOrder vs index of the value as prior.
     """
@@ -109,8 +110,11 @@ def EcdfOverTime(dict result, int N, int rep):
             print(e)
             pass
     return vals
+## TimeAverage methods
 
-def _TAalgorithm(float t, test, times, float delta):
+cdef _TAalgorithm(float t, test, times, float delta):
+    cdef float c
+    cdef int i
     consider = deque(times.where(abs(times - t) <= delta))
     localData = []
     while consider:
@@ -122,15 +126,17 @@ def _TAalgorithm(float t, test, times, float delta):
                 pass
     return localData
 
-def TimeAverage(test, times, float delta):
+cpdef list TimeAverage(test, times, float delta):
     """
     Time-averaging across simulations:
 
     for $t \in [0,T] = [0,\tau_{1}] \cup [\tau_{1},\tau_{2}] \dots \cup [\tau_{S},T]$ being the sim time partitioned
-     by events, for $\tau^{a}_{i}$ being some entry/exit time of one particular sim run $a$, search the other sims
-     for (e.g., sim $b$) closest $\tau^{b}_{n}$ such that $\|\tau_{i}^{a} - \tau_{n}^{b}\| \leq \Delta$ for some chosen
-     $\Delta$. Given parameters are equal across sims, find the $i$th tau first. If $n=i$ then we consider this point when
-     time-averaging, otherwise see ordering w.r.t. $\tau_{i}^{a}$ to choose another to test. If none exist, pass sim in time
-     average for this event-time.
+    by events, for $\tau^{a}_{i}$ being some entry/exit time of one particular sim run $a$, search the other sims
+    for (e.g., sim $b$) closest $\tau^{b}_{n}$ such that $\|\tau_{i}^{a} - \tau_{n}^{b}\| \leq \Delta$ for some chosen
+    $\Delta$. Given parameters are equal across sims, find the $i$th tau first. If $n=i$ then we consider this point when
+    time-averaging, otherwise see ordering w.r.t. $\tau_{i}^{a}$ to choose another to test. If none exist, pass sim in time
+    average for this event-time.
     """
-    return pd.Series(np.mean([m(1) for m in _TAalgorithm(t,test, times, delta)]) for t in times)
+    cdef float t
+    cdef object m
+    return [np.mean([m(1) for m in _TAalgorithm(t, test, times, delta)]) for t in times]

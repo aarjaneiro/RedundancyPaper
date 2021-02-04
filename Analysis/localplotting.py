@@ -21,5 +21,5 @@ times.sort()
 times = pd.Series(times) # drop repeats
 delta = np.mean(abs(times.diff())) * 30 # differenced series avg. deviation
 
-print(datahelpers.TimeAverage(test, times, delta))
+print(datahelpers.TimeAverage(test, times, delta)[:20])
 
