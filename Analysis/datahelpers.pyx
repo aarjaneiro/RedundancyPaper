@@ -1,9 +1,11 @@
 #cython: language_level=3
 
 import bigjson
+import numpy as np
+import pandas as pd
 from collections import deque
-
-from bigjson.obj import Object
+import sys
+sys.path.append(".")
 
 cpdef dict retrieve(str name, int N, int rep=-1):
     """
@@ -90,7 +92,12 @@ def EcdfOverTime(dict result, int N, int rep):
     Returns ECDF values in a list for some rep and N. N here is the literal value in ToOrder vs index of the value as prior.
     """
     cdef dict vals = {}
-    for key, value in getPerN(result, rep).items():
+    cdef object queue
+
+    queue = deque(getPerN(result, rep).items())
+    del result
+    while queue:
+        key, value = queue.popleft()
         try:
             zeroes = (N - len(value)) / N
 
@@ -102,3 +109,28 @@ def EcdfOverTime(dict result, int N, int rep):
             print(e)
             pass
     return vals
+
+def _TAalgorithm(float t, test, times, float delta):
+    consider = deque(times.where(abs(times - t) <= delta))
+    localData = []
+    while consider:
+        c = consider.popleft()
+        for i in range(30):
+            try:
+                localData.append(test[i][c])
+            except:
+                pass
+    return localData
+
+def TimeAverage(test, times, float delta):
+    """
+    Time-averaging across simulations:
+
+    for $t \in [0,T] = [0,\tau_{1}] \cup [\tau_{1},\tau_{2}] \dots \cup [\tau_{S},T]$ being the sim time partitioned
+     by events, for $\tau^{a}_{i}$ being some entry/exit time of one particular sim run $a$, search the other sims
+     for (e.g., sim $b$) closest $\tau^{b}_{n}$ such that $\|\tau_{i}^{a} - \tau_{n}^{b}\| \leq \Delta$ for some chosen
+     $\Delta$. Given parameters are equal across sims, find the $i$th tau first. If $n=i$ then we consider this point when
+     time-averaging, otherwise see ordering w.r.t. $\tau_{i}^{a}$ to choose another to test. If none exist, pass sim in time
+     average for this event-time.
+    """
+    return pd.Series(np.mean([m(1) for m in _TAalgorithm(t,test, times, delta)]) for t in times)
