@@ -111,12 +111,11 @@ def EcdfOverTime(dict result, int N, int rep):
             pass
     return vals
 ## TimeAverage methods
-
-cdef _TAalgorithm(float t, test, times, float delta):
+cdef list _TAalgorithm(float t, dict test, times, float delta):
     cdef float c
-    cdef int i
+    cdef Py_ssize_t i
+    cdef list localData = []
     consider = deque(times.where(abs(times - t) <= delta))
-    localData = []
     while consider:
         c = consider.popleft()
         for i in range(30):
@@ -126,7 +125,7 @@ cdef _TAalgorithm(float t, test, times, float delta):
                 pass
     return localData
 
-cpdef list TimeAverage(test, times, float delta):
+cpdef list TimeAverage(dict test, float[:] times, float delta, float eVal=1):
     """
     Time-averaging across simulations:
 
@@ -139,4 +138,10 @@ cpdef list TimeAverage(test, times, float delta):
     """
     cdef float t
     cdef object m
-    return [np.mean([m(1) for m in _TAalgorithm(t, test, times, delta)]) for t in times]
+    cdef list ret = []
+    queue = deque(times)
+    del times # clear mem
+    while queue:
+        t = queue.popleft()
+        ret.append(np.mean([m(eVal) for m in _TAalgorithm(t, test, times, delta)]))
+    return ret
