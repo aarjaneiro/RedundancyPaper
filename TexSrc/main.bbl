@@ -51,7 +51,7 @@ Mitzenmacher, M. (2001).
 \newblock The power of two choices in randomized load balancing.
 \newblock {\em IEEE Trans. Parallel Distrib. Syst.}, 12(10):1094–1104.
 
-\bibitem[Mukhopadhyay and Mazumdar, 2015]{mukhopadhyay_analysis_nodate}
+\bibitem[Mukhopadhyay ~& Mazumdar, 2015]{mukhopadhyay_analysis_nodate}
 Mukhopadhyay, A. and Mazumdar, R.~R. (2015).
 \newblock Analysis of randomized join-the-shortest-queue ({JSQ}) schemes in
   large heterogeneous processor sharing systems.
