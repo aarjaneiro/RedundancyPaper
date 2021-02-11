@@ -5,13 +5,13 @@
 %======================================================================
 In order to generate and study parallel queueing processes, few trivial options currently exist.
 Moreover, while there exist some discrete event simulation (DES) frameworks which indeed focus on queueing networks, they currently tend not to permit the simultaneous study of asynchronous, redundancy-based schemes~\cite{noauthor_ciwpythonciw_nodate}.
-In order to visualize and analyse the large class of queueing systems within this paradigm~\cite{shneer_large-scale_2020,cruise_stability_2020}, I introduced a novel module for Python which is currently available on PyPi: \lstinline{ParallelQueue}, extending the DES package \lstinline{SimPy}.
+In order to visualize and analyse the large class of queueing systems within this paradigm~\cite{shneer_large-scale_2020,cruise_stability_2020}, I introduced a novel module for Python which is currently available on PyPi: \textit{ParallelQueue} extending the DES package \textit{SimPy}.
 
 The package currently allows for the studying of parallel systems with or without redundancy as well as with the option of allowing thresholds to be implemented in either case.
-Moreover, the package allows one to specify any inter-arrival and service distribution as well as their own \lstinline{Monitor}s, being a class which can gather data from the ongoing simulation to be distributed back to the user upon the completion of a simulation.
-In particular, the \lstinline{Monitor}s are currently configured to collect data upon arrival, routing, and job completion Fig~\ref{fig:API}.
+Moreover, the package allows one to specify any inter-arrival and service time distribution as well as their own \lstinline{Monitor}s, being a class which can gather data from the ongoing simulation to be distributed back to the user upon the completion of a simulation.
+In particular, the \lstinline{Monitor}s are currently configured to collect data upon arrival, routing, and job completion as demonstrated by Figure~\ref{fig:API}.
 
-Take Figures~\ref{fig:red}:\ref{fig:redpic} for example, which permits one to simulate a Redundancy-2 queueing system with 100 queues in parallel for 10000 units of time while returning the total queue counts over time (which are updated upon a change in queue count).
+Take Figures~\ref{fig:red} and \ref{fig:redpic} for example, which permits one to simulate a Redundancy-2 queueing system with 100 queues in parallel for 1000 units of time while returning the total queue counts over time (which are updated upon a change in queue count).
 
 \begin{figure}
 
@@ -30,19 +30,19 @@ sim = RedundancyQueueSystem(
 sim.RunSim()
 totals = sim.MonitorOutput["TimeQueueSize"]
     \end{lstlisting}
-    \caption{Python code using ParallelQueue to simulate a Redundancy-2 System.}
+    \caption{Python code using \textit{ParallelQueue} to simulate a Redundancy-2 System.}
     \label{fig:red}
 \end{figure}
 
 \begin{figure}
     \centering
-    \includegraphics[scale=0.8]{redundancy.png}
+    \includegraphics[scale=0.8]{redundancy}
     \caption{Plot using \lstinline{totals} of Figure~\ref{fig:red}}
     \label{fig:redpic}
 \end{figure}
 
-Remarkably, the simulation itself was fast despite the size of the system as in Fig~\ref{fig:lstlisting2}.
-.\begin{figure}
+Remarkably, the simulation itself is performed speedily on consumer hardware despite the size of the system as demonstrated in Figure~\ref{fig:lstlisting2}.
+\begin{figure}
      %! suppress = MissingLabel
      \begin{lstlisting}
 CPU times: user 2.02 s, sys: 9.57 ms, total: 2.03 s
@@ -57,23 +57,23 @@ Intel i5-8250U (8) @ 3.400GHz
 
 Altogether, this makes the package easy to parallelize with and thus to compare systems of different sizes
 and with large running-times.
-While currently not implemented in any development branch of \lstinline{ParallelQueue}, the base Python package
-\lstinline{multiprocessing} is used in throughout this paper when simulating for the same system across parameters.
+While currently not implemented in any development branch of \textit{ParallelQueue}, the base Python package
+\textit{multiprocessing} is used in throughout this paper when simulating for the same system across parameters.
 In general, the main caveat when processing many models is that the storage of the simulation results can quickly begin
 to consume storage;
-when processing many models, therefore ensure that they are saved (e.g., using \lstinline{pickle}) and removed from
+when processing many models, therefore ensure that they are saved (e.g., using \textit{pickle}) and removed from
 the local environment when doing analysis.
 
-In terms of development, the models implemented in the \lstinline{base_models} module use the framework established in
+In terms of development, the models implemented in the \textit{base_models} module use the framework established in
 \ref{ch:model-specification}.
 That is, modelling redundancy, a hyperedge of sorts is generated whence the dispatcher
 receives a job to be cloned.
 This hyperedge then exists for the duration of time for which the replica class is in the system and is defined in such
-a way that \lstinline{Monitor} class objects can interact with them in order to acquire data.
-In Python, such a data structure can be implemented rather easily by employing the \lstinline{Dict} type which defines
+a way that \textit{Monitor} class objects can interact with them in order to acquire data.
+In Python, such a data structure can be implemented rather easily by employing the \textit{Dict} type which defines
 a keyed set of values.
 By keying based on the job arrivals (before cloning), a unique set of marks can be retrieved for the set by simply using
-the \lstinline{Dict} object as a reference.
+the \textit{Dict} object as a reference.
 
 \begin{figure}
     \centering
@@ -85,7 +85,7 @@ the \lstinline{Dict} object as a reference.
 
 \section{Results}\label{sec:results}
 First, we examine each model in terms of their respective performance in $E(T)$, the expected time each job spends in the system.  
-As Fig~\ref{fig:img} shows, for a load $\rho \triangleq \frac{\lambda}{\mu} = 0.5$ by taking $\mu=1, \lambda = 0.5$ (we will assume $\mu \equiv 1$ for the
+As Figure~\ref{fig:img} shows, for a load $\rho \triangleq \frac{\lambda}{\mu} = 0.5$ by taking $\mu=1, \lambda = 0.5$ (we will assume $\mu \equiv 1$ for the
 rest of the simulations) , Redundancy(2)) and Threshold(2,2) policies are rather alike with low loads as $N \rightarrow \infty$. This is to be expected, of course, given that even such a low threshold is unlikely to be exceeded with the processors acting faster than arrivals on average. Ignoring cancellation costs, this clearly demonstrates how utilizing otherwise dormant queues comes to benefit the system's performance. Note that the figure is generated with the \textit{same} seed generation scheme for 30 different seeds per iteration, making the overlap a product of  the two accessing random numbers from the system at the same points in time (in their respective simulations).
 
 \begin{figure}
