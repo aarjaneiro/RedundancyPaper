@@ -1,35 +1,38 @@
 %======================================================================
+
 \chapter{Model Specification}\label{ch:model-specification}
 
 In order to model such a system, we incorporate the notation most frequently seen in the
-study of palm calculus \cite{baccelli_elements_2003}. Most importantly, assuming we delegate a probability space $(\Omega, \mathcal{F}_{t}, \mathcal{F}, P)$ the measurable flow $\{\theta_{t}\}$ which is $P/\theta_{t}$ invariant (Ergodic, such that $\theta_{t}M = M \text{  for some } M \in \mathcal{F} \Rightarrow P(M) \in \{0,1\}$), then the arrival process $A$ can be associated with the flow.
+study of palm calculus \cite{baccelli_elements_2003}. Most importantly, assuming we delegate a probability space $(\Omega, \mathcal{F}_{t}, \mathcal{F}, P)$ the measurable flow $\{\theta_{t}\}$ which is $P/\theta_{t}$ invariant (i.e., Ergodic such that $\theta_{t}M = M \text{  for some } M \in \mathcal{F} \Rightarrow P(M) \in \{0,1\}$), then the arrival process $A$ can be associated with the flow.
 In a system with Markovian arrivals, the counting measure associated with the flow would necessarily be Poisson;
-other so-called counting processes wherein inter-arrivals are determined by random or even deterministic periods of time can be used. Inter-arrival times (for arrival $n$ occuring at $T_{n}$), regardless of the generating process, shall be denoted
-\[\tau_{n} = T_{n+1}  -  T_{n}, n \in \mathbb{Z}.\]
- Intensities (even if non-Poisson) will be denoted $\lambda = E(A((0,1])))$ for arrival process $A$, being interpreted as the intensity of a process moving a state (i.e., counting an additional element) within unit time.
+other so-called counting processes wherein inter-arrivals are determined by random or even deterministic periods of time can be used. Inter-arrival times (for arrival $n$ ocurring at $T_{n}$), regardless of the generating process, shall be denoted
+\[\tau_{n} = T_{n+1}  - T_{n}, n \in \mathbb{N}.\]
+Intensities (even if non-Poisson) will be denoted $\lambda = E(A((0,1])))$ for arrival process $A$, being interpreted as the intensity of a process moving a state (i.e., counting an additional element) within unit time.
 \begin{definition}[Marked Process]
-    For each job which enters the system, they can be "marked" by series of random variables defining their behaviour within the system \cite{baccelli_elements_2003}. In general, for the systems we shall consider, we consider the mark processes $\sigma_{n}$ as being the required service of arrival $n$ and the marks $T_{n}$ as its time of arrival.
-    The tuple \[(T,\sigma)_{n}, n \in \mathbb{Z}\] will therefore be used to mark the $n$th job.
+    For each job which enters the system, they can be ``marked" by a series of random variables defining their behaviour within the system \cite{baccelli_elements_2003}. In general, for the systems we shall consider, we consider the marked processes $\sigma_{n}$ as being the required service of arrival $n$ and the marks $T_{n}$ as its time of arrival.
+    The tuple \[(T,\sigma)_{n}, n \in \mathbb{N}\] will therefore be used to mark the $n$th job.
     We shall extend this notation, however, to include sets;
     for set of jobs $\eta$, wherein each element has their own arrival time:
-    \[(\sigma, T)_{\eta} = \{(T,\sigma)_{n}\}_{n \in \eta}.\]
+    \[(T, \sigma)_{\eta} = \{(T,\sigma)_{n}\}_{n \in \eta}.\]
 \end{definition}
 
-For the marked process to be useful, we would like to be able to condition onto it in order to ease the problem of determining workload into one of considering (conditionally) non-random terms. In a simple G/M/c, as mentioned before, the double $(T,\sigma)_{n}$ would be sufficient. In our case, given that jobs can find their status in the system tied to the behaviour of their replicas, we must append a marking to track this phenomenon. As a matter of fact, we instead move to marking the queues as was done by \cite{bramson_asymptotic_2012} to prove the conjecture in the case of Join-The-Shortest-Queue(d) systems, although with an additional job dependency term.
+In a simple $G/M/c$ queue, as discussed before, the double $(T,\sigma)_{n}$ would be sufficient for reducing the problem into a deterministic one.
+In our case, given that jobs can find their status in the system tied to the behaviour of their replicas, we must append a marking to track this phenomenon.
+As a matter of fact, we instead move to marking the queues as was done by \cite{bramson_asymptotic_2012} to prove the conjecture in the case of Join-The-Shortest-Queue($d$) systems, although with an additional job dependency term.
 
 \begin{definition}[Job Dependency Graph: Finite Case]
     \hfill \\
-    The \textbf{Job Dependency Graph}, $G_{t}=(V,E)_{t}$ is held constant between the events of arrivals and job completions, where an edge is drawn between two nodes if and only if they are job-dependent.
+    The \textbf{Job Dependency Graph}, $G_{t}=(V,E)_{t}$, is held constant between the events of arrivals and job completions, where an edge is drawn between two nodes if and only if they are job-dependent.
 
     \begin{enumerate}
         \item Movement in a queue requires \textit{appropriate} redrawing of graph.
         \item $G_{t}$ is stochastic with law in $\text{Pr}(\Omega, \mathcal{F}_{t})$.
         \item Maximal system queue size is bounded, $\sup_{n \in \chi}z_{n}(t):=\nu(t).$
     \end{enumerate}
-    "Appropriate redrawing" in this case means
+    ``Appropriate redrawing" in this case means
     \begin{enumerate}
         \item The graph is redrawn to reflect movement within each queue (moving due to job completions or arrivals).
-        \item $G_{t}$ can depend only on $G_{s}, s <t $ and other current values of $X^{*}_{t}$ (denote these other values $\tilde X^{*}_{t}$) and is such that \[P(G_{t}|\tilde X^{*}_{t}, \{G_{a}\}_{a \in S})=P(G_{t}|\tilde X^{*}_{t}, G_{\max(S)})\]
+        \item $G_{t}$ can depend only on $G_{s}, s <t$, and other current values of $X^{*}_{t}$ (denote these other values by $\tilde X^{*}_{t}$) and is such that \[P(G_{t}|\tilde X^{*}_{t}, \{G_{a}\}_{a \in S})=P(G_{t}|\tilde X^{*}_{t}, G_{\max(S)})\]
         for any set $S$ such that $ S \subset [0,t)$.
     \end{enumerate}
     \label{dep1}
@@ -51,33 +54,36 @@ For the marked process to be useful, we would like to be able to condition onto 
     \end{align}
     is a blocked matrix such that sub matrix
     \[B_{i,j}= [b_{q,m}]_{q,m \leq N} = \begin{cases}
-                                            1, \substack{\text{ queue } q \text{ in row } i \text{ is connected in } G_{t} \\ \text{ to queue } m \text{ in row } j}\\
+                                            1, \substack{if \text{ queue } q \text{ in row } i \text{ is connected in } G_{t} \\ \text{ to queue } m \text{ in row } j}\\
                                             0, \text{otherwise}
     \end{cases}\]
     where connections between jobs occur if and only if the completion of one job implies the removal of all other connected jobs from the system.
     \label{jdf}
 \end{definition}
 
-While complicated in the above form, this graph merely draws an edge between jobs of separate queues while tracking their current place in their respective queues. Because at most one event can happen in infinitesimal time (an arrival or departure), the assumptions merely state that between any two events this graph shall not need to be redrawn. Extending this notion, one can iterate such a procedure indefinitely, viewing the resultant infinite graph as one where jobs are joined by hyperedges if and only if there exists an element of a set of replicas in each of the queues. In other words, one can represent queues which are connected by means of having replicas of the same jobs enqueued within them by viewing each as a node connected with a hyperedge; we will call queues related by such a hyperedge members of a \textit{replica class} . Thus, \ref{dep1} can be represented more-succinctly in a hypergraph form, allowing one to to represent the cavity process studied in \cite{Hellemans}.
+While complicated in the above form, this graph merely draws an edge between jobs of separate queues while tracking their current place in their respective queues. Because at most one event can happen in infinitesimal time (i.e., an arrival or departure), the assumptions merely state that between any two events this graph shall not need to be redrawn. Extending this notion, one can iterate such a procedure indefinitely, viewing the resultant infinite graph as one where jobs are joined by hyperedges if and only if there exists an element of a set of replicas in each of the queues. In other words, one can represent queues which are connected by means of having replicas of the same jobs enqueued within them by viewing each as a node connected with a hyperedge; we will call queues related by such a hyperedge members of a \textit{replica class} . Thus, Definition \ref{dep1} can be represented more succinctly in a hypergraph form, allowing one to represent the cavity process studied in \cite{Hellemans}.
 
 \begin{definition}(Hypergraph Representation of the Dependency Matrix)
-By collapsing edges as jobs and vertices as servers, all connected subgraphs of $G_{t}$ can be thought of as incident nodes with edges ${i_{1}, \dots, i_{j}}_{j<d}$ representing connected jobs. This gives us now only as many nodes as there are currently servers. Such a representation for $G_{t}$ will be denoted $\mathcal{G}_{t}$. See Fig \ref{fig:hyper} for a visual representation.
+    By collapsing edges as jobs and vertices as servers, all connected subgraphs of $G_{t}$ can be thought of as incident nodes with edges $i_{1}, \dots i_{j}$, $j<d$ representing connected jobs. This gives us now only as many nodes as there are currently servers. Such a representation for $G_{t}$ will be denoted by $\mathcal{G}_{t}$. See Fig \ref{fig:hyper} for a visual representation.
 \end{definition}
 
 \begin{figure}
-\centering
-\includegraphics[scale=0.5]{systemredun.png}
-\caption{A graphical representation of queues with replicated jobs as hyperedges.}
-\label{fig:hyper}
+    \centering
+    \includegraphics[scale=0.5]{systemredun}
+    \caption{A graphical representation of queues with replicated jobs as hyperedges.}
+    \label{fig:hyper}
 \end{figure}
 
-When one creates the infinite graph iteratively, it is meant that one could view the graph described in \ref{dep1} as an embedding into a larger graph by merely considering more queues or a larger maximal queue size at any finite time $t$, corresponding to the adding of an additional column or row of vertices, respectively. Building a metric on an infinite graph space simplifies the matter of quantifying convergence in terms of $N$ significantly because all possible finite embeddings can be expressed in the same space as $N\rightarrow \infty$. Thus, let us consider \[\mathbb{E}:= \{\text{locally finite graphs}\}.\] Now, extending the notation of \cite{bramson_asymptotic_2012}, we can fully describe the marked process for queues with general service times.
+When one creates the infinite graph iteratively, it is meant that one could view the graph described in Definition \ref{dep1} as an embedding into a larger graph by merely considering more queues or a larger maximal queue size at any finite time $t$, corresponding to the adding of an additional column or row of vertices, respectively. Building a metric on an infinite graph space simplifies the matter of quantifying convergence in terms of $N$ significantly because all possible finite embeddings can be expressed in the same space as $N\rightarrow \infty$. Thus, let us consider \[\mathbb{E}:= \{\text{locally finite graphs}\}.\] Now, extending the notation of \cite{bramson_asymptotic_2012}, we can fully describe the marked process for queues with general service times.
 \begin{definition}[State Space With Redundancy]
+    %%TODO: re-express this!
     \hfill \\
     \hfill \\
-	For $X^{*}_{n}(t)$ corresponding to the $n$th queue out of $N$,
-	\[X_{n}^{*}(t)\in (\mathbb{N},(\mathbb{R}^{+})^{3},\rho(\mathbb{E})):=\mathcal{E}^{(\psi)}_{n}\]
-	\[X^{*}(t) \in \{\mathcal{E}^{(\mathbb{N})}_{n}\}_{n \leq N} := \mathcal{E}^{(\psi)}\]
+    For $X^{*}_{n}(t)$ corresponding to the $n$th queue out of $N$ possible queues,
+    \begin{gather*}
+        X_{n}^{*}(t)\in (\mathbb{N},(\mathbb{R}^{+})^{3},\rho(\mathbb{E})):=\mathcal{E}^{(\psi)}_{n}\\
+        X^{*}(t) \in \{\mathcal{E}^{(\mathbb{N})}_{n}\}_{n \leq N} := \mathcal{E}^{(\psi)}\\
+    \end{gather*}
     Corresponding to
     \begin{enumerate}
         \item $z_{n}(t) \in \mathbb{N}$ for queue size
@@ -88,7 +94,6 @@ When one creates the infinite graph iteratively, it is meant that one could view
     \end{enumerate}
     \label{def:spec}
 \end{definition}
-
 
 
 %======================================================================
