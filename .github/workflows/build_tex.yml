@@ -1,9 +1,0 @@
-name: Build LaTeX document
-on: [push]
-jobs:
-  build_latex:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: xu-cheng/latex-action@v2
-        with:
-          root_file: /TexSrc/main.tex
