@@ -1,8 +1,0 @@
-\contentsline {chapter}{List of Figures}{vii}{section*.2}%
-\contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}%
-\contentsline {chapter}{\numberline {2}Model Specification}{5}{chapter.2}%
-\contentsline {chapter}{\numberline {3}Simulation Study}{9}{chapter.3}%
-\contentsline {section}{\numberline {3.1}ParallelQueue Package}{9}{section.3.1}%
-\contentsline {section}{\numberline {3.2}Results}{11}{section.3.2}%
-\contentsline {chapter}{\textbf {References}}{16}{section*.5}%
-\contentsline {chapter}{APPENDICES}{18}{appendix*.7}%
