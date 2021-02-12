@@ -11,7 +11,7 @@ Checklist
 2. Incorporate missing results []
 3. Restate definition 10 []
 4. Elaborate lemma 1 []
-5. Find and re-add missing figure in chapt 3. []
+5. Find and re-add missing figures in chapt 3. []
    1. Each contain tag `[MISSING]`
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
