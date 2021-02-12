@@ -43,7 +43,6 @@ totals = sim.MonitorOutput["TimeQueueSize"]
 
 Remarkably, the simulation itself is performed speedily on consumer hardware despite the size of the system as demonstrated in Figure~\ref{fig:lstlisting2}.
 \begin{figure}
-    %! suppress = MissingLabel
     \begin{lstlisting}
 CPU times: user 2.02 s, sys: 9.57 ms, total: 2.03 s
 Wall time: 2.05 s
@@ -89,7 +88,7 @@ rest of the simulations) , Redundancy(2)) and Threshold(2,2) policies are rather
 
 \begin{figure}
     \centering
-    \includegraphics[width=0.7\linewidth]{} % [MISSING] - TODO: find this image + add to git
+    \includegraphics[width=0.7\linewidth]{attimes.png} %
     \caption{Comparisons of Systems: Values are averaged over 30 independent iterations each, running for $t=1000$)}
     \label{fig:img}
 \end{figure}
@@ -121,7 +120,7 @@ In order to evaluate the results of these simulations directly, the work of~\cit
 \end{definition}
 In essence, this is formulation provides a means of reducing time-exchangeability -- a problem concerning the probabilistic behaviour of a group-theoretic operator -- into a problem of analysis. While not necessarily implying exchangeability, local exchangeability provides a sufficient condition upon fulfilment of an additional criterion for full exchangeability: $d(t,t') \overset{|t-t'|\rightarrow 0}\rightarrow O(|t-t|^{1+a})$ for $a>1$.
 
-In terms of $N \rightarrow \infty$, obviously it is important to consider $\rho$. For extremely low values of $\rho$, we expect the probability of the threshold being breached at a high $N$ at any time to approach zero. This is examined, for example, in Figure~\ref{fig:img1}. For this image, each value of $\rho$, $N \in \{2, 12, \dots 42\}$ is tested and prescribed a bar representing that $N \times \rho$ combination's $E(T)$ until $t=1000$ (each combination being run 30 times with independent seeds). Going forward, this suggests that we can examine rather high levels of $\rho$ to better contrast the difference between redundancy and non-redundancy models. Moreover, as we are evaluating the efficacy of this model for any $d$ choices, we place particular emphasis on $d \equiv 2$ given that returns from increasing $d$ tends to decrease regardless of whether replicas are or are not being considered~\cite{gardner_redundancy-d_2017,power}.
+In terms of $N \rightarrow \infty$, obviously it is important to consider $\rho$. For extremely low values of $\rho$, we expect the probability of the threshold being breached at a high $N$ at any time to approach zero. This is examined, for example, in Figure~\ref{fig:img1}. For this image, each value of $\frac{\rho}{d}$, $N \in \{2, 12, \dots 42\}$ is tested and prescribed a bar representing that $N \times \rho$ combination's $E(T)$ until $t=1000$ (each combination being run 30 times with independent seeds). Going forward, this suggests that we can examine rather high levels of $\rho$ to better contrast the difference between redundancy and non-redundancy models. Moreover, as we are evaluating the efficacy of this model for any $d$ choices, we place particular emphasis on $d \equiv 2$ given that returns from increasing $d$ tends to decrease regardless of whether replicas are or are not being considered~\cite{gardner_redundancy-d_2017,power}.
 % TODO: \usepackage{graphicx} required
 \begin{figure}
     \centering
