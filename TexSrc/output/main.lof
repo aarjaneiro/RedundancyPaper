@@ -1,0 +1,13 @@
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {1.1}{\ignorespaces Commutativity of Limits}}{3}{figure.1.1}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {2.1}{\ignorespaces A graphical representation of queues with replicated jobs as hyperedges.}}{8}{figure.2.1}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Python code using \textit {ParallelQueue} to simulate a Redundancy-2 System.}}{10}{figure.3.1}%
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Plot using \lstinline {totals} of Figure\nobreakspace {}\ref {fig:red}}}{10}{figure.3.2}%
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Runtime Statistics}}{11}{figure.3.3}%
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Overview of the ParallelQueue API}}{12}{figure.3.4}%
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Comparisons of Systems: Values are averaged over 30 independent iterations each, running for $t=1000$)}}{12}{figure.3.5}%
+\contentsline {figure}{\numberline {3.6}{\ignorespaces Threshold(2,2) for Varying $N$ and $\rho $}}{14}{figure.3.6}%
+\contentsline {figure}{\numberline {3.7}{\ignorespaces Redundancy(2) ECDFs for Varying $N$}}{15}{figure.3.7}%
+\contentsline {figure}{\numberline {3.8}{\ignorespaces Redundancy(2) Histograms of ECDF Changes for Varying $\tilde \tau $ at $N=1000$}}{15}{figure.3.8}%
