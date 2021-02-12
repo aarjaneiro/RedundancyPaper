@@ -2,6 +2,7 @@ Mean Field Behaviour of Queueing Systems with Redundancy
 ---------------------------------
 __Simulation Project__
 
+To see the history of changes to this project, [click here (or the history symbol above)](https://github.com/aarjaneiro/RedundancyPaper/commits/master)
 
 Directories
 -----------
