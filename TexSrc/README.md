@@ -5,7 +5,7 @@ This file highlights the remaining tasks for the paper portion of this project.
 Checklist
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-1. Fix the citation issues. []
+1. Fix the citation issues. [x]
     1. Should exist a means via bibtex.
     
 2. Incorporate missing results []

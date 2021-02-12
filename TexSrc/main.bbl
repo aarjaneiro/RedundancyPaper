@@ -1,0 +1,64 @@
+\begin{thebibliography}{10}
+
+\bibitem{mukhopadhyay_analysis_nodate}
+A.~{Mukhopadhyay} and R.~R. {Mazumdar}, ``Analysis of randomized
+  join-the-shortest-queue ({JSQ}) schemes in large heterogeneous processor
+  sharing systems,'' {\em IEEE Transactions on Control of Network Systems},
+  vol.~3, no.~2, pp.~116--126, 2016.
+
+\bibitem{austin_exchangeable_2015}
+T.~Austin, ``Exchangeable random measures,'' {\em Annales de l’Institut Henri
+  Poincaré}, vol.~51, no.~3, pp.~842--861, 2015.
+
+\bibitem{austin_exchangeable_2008}
+T.~Austin, ``On exchangeable random variables and the statistics of large
+  graphs and hypergraphs,'' {\em Probability Surveys}, vol.~5, no.~0,
+  pp.~80--145, 2008.
+
+\bibitem{ayesta_unifying_2018}
+U.~Ayesta, T.~Bodas, and I.~Verloop, ``On a unifying product form framework for
+  redundancy models,'' {\em Performance Evaluation}, vol.~127-128, pp.~93--119,
+  2018.
+
+\bibitem{baccelli_elements_2003}
+F.~Baccelli and P.~Brémaud, {\em Elements of Queueing Theory}.
+\newblock Springer Berlin Heidelberg, 2003.
+
+\bibitem{bramson_asymptotic_2012}
+M.~Bramson, Y.~Lu, and B.~Prabhakar, ``Asymptotic independence of queues under
+  randomized load balancing,'' {\em Queueing Systems}, vol.~71, no.~3,
+  pp.~247--292, 2012.
+
+\bibitem{Hellemans}
+T.~Hellemans, T.~Bodas, and B.~Van~Houdt, ``Performance analysis of workload
+  dependent load balancing policies,'' {\em Proc. ACM Meas. Anal. Comput.
+  Syst.}, vol.~3, June 2019.
+
+\bibitem{noauthor_ciwpythonciw_nodate}
+G.~I. Palmer, V.~A. Knight, P.~R. Harper, and A.~L. Hawa, ``Ciw: An open-source
+  discrete event simulation library,'' 2019.
+
+\bibitem{shneer_large-scale_2020}
+S.~Shneer and A.~Stolyar, ``Large-scale parallel server system with
+  multi-component jobs,'' {\em {arXiv}:2006.11256 [cs, math]}, 2020.
+
+\bibitem{cruise_stability_2020}
+J.~Cruise, M.~Jonckheere, and S.~Shneer, ``Stability of {JSQ} in queues with
+  general server-job class compatibilities,'' {\em {arXiv}:2001.09921 [math]},
+  2020.
+
+\bibitem{gardner_redundancy-d_2017}
+K.~Gardner, M.~Harchol-Balter, A.~Scheller-Wolf, M.~Velednitsky, and
+  S.~Zbarsky, ``Redundancy-d: The power of d choices for redundancy,'' {\em
+  Operations Research}, vol.~65, no.~4, pp.~1078--1094, 2017.
+
+\bibitem{campbell2020local}
+T.~Campbell, S.~Syed, C.-Y. Yang, M.~I. Jordan, and T.~Broderick, ``Local
+  exchangeability,'' {\em arXiv:1906.09507 [math.ST]}, 2020.
+
+\bibitem{power}
+M.~Mitzenmacher, ``The power of two choices in randomized load balancing,''
+  {\em IEEE Trans. Parallel Distrib. Syst.}, vol.~12, p.~1094–1104, Oct.
+  2001.
+
+\end{thebibliography}
