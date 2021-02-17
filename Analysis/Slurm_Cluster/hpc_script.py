@@ -160,11 +160,6 @@ def SafeRun(maxtime=1000, SArgs=1, AArgs=2, d=2, r=2, order=range(2, 20, 2),
 
 from pqTools import fileMaker
 
-# In[ ]:
-
-
-# %%time
-
 ToOrder = [25, 50, 100, 500, 1000]
 results = SafeRun(of="TSim", order=ToOrder, maxtime=1000, AArgs=5, simrep=30, ts=False, seed=64)
 results = results[list(results.keys())[0]]
@@ -172,10 +167,6 @@ print("Saving")
 fileMaker(results, list(range(len(ToOrder))))
 
 results2 = SafeRun(of="JSim", order=ToOrder, maxtime=1000, AArgs=5, simrep=30, ts=False, seed=1021)
-# getPerN(2)[0]
-
-# while True:  # cleans
-#     arr3.remove({})
 
 results2 = results2[list(results2.keys())[0]]
 

@@ -9,8 +9,8 @@ Checklist
     1. Should exist a means via bibtex.
     
 2. Incorporate missing results []
-3. Restate definition 10 []
-4. Elaborate lemma 1 []
+3. Restate definition 10 [x]
+4. Elaborate lemma 1 [x]
 5. Find and re-add missing figures in chapt 3. []
    1. Each contain tag `[MISSING]`
 

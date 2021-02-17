@@ -93,8 +93,20 @@ rest of the simulations) , Redundancy(2)) and Threshold(2,2) policies are rather
     \label{fig:img}
 \end{figure}
 
-As~\cite{gardner_redundancy-d_2017} show, a Redundancy($d$) system is asymptotically stable if and only if $\rho < 1 $. Given that, in premise, Threshold($r,d$) models are more or less a superclass of Join-The-Shortest queue and Redundancy($d$) (trivially with rising $r$  implying no threshold exists and thus copies should always be made as in the case of Redundancy($d$), it is perhaps most interesting to examine if Threshold models are better able to handle high-load environments. Proving the superclass property in terms of Redundancy is relatively easy and is done in Lemma~\ref{sup}. By contrast, after merely setting $r \equiv 0$, we get $ \mathcal{D}_{\text{Thresh(0,d)}} \overset{d}{=} \mathcal{D}_{\text{JSQ(d)}}$ by definition.
+As~\cite{gardner_redundancy-d_2017} show, a Redundancy($d$) system is asymptotically stable if and only if $\rho < 1 $. Given that, in premise, Threshold($r,d$) models are more or less a superclass of Join-The-Shortest queue and Redundancy($d$) (trivially with rising $r$  implying no threshold exists and thus copies should always be made as in the case of Redundancy($d$), it is perhaps most interesting to examine if Threshold models are better able to handle high-load environments. Proving the superclass property in terms of Redundancy is relatively easy and is done in Lemma~\ref{sup}. By contrast, after merely setting $r \equiv 0$, we get $ \mathcal{D}_{\text{Thresh(0,d)}} \overset{d}{=} \mathcal{D}_{\text{JSQ(d)}}$ by definition. To prove the lemma, we first must introduce the concepts of stochastic domination and coupling.
+\begin{definition}[Stochastic Domination]
+    \\~\\
+    $\mathbf{X}_{1}^{(N)}$ is said to dominate $\mathbf{X}_{2}^{(N)}$, using the notation $\leq_{st}$, when ~\cite{bramson_asymptotic_2012}
+    \[\mathbf{X}_{1}^{(N)}\leq_{st}\mathbf{X}_{2}^{(N)} \iff\# X_{1,i} \leq \# X_{2,i}  \quad \forall i \in [N] \quad P-a.s.\]
+\end{definition}
 
+\begin{definition}[Coupled Process]
+        \label{coupled}
+    \\~\\
+    For stochastic processes $X_{t} \in Pr(\Omega_{x}, \mathcal{F}_{x}, \mathcal{F}_{t,x})$ and $X_{t} \in Pr(\Omega_{y}, \mathcal{F}_{y}, \mathcal{F}_{t,y})$.
+    $X_{t}$ and $Y_{t}$ are said to be coupled over the probability space $Pr(\Omega, \mathcal{F}, \mathcal{F}_{t})$ if there exist
+    $\hat X_{t}, \hat Y_{t} \in Pr(\Omega, \mathcal{F}, \mathcal{F}_{t})$ such that $\hat X_{t} \overset{d}{=}X_{t}$ and $\hat Y_{t} \overset{d}{=}Y_{t}$ \cite{bramson_asymptotic_2012}.
+\end{definition}
 
 \begin{lemma}
     \label{sup}
@@ -102,16 +114,15 @@ As~\cite{gardner_redundancy-d_2017} show, a Redundancy($d$) system is asymptotic
 \end{lemma}
 \textit{Proof}:
 
-Take $\leq_{st}$ to mean that~\cite{bramson_asymptotic_2012}
-\[\mathbf{X}_{1}^{(N)}\leq_{st}\mathbf{X}_{2}^{(N)} \iff\# X_{1,i} \leq \# X_{2,i}  \quad \forall i \in [N] \quad P-a.s.\]
-To show the sequence to be convergent, we will construct a coupling in such a manner that $\forall r \in \mathbb{R}^{+}$,  the system is bounded by another~\cite{baccelli_elements_2003} . For $\mathbf{X}_{1}^{(N)}$ under $\text{Thresh}(r,d)$, await the first arrival, denoted $T_{\xi_{1}}$, where a selection set, $\nu \subset [N] $ is prescribed such that $\exists \hat X \in \{X_{i}\}_{i \in \nu} $ such that $ \# (\hat X) > r $. Thus, for  $ t \in [0,T_{\xi_{1}})$, $\mathcal{D}_{\text{Thresh(r,d)}}\mathbf(X^{(n)}) = \mathcal{D}_{\text{Red(d)}}\mathbf(X^{(n)}) \quad$ . For clarity, let us now consider $\mathbf{Y}^{(N)}$ to be a copy of  $\mathbf{X}^{(N)}$ such that they are independent, identical in distribution and in terms of the marks of \textit{arrival process and job-size draws} along with the queues parsed (as was similarly done in~\cite{bramson_asymptotic_2012} Lemma 4.1); effectively, the only difference being left between these copies is $r$ changing which queues receive clones (and thus, too, the mark of queue-dependency).  $\mathcal{D}_{\text{Red(d)}}\mathbf(X^{(n)}) = \mathcal{D}_{\text{Thresh(r,d)}}\mathbf(Y^{(n)}) $; clearly, at time $T_{\xi_{1}}$, $\mathbf{X}^{(N)}\leq_{st}\mathbf{Y}^{(N)} $
-due to jobs only being added for ${\hat Y_{i}}$ (defined analogously to  ${\hat X_{i}}$ ).
+To show the sequence of routing algorithms to be convergent, we will construct a coupling in such a manner that $\forall r \in \mathbb{R}^{+}$, the system is stochastically dominated by another which is made to be finite~\cite{baccelli_elements_2003} . To do so, for $\mathbf{X}_{1}^{(N)}$ under $\text{Thresh}(r,d)$, denote the first arrival as $T_{\xi_{1}}$, at which time it is the case that a selection set, $\nu \subset [N] $, is prescribed wherein there exists $\hat X \in \{X_{i}\}_{i \in \nu} $ such that $ \# (\hat X) > r $. Thus, for  $ t \in [0,T_{\xi_{1}})$, we have $\mathcal{D}_{\text{Thresh(r,d)}}\mathbf(X^{(n)}) = \mathcal{D}_{\text{Red(d)}}\mathbf(X^{(n)})$. For clarity, let us now consider $\mathbf{Y}^{(N)}$ to be a copy of  $\mathbf{X}^{(N)}$ such that they are independent, identical in distribution and in terms of the marks of \textit{arrival process and job-size draws} along with the queues parsed (as was similarly done in~\cite{bramson_asymptotic_2012} in Lemma 4.1 using Definition \ref{coupled}). Effectively, the only difference being left between these copies is $r$ changing which queues receive clones and thus, too, the mark of queue-dependency. At time $T_{\xi_{1}}$ we clearly have $\mathcal{D}_{\text{Red(d)}}\mathbf(X^{(n)}) = \mathcal{D}_{\text{Thresh(r,d)}}\mathbf(Y^{(n)})$ due to there being no existing jobs for which the threshold would perclude cloning in the case of Thresh($r,d$).
+As such, we also have $\mathcal{D}_{\text{Thresh}(r,d)}(Y^{(N)}(T_{\xi_{1}}))\leq_{st}\mathcal{D}_{\text{Red}(d)}(X^{(N)}(T_{\xi_{1}}))$.
 
-Now, assume $\rho< 1$, giving us $ \# Y_{i}  < \infty \quad \forall t \in \mathbb{R}^{+}$ with probability 1~\cite{gardner_redundancy-d_2017}. As such, we have that $\forall r \left[\exists \xi_{1}(r) | P_{r}\left(\mathbf{X}^{(N)} (t) = \mathbf{Y}^{(N)}(t) |t \in [0,T_{\xi_{1}}) \right) = 1\right]$ such that $\xi_{1} (r)$ is monotone increasing in $r$ and where $P_{r}(A) = P(\mathcal{D}_{M(r)}(A))$ for routing algorithm of $A$ being $M$. Letting $r \rightarrow \infty \Rightarrow \xi_{1} \rightarrow \infty$, we then have $\mathbf{X}^{(N)}(t) =  \mathbf{Y}^{(N)}(t) \quad \forall t \in \mathbb{R}^{+}$ in terms of distribution (i.e., as the result holds $\forall t \in \mathbb{R}^{+}$ as $r\rightarrow \infty$), implying the required weak convergence for $\mathcal{D}$ in law over system  $\mathbf{X}^{(N)}(t)$.  \qed
+Now, assume $\rho< 1$, giving us $ \# Y_{i}  < \infty \quad \forall t \in \mathbb{R}^{+}$ with probability 1~\cite{gardner_redundancy-d_2017}. As such, we have that $\forall r \in \mathbb{R}^{+}$ there exists $ \xi_{1}(r) $ such that $ P_{r}(\mathbf{X}^{(N)}(t) = \mathbf{Y}^{(N)}(t) |t \in [0,T_{\xi_{1}}) \right) = 1$ $P_{r}(A) := P(\mathcal{D}_{M(r)}(A))$ wherein $M$ denotes the routing algorithm of process $A$. Note that $\xi_{1} (r)$ is monotone increasing in $r$. Letting $r \rightarrow \infty \Rightarrow \xi_{1} \rightarrow \infty$, we then have $\mathbf{X}^{(N)}(t) =  \mathbf{Y}^{(N)}(t) \quad \forall t \in \mathbb{R}^{+}$ in terms of distribution (i.e., as the result holds $\forall t \in \mathbb{R}^{+}$ as $r\rightarrow \infty$), implying the required weak convergence from below for $\mathcal{D}$ in law over system  $\mathbf{X}^{(N)}(t)$.  \qed
 
 In order to evaluate the results of these simulations directly, the work of~\cite{campbell2020local} provides statistical notions of asymptotic exchangeability in the de Finetti sense by means of quantifying \textit{local} empirical measure sequences.
 
 \begin{definition}[Local exchangeability]
+    \\
     $\mathbb{X}$ is a locally exchangeable process if and only if there exists process $G_{t}$ where $\forall T \subset \mathbb{R}, \gamma \in \text(X,\Gamma) $
     \[P\left(\bigcap_{t \in T} \{X_{t} \in A\} | G^{(T)}_{t} \right) = \prod_{t \in T} G_{t} \quad \text{P-a.s.}\]
     \[\sup_{\omega}E|G^{(T)}_{t} (\omega)-G^{(T)}_{\gamma t}| \leq \sum_{t \in T} d(t, \gamma(t))\]
