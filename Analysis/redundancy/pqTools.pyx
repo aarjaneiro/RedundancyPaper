@@ -3,7 +3,7 @@
 import json as js
 cpdef void fileMaker(list results,list ToOrder,str name="Tsim",int reps=30):
     """
-    Serializes data into a dictionary --> JSON(str(Data))
+    Serializes time data into a dictionary --> JSON(str(Data))
     """
     cdef dict ret, subret, mret, m
     cdef int N, i
