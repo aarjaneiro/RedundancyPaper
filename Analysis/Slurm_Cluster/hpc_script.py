@@ -68,7 +68,7 @@ class Concurrent:
             plt.title("Average Time in System as N → ∞")
 
     def RSim(self, reps):
-        mons = [ReplicaClassCounts]
+        mons = [TimeQueueSize]
         testvalues = []
         for N in (self.order):
             _sim = RedundancyQueueSystem(maxTime=self.maxtime, parallelism=N, seed=self.seed + 2331 * N + reps,
@@ -84,7 +84,7 @@ class Concurrent:
             return np.mean(testvalues)
 
     def JSim(self, reps):
-        mons = [ReplicaClassCounts]
+        mons = [TimeQueueSize]
         testvalues = []
         for N in (self.order):
             _sim = JSQd(maxTime=self.maxtime, parallelism=N, seed=self.seed + 2331 * N + reps, d=self.d,
@@ -99,7 +99,7 @@ class Concurrent:
             return np.mean(testvalues)
 
     def TSim(self, reps):
-        mons = [ReplicaClassCounts]
+        mons = [TimeQueueSize]
         testvalues = []
         for N in (self.order):
             _sim = RedundancyQueueSystem(maxTime=self.maxtime, parallelism=N, seed=self.seed + 2331 * N + reps,
@@ -158,23 +158,22 @@ def SafeRun(maxtime=1000, SArgs=1, AArgs=2, d=2, r=2, order=range(2, 20, 2),
     return run.Results()
 
 
-from pqTools import fileMaker
+from redundancy.pqTools import fileMaker
 
 ToOrder = [25, 50, 100, 500, 1000]
 results = SafeRun(of="TSim", order=ToOrder, maxtime=1000, AArgs=5, simrep=30, ts=False, seed=64)
 results = results[list(results.keys())[0]]
-print("Saving")
-fileMaker(results, list(range(len(ToOrder))))
+# print("Saving")
+# fileMaker(results, list(range(len(ToOrder))))
 
 results2 = SafeRun(of="JSim", order=ToOrder, maxtime=1000, AArgs=5, simrep=30, ts=False, seed=1021)
-
 results2 = results2[list(results2.keys())[0]]
 
-print("Saving")
-fileMaker(results2, list(range(len(ToOrder))), "Jsim")
+# print("Saving")
+# fileMaker(results2, list(range(len(ToOrder))), "Jsim")
 
 results3 = SafeRun(of="RSim", order=ToOrder, maxtime=1000, AArgs=5, simrep=30, ts=False, seed=1111)
 results3 = results3[list(results3.keys())[0]]
 
-print("Saving")
-fileMaker(results3, list(range(len(ToOrder))), "Rsim")
+# print("Saving")
+# fileMaker(results3, list(range(len(ToOrder))), "Rsim")
