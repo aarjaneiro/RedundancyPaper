@@ -100,7 +100,7 @@ cpdef list time_sampler(X, time_samples, max_time = 1000):
         ret.append(data_slice)
     return ret
 
-cpdef dHSIC_hat(list Xs):
+cpdef dHSIC_hat(Xs):
     """https://arxiv.org/pdf/1603.00285.pdf -- see algorithm 1. Tests across d dists for independence beyond
     binary betyween all elements of Xs."""
     cdef int x_len = Xs[0].shape[0]
@@ -123,7 +123,7 @@ cpdef float dHSIC_resample(list Xs, int shuffle=500):
     hits = 0
     for i in range(shuffle):
         index_perm = np.random.permutation(len(Xs)) # a sampled time
-        permed = dHSIC_hat(Xs[np.ix_(index_perm, index_perm)])
+        permed = dHSIC_hat(np.array(Xs)[np.ix_(index_perm, index_perm)])
         if permed >= init:
             hits += 1
     return (hits + 1)/shuffle
