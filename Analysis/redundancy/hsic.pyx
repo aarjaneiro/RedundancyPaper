@@ -6,41 +6,46 @@ To test for independence, the null hypothesis is H0:PXY=PXPY. We assume we obser
 
 """
 
-
 import numpy as np
 cimport numpy as np
-cimport cython
 from scipy.stats import gamma
 from sklearn.metrics import pairwise_distances
 from sklearn.metrics import pairwise_kernels
 
-cpdef cython.numeric width(cython.numeric[:,:] Z):
+cpdef width(Z):
     dist_mat = pairwise_distances(Z, metric='euclidean')
     return np.median(dist_mat[dist_mat > 0])
 
 
-cpdef HSIC_permutations(cython.numeric[:,:] X, cython.numeric[:,:] Y, float alpha, cython.numeric width_X = -1, cython.numeric width_Y = -1, int shuffle = 100):  # set widths to -1 for median heuristics
-
-    m = X.shape[0]
-
-    # median heuristics for kernel width
+cdef center_kl(X, Y, width_X, width_Y, m=None):
+    if m is None:
+        m = X.shape[0]
     if width_X == -1.:
         width_X = width(X)
     if width_Y == -1.:
         width_Y = width(Y)
+    return center_k(X, width_X, m), center_k(Y, width_Y, m)
 
-    K = pairwise_kernels(X, X, metric='rbf', gamma=0.5 / (width_X ** 2))
-    L = pairwise_kernels(Y, Y, metric='rbf', gamma=0.5 / (width_Y ** 2))
+cdef center_k(X, width_X, m=None):
+    if m is None:
+        m = X.shape[0]
     H = np.eye(m) - (1 / m) * (np.ones((m, m)))
-    # ...to center K
-    K_c = H @ K @ H
+    K = pairwise_kernels(X, X, metric='rbf', gamma=0.5 / (width_X ** 2))
+    K = H @ K @ H
+    return K
+
+
+cpdef HSIC_permutations(X, Y, float alpha, width_X = -1, width_Y = -1, int shuffle = 100):  # set widths to -1 for median heuristics
+
+    m = X.shape[0]
+    K, L = center_kl(X, Y, width_X, width_Y, m)
 
     np.fill_diagonal(K, 0)
     np.fill_diagonal(L, 0)
     KL = np.dot(K, L)
     HSIC_arr = np.zeros(shuffle)
     for sh in range(shuffle):
-        index_perm = np.random.permutation(L.shape[0])
+        index_perm = np.random.permutation(L.shape[0]) # a sampled time
         L_perm = L[np.ix_(index_perm, index_perm)]
         HSIC_arr[sh] = np.trace(np.dot(K, L_perm)) / (m * (m - 3)) + np.sum(K) * np.sum(L_perm) / (
                     m * (m - 3) * (m - 1) * (m - 2)) - 2 * np.sum(np.dot(K, L_perm)) / (m * (m - 3) * (m - 2))
@@ -50,20 +55,10 @@ cpdef HSIC_permutations(cython.numeric[:,:] X, cython.numeric[:,:] Y, float alph
             m * (m - 3) * (m - 2)),  HSIC_arr_sort[round((1 - alpha) * shuffle)]
 
 
-cpdef HSIC_gamma(cython.numeric[:,:] X, cython.numeric[:,:] Y, float alpha, cython.numeric width_X = -1, cython.numeric width_Y = -1):  # set widths to -1 for median heuristics
+cpdef HSIC_gamma(X, Y, float alpha, width_X = -1, width_Y = -1, max_time=1000):  # set widths to -1 for median heuristics
 
     m = X.shape[0]
-    if width_X == -1:
-        width_X = width(X)
-    if width_Y == -1:
-        width_Y = width(Y)
-
-    K = pairwise_kernels(X, X, metric='rbf', gamma=0.5 / (width_X ** 2))
-    L = pairwise_kernels(Y, Y, metric='rbf', gamma=0.5 / (width_Y ** 2))
-    H = np.eye(m) - (1 / m) * (np.ones((m, m)))
-
-    K_c = H @ K @ H
-    L_c = H @ L @ H
+    K, L = center_kl(X, Y, width_X, width_Y, m)
 
     # unbiased statistics
     np.fill_diagonal(K, 0)
@@ -72,7 +67,7 @@ cpdef HSIC_gamma(cython.numeric[:,:] X, cython.numeric[:,:] Y, float alpha, cyth
 
     vHSIC = np.power(1 / 6 * KL, 2)
     vaHSIC = 1 / (m * (m - 1)) * (np.sum(vHSIC) - np.trace(vHSIC))
-    varHSIC = 72 * (m - 4) * (m - 5) / (m * (m - 1) * (m - 2) * (m - 3)) * vaHSIC  # variance under H0
+    varHSIC = max_time * (m - 4) * (m - 5) / (m * (m - 1) * (m - 2) * (m - 3)) * vaHSIC  # variance under H0
     bone = np.ones(m)
     mu_X = 1 / (m * (m - 1)) * bone @ (K @ bone)
     mu_Y = 1 / (m * (m - 1)) * bone @ (L @ bone)
@@ -83,7 +78,7 @@ cpdef HSIC_gamma(cython.numeric[:,:] X, cython.numeric[:,:] Y, float alpha, cyth
     return np.trace(KL) / (m * (m - 3)) + np.sum(K) * np.sum(L) / (m * (m - 1) * (m - 2) * (m - 3)) - 2. * np.sum(
         KL) / (m * (m - 3) * (m - 2)), gamma.ppf(1 - alpha, al, scale=bet)
 
-cpdef list time_sampler( X, time_samples,  max_time = 1000):
+cpdef list time_sampler(X, time_samples, max_time = 1000):
     """
     For a list of runs of the same process, returns array of each at specified times.
     Samples using binary search algorithm (https://numpy.org/doc/stable/reference/generated/numpy.searchsorted.html).
@@ -104,3 +99,43 @@ cpdef list time_sampler( X, time_samples,  max_time = 1000):
             data_slice.append(proc[insertion_point])
         ret.append(data_slice)
     return ret
+
+cpdef dHSIC_hat(list Xs):
+    """https://arxiv.org/pdf/1603.00285.pdf -- see algorithm 1. Tests across d dists for independence beyond
+    binary betyween all elements of Xs."""
+    cdef int x_len = Xs[0].shape[0]
+    # inits
+    t1 = 1
+    t2 = 1
+    t3 = (2/x_len)
+    # algo (linear despite being quadratic in paper?)
+    for x in Xs:
+        K = center_k(x,width(x))
+        t1 = np.multiply(t1, K)
+        t2 = (1 / x_len ** 2) * t2 * np.sum(K)
+        t3 = (1 / x_len)*t3 + np.sum(K,axis=0)
+    return (1 / x_len ** 2) * np.sum(t1) + t2 - np.sum(t3)
+
+cpdef float dHSIC_resample(list Xs, int shuffle=500):
+    """Resampling test implementation -- see sec 4.3.
+    Returns p value."""
+    init = dHSIC_hat(Xs) # replace to save memory
+    hits = 0
+    for i in range(shuffle):
+        index_perm = np.random.permutation(len(Xs)) # a sampled time
+        permed = dHSIC_hat(Xs[np.ix_(index_perm, index_perm)])
+        if permed >= init:
+            hits += 1
+    return (hits + 1)/shuffle
+
+
+
+
+
+
+
+
+
+
+
+
