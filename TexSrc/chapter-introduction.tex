@@ -41,12 +41,11 @@ In particular, \textit{Threshold(R,d)} has risen to prominence as a means to bal
     \begin{align}
         W_{i}(t) = \sum_{j \leq \#X_{i}(t)}w^{(i)}_{j}(t)
     \end{align}
-    for counting measure $\#$ which counts the jobs waiting in a queue at some particular time. \textbf{System Load} refers to the amount of work remaining in the entire system,
+    for counting measure $\#$ which counts the jobs waiting in a queue at some particular time. \textbf{System Load} refers to the amount of work remaining in the entire system, namely
     \begin{align*}
         W(t) = \sum_{i \in \psi}W_{i}(t)
     \end{align*}
     where $\psi \subseteq \mathbb{N}$, given that we will be considering the case of systems operating in finite time as the number of queues grows indefinitely.
-    As such, $\psi$ will henceforth refer to this more general case.
     As such, $\psi$ will henceforth refer to this more general case.
 \end{definition}
 As an example, a service time in a $G/M/c$ system will be drawn from an exponential distribution. In this simple case,
@@ -78,27 +77,29 @@ Moreover, accepting this set-index notation, $\mathbf{X}^{\psi}$ will refer to t
 
 \begin{definition}[Threshold($R,d$)]
     \hfill \\
-    \textbf{Threshold(R,d)}, denoted $\mathcal{D}_{THRESH(R,d),Z}$, selects $d$ queues upon a job arrival.
+    \textbf{Threshold(R,d)}, denoted by $\mathcal{D}_{\text{Thresh}(R,d,Z)}$, selects $d$ queues upon a job arrival.
     Next:
     \begin{enumerate}
         \item For $i \leq d$ queues which have workload less than or equal to $R$, place copies in these $i$ queues.
         \item If $i=0$, place the original arrival in a queue from the $d$ chosen at random.
     \end{enumerate}
-    $Z$ refers to any imposed job cancellation cost (e.g., an added temporary workload).
+    $Z$ refers to any imposed job cancellation cost (e.g., an added temporary workload). In this paper we will concern
+    ourselves to the cancellation cost-free case, denoted $\mathcal{D}_{\text{Thresh}(R,d)}$.
 \end{definition}
 
 
 One important question, however, is yet to be answered.
 It is unknown whether or not there exists sufficient arrival rate or service rate parameters such that a mean field will be observed for particular values of $R$ or $d$ in the threshold model.
-This leads us to the following conjecture for which this paper aims to prove.
+This leads us to the following conjecture for which this paper aims to demonstrate.
 \begin{conjecture}
     \hfill \\
-    As $N \longrightarrow \infty$, the system $\mathcal{D}_{THRESH(R,d),Z}$ becomes $(\psi, \Gamma)$-exchangeable. As $t \longrightarrow \infty$, the system becomes deterministic.
+    As $N \longrightarrow \infty$, the system $\mathcal{D}_{\text{Thresh}(R,d)}$ becomes $(\psi, \Gamma)$-exchangeable.
+    Moreover, As $t \longrightarrow \infty$, the system becomes deterministic.
     \label{conj}
 \end{conjecture}
 
 
-%Note, however, that in this research we focus on $Z\equiv0$, being the case of no cancellation cost. We denote the policy $\mathcal{D}_{THRESH(R,d),Z=0}= \mathcal{D}_{THRESH(R,d)}$ for brevity. As Mukhopadhyay (2015) summarizes, the process of proving a problem of form \ref{conj} amounts to the following:
+%Note, however, that in this research we focus on $Z\equiv0$, being the case of no cancellation cost. We denote the policy $\mathcal{D}_{\text{Thresh=(R,d,Z0}= \mathcal{D}_{THRESH(R,d)}$ for brevity. As Mukhopadhyay (2015) summarizes, the process of proving a problem of form \ref{conj} amounts to the following:
 %\begin{enumerate}
 %    \item
 %    Show that the empirical distribution,
