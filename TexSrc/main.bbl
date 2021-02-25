@@ -53,12 +53,9 @@ K.~Gardner, M.~Harchol-Balter, A.~Scheller-Wolf, M.~Velednitsky, and
   Operations Research}, vol.~65, no.~4, pp.~1078--1094, 2017.
 
 \bibitem{campbell2020local}
-T.~Campbell, S.~Syed, C.-Y. Yang, M.~I. Jordan, and T.~Broderick, ``Local
-  exchangeability,'' {\em arXiv:1906.09507 [math.ST]}, 2020.
+
 
 \bibitem{power}
-M.~Mitzenmacher, ``The power of two choices in randomized load balancing,''
-  {\em IEEE Trans. Parallel Distrib. Syst.}, vol.~12, p.~1094–1104, Oct.
-  2001.
+
 
 \end{thebibliography}

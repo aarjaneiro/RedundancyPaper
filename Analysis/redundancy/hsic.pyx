@@ -1,4 +1,5 @@
-#cython : language_level = 3
+#cython: language_level=3
+#cython: infer_types=True
 """
 Methods for testing independence using the Hilbert-Schmidt information criterion.
 
@@ -9,6 +10,7 @@ HSIC -- https://arxiv.org/pdf/2010.00271.pdf, https://github.com/felix-laumann/M
 DHSIC -- https://arxiv.org/pdf/1603.00285.pdf
 """
 import random
+from copy import deepcopy
 
 import numpy as np
 cimport numpy as np
@@ -103,7 +105,7 @@ cpdef list time_sampler(X, time_samples, max_time = 1000):
         ret.append(data_slice)
     return ret
 
-cpdef dHSIC_hat(Xs):
+cdef dHSIC_hat(Xs):
     """https://arxiv.org/pdf/1603.00285.pdf -- see algorithm 1. Tests across d dists for independence beyond
     binary betyween all elements of Xs."""
     cdef int x_len = Xs[0].shape[0]
@@ -119,15 +121,32 @@ cpdef dHSIC_hat(Xs):
         t3 = (1 / x_len) * t3 + np.sum(K, axis=0)
     return (1 / x_len ** 2) * np.sum(t1) + t2 - np.sum(t3)
 
-cpdef float dHSIC_resample(list Xs, int shuffle=500):
-    """Resampling test implementation -- see sec 4.3. of https://arxiv.org/pdf/1603.00285.pdf
-    Returns p value."""
+cpdef dHSIC_resample_test(list Xs, int shuffle=500, float alpha = 0.05):
+    """Resampling implementation -- see sec 4.3. of https://arxiv.org/pdf/1603.00285.pdf
+     Returns stat and threshold (if possible)."""
     init = dHSIC_hat(Xs)
-    xlen = len(Xs)
+    locX = deepcopy(Xs) # deep copy
     cdef int hits = 0
+    cdef list dXs = []
     for i in range(shuffle):
-        random.shuffle(Xs)  # void shuffles
-        permed = dHSIC_hat(Xs)
+        random.shuffle(locX)  # void shuffles
+        permed = dHSIC_hat(locX)
         if permed >= init:
             hits += 1
-    return (hits + 1) / shuffle
+        dXs.append(permed)
+    dXs.sort()
+    critIndex = 0
+    for i in range(shuffle):
+        if dXs[i] == init:
+            critIndex += 1
+    critIndex += np.ceil((1-alpha) * (shuffle + 1))
+    critIndex = int(critIndex)
+    if critIndex < shuffle:
+        thrsh = dXs[critIndex]
+    else:
+        thrsh = None
+    #stat, threshold
+    return (hits + 1) / (shuffle + 1), thrsh
+
+
+

@@ -5,45 +5,63 @@ The style file: ieeetr.bst
 Database file #1: main.bib
 Warning--entry type for "noauthor_ciwpythonciw_nodate" isn't style-file defined
 --line 120 of file main.bib
+You're missing a field name---line 180 of file main.bib
+ : 
+ : %    author = {Mitzenmacher, Michael},
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+You're missing a field name---line 198 of file main.bib
+ : 
+ : %    title = {Local Exchangeability},
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+Warning--empty author in campbell2020local
+Warning--empty title in campbell2020local
+Warning--empty journal in campbell2020local
+Warning--empty year in campbell2020local
+Warning--empty author in power
+Warning--empty title in power
+Warning--empty journal in power
+Warning--empty year in power
 You've used 13 entries,
             1876 wiz_defined-function locations,
-            557 strings with 5662 characters,
-and the built_in function-call counts, 3369 in all, are:
-= -- 340
-> -- 128
+            546 strings with 5382 characters,
+and the built_in function-call counts, 3024 in all, are:
+= -- 288
+> -- 109
 < -- 0
-+ -- 48
-- -- 35
-* -- 230
-:= -- 480
-add.period$ -- 14
++ -- 42
+- -- 29
+* -- 225
+:= -- 427
+add.period$ -- 12
 call.type$ -- 13
-change.case$ -- 12
+change.case$ -- 10
 chr.to.int$ -- 0
-cite$ -- 13
-duplicate$ -- 178
-empty$ -- 311
-format.name$ -- 35
-if$ -- 825
+cite$ -- 21
+duplicate$ -- 157
+empty$ -- 301
+format.name$ -- 29
+if$ -- 727
 int.to.chr$ -- 0
 int.to.str$ -- 13
 missing$ -- 13
 newline$ -- 43
-num.names$ -- 13
-pop$ -- 36
+num.names$ -- 11
+pop$ -- 48
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 128
+skip$ -- 96
 stack$ -- 0
-substring$ -- 208
-swap$ -- 80
+substring$ -- 186
+swap$ -- 56
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
-warning$ -- 0
-while$ -- 31
+warning$ -- 8
+while$ -- 28
 width$ -- 15
-write$ -- 126
-(There was 1 warning)
+write$ -- 116
+(There were 2 error messages)
