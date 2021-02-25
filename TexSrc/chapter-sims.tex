@@ -82,9 +82,11 @@ the \textit{Dict} object as a reference.
 
 
 \section{Results}\label{sec:results}
+
+\subsection{Methodology}\label{subsec:methodology}
 First, we examine each model in terms of their respective performance in $E(T)$, the expected time each job spends in the system.
 As Figure~\ref{fig:img} shows, for a load $\rho \triangleq \frac{\lambda}{\mu} = 0.5$ by taking $\mu=1, \lambda = 0.5$ (we will assume $\mu \equiv 1$ for the
-rest of the simulations) , Redundancy(2)) and Threshold(2,2) policies are rather alike with low loads as $N \rightarrow \infty$. This is to be expected, of course, given that even such a low threshold is unlikely to be exceeded with the processors acting faster than arrivals on average. Ignoring cancellation costs, this clearly demonstrates how utilizing otherwise dormant queues comes to benefit the system's performance. Note that the figure is generated with the \textit{same} seed generation scheme for 30 different seeds per iteration, making the overlap a product of the two accessing random numbers from the system at the same points in time (in their respective simulations).
+rest of the simulations), Redundancy(2)) and Threshold(2,2) policies are rather alike with low loads as $N \rightarrow \infty$. This is to be expected, of course, given that even such a low threshold is unlikely to be exceeded with the processors acting faster than arrivals on average. Ignoring cancellation costs, this clearly demonstrates how utilizing otherwise dormant queues comes to benefit the system's performance. Note that the figure is generated with the \textit{same} seed generation scheme for 30 different seeds per iteration, making the overlap a product of the two accessing random numbers from the system at the same points in time (in their respective simulations).
 
 \begin{figure}
     \centering
@@ -101,7 +103,7 @@ As~\cite{gardner_redundancy-d_2017} show, a Redundancy($d$) system is asymptotic
 \end{definition}
 
 \begin{definition}[Coupled Process]
-        \label{coupled}
+    \label{coupled}
     \\~\\
     For stochastic processes $X_{t} \in Pr(\Omega_{x}, \mathcal{F}_{x}, \mathcal{F}_{t,x})$ and $X_{t} \in Pr(\Omega_{y}, \mathcal{F}_{y}, \mathcal{F}_{t,y})$.
     $X_{t}$ and $Y_{t}$ are said to be coupled over the probability space $Pr(\Omega, \mathcal{F}, \mathcal{F}_{t})$ if there exist
@@ -121,22 +123,82 @@ Now, assume $\rho < 1$, giving us $ \# Y_{i}  < \infty \quad \forall t \in \math
 
 In order to actually test the hypothesized results with respect to independence, we employ the joint Hilbert-Schmidt Independence Criterion (HSIC)~\cite{jointindep} to test the independence of queue counting processes $\{\#X_{n}(t)\}_{n \in [N]}$ in a Monte Carlo-styled
 simulation consisting of $N_{\text{MC}}$ simulations for the queueing process $\mathbf{X}^{(N)}$.
-\begin{definition}[HSIC Testing for Two Non-stationary Processes]
-\label{hsichat}
+\begin{definition}[HSIC Test for Two Processes]
+
+    \label{hsichat}
     Following~\cite{nonstat}, for processes $X_{t}$ and $Y_{t}$ with common time domain $t \in T$, denote by $\kappa_{x}, \kappa_{y}$ the kernels which
-map each process to a seperable reproducing kernel Hilbert space ($\mathcal{H}_{x}, \mathcal{H}_{y}$, respectively).
+    map each process to a seperable reproducing kernel Hilbert space ($\mathcal{H}_{x}, \mathcal{H}_{y}$, respectively).
     Define HSIC to be the $\mathcal{H}_{x} \otimes \mathcal{H}_{y}$ norm of form:
-    \[\text{HSIC}(\mathcal{H}_{x},\mathcal{H}_{y}) = \|\mu_{XY} - \mu_{X} \otimes \mu_{Y}\|^{2}_{\mathcal{H}_{x} \otimes \mathcal{H}_{y}}\],
+    \[\text{HSIC}(\mathcal{H}_{x},\mathcal{H}_{y}) = \|\mu_{XY} - \mu_{X} \otimes \mu_{Y}\|^{2}_{\mathcal{H}_{x} \otimes \mathcal{H}_{y}},\]
     where $\mu_{Z}$ denotes a mean embedding of process $Z$ onto space $\mathcal{H}_{Z}$.
-\\~\\
+    \\~\\
     In order to test the hypotheses of
-    \[H_{0}: P_{XY} = P_{X}P_{Y}, H_{a} P_{XY} \not = P_{X}P_{Y},\]
-where $P_{Z}$ denotes the marginal distribution of $Z$,~\cite{nonstat} suggest a resampling procedure.
-    Specifically, for any estimator of $\text{HSIC}(XY)$, $\hat \text{HSIC}(XY)$, sample a common set of $N_{\text{time}}$ times, $\{\tau_{\ell}\}_{ell \leq N_{\text{time}}} \subset T$, and calculate $\hat H :=\{\hat\text{HSIC}(X_{(\{\tau_{N_{\text{time}}}\})}Y_{\gamma(\tau_{N_{\text{time}}})}))\}_{\gamma \in \Gamma}$ where $X_{(\{\tau_{N_{\text{time}}}\})}$ denotes $X$ restricted to the sampled times $\{\tau_{N_{\text{time}}}\}$ and $\Gamma$ is a set of permutations on these $N_{\text{time}}$ samples.
-    After taking $c_{\alpha} := \hat H_{(1-\alpha)N_{\text{times}}}$, the null hypothesis is rejected if $\hat \text{HSIC}(XY) > c_{\alpha}$
+    \[H_{0}: P_{XY} = P_{X}P_{Y}, H_{a}: P_{XY} \not = P_{X}P_{Y},\]
+    where $P_{Z}$ denotes the marginal distribution of $Z$,~\cite{nonstat} suggest a resampling procedure.
+    Specifically, for any estimator of $\text{HSIC}(XY)$, ${H_{\text{HSIC}}}(XY)$, sample a common set of $N_{\text{time}}$ times, $\{\tau_{\ell}\}_{ell \leq N_{\text{time}}} \subset T$, and calculate \[K :=\{H_{\text{HSIC}}(X_{(\{\tau_{N_{\text{time}}}\})}Y_{\gamma(\tau_{N_{\text{time}}})}))\}_{\gamma \in \Gamma}\] where $X_{(\{\tau_{N_{\text{time}}}\})}$ denotes $X_{t}$ restricted to the sampled times $\{\tau_{N_{\text{time}}}\}$ and $\Gamma$ is a set of permutations on these $N_{\text{time}}$ samples ordered such that $K_{i} \leq K_{i+1}$.
+    After taking $c_{\alpha} :=  K_{(1-\alpha)N_{\text{time}}}$, the null hypothesis is rejected if $H_{\text{HSIC}}(XY) > c_{\alpha}$.
 \end{definition}
-%Specifically, we utilize an extension of HSIC testing for non-stationary processes described in~\cite{nonstat}, wherein for some common set of $N_{\text{time}}$ sampled times, $\{\tau_{\ell}\}_{ell \leq N_{\text{time}}}$,
-Unlike the procedure utilized by~\cite{nonstat}, however, we adopt a modification
+
+%Specifically, we utilize an extension of HSIC testing for non -stationary processes described in~\cite{nonstat}, wherein for some common set of $N_{\text{time}}$ sampled times, $\{\tau_{\ell}\}_{ell \leq N_{\text{time}}}$,
+Unlike the procedure utilized by~\cite{nonstat}, however, we adopt a modification described in~\cite{jointindep} to test for joint independence across $N$ processes.
+While retaining the time sampling procedure of~\cite{nonstat}, we are instead concerned with testing upon the so-called $d\text{HSIC}$.
+
+\begin{definition}[$d$HSIC]
+
+    \label{dhsic}
+    For a set of $d$ stochastic processes $\mathcal{X} = \{X_{i}\}_{i \leq d}$, define $d\text{HSIC}$ as:
+    \[d\text{HSIC}(\mathcal{X}) := \|\mu_{\bigotimes_{i \leq d}(P_{X_{i}})} - \mu_{\{P_{X_{i}}\}_{i \leq d}}\|_{\bigotimes_{i \leq d}\mathcal{H}_{X_{i}}}\]
+\end{definition}
+
+Much like the procedure described in Definition~\ref{hsichat}, an estimator and critical value can also be calculated in order to test for independence.
+The particular means of estimation used in this research is outlined in Sections 4.1, 4.2, and B.5 of~\cite{jointindep}.
+
+\subsection{Simulation Results}\label{subsec:simulation-results}
+
+\begin{table}
+    \centering
+    \caption{$d$HSIC Test for Sampled Times in $\{900, 905, \dots 1000\}$}
+    \label{tab:longtime}
+    \begin{tabular}{|c|c|c|c|c|}
+        \hline
+        $\rho$ & $N$ & $d$HSIC      & Thresh       & Reject \\
+        \hline
+        \hline
+        0.8   & 2   & 1.000000e+00 & None         & True   \\
+        \hline
+        0.8   & 5   & 2.974052e-01 & 8.803959e-04 & False  \\
+        \hline
+        0.8   & 25  & 2.075848e-01 & 1.362528e-12 & False  \\
+        \hline
+        0.8   & 50  & 4.371257e-01 & 4.278056e-16 & False  \\
+        \hline
+        0.8   & 100 & 8.562874e-01 & 5.433853e-16 & False  \\
+        \hline
+        0.9   & 2   & 1.000000e+00 & None         & True   \\
+        \hline
+        0.9   & 5   & 7.944112e-01 & 7.598152e-04 & False  \\
+        \hline
+        0.9   & 25  & 6.387226e-02 & 3.881079e-13 & False  \\
+        \hline
+        0.9   & 50  & 3.093812e-01 & 3.887126e-16 & False  \\
+        \hline
+        0.9   & 100 & 4.111776e-01 & 3.810494e-16 & False  \\
+        \hline
+        0.99  & 2   & 1.000000e+00 & None         & True   \\
+        \hline
+        0.99  & 5   & 2.694611e-01 & 8.767824e-04 & False  \\
+        \hline
+        0.99  & 25  & 8.522954e-01 & 4.537373e-11 & False  \\
+        \hline
+        0.99  & 50  & 5.309381e-01 & 4.011008e-16 & False  \\
+        \hline
+        0.99  & 100 & 3.772455e-01 & 4.590393e-16 & False  \\
+        \hline
+    \end{tabular}
+\end{table}
+
+
+
 
 
 

@@ -149,7 +149,6 @@
     author = {Hellemans, Tim and Bodas, Tejas and Van Houdt, Benny},
     title = {Performance Analysis of Workload Dependent Load Balancing Policies},
     year = {2019},
-    issue_date = {June 2019},
     publisher = {Association for Computing Machinery},
     address = {New York, NY, USA},
     volume = {3},
@@ -158,7 +157,6 @@
     doi = {10.1145/3341617.3326150},
     abstract = {Load balancing plays a crucial role in achieving low latency in large distributed systems. Recent load balancing strategies often rely on replication or use placeholders to further improve latency. However assessing the performance and stability of these strategies is challenging and is therefore often simulation based. In this paper we introduce a unified approach to analyze the performance and stability of a broad class of workload dependent load balancing strategies. This class includes many replication policies, such as replicate below threshold, delayed replication and replicate only small jobs, as well as strategies for fork-join systems. We consider systems with general job size distributions where jobs may experience server slowdown. We show that the equilibrium workload distribution of the cavity process satisfies a functional differential equation and conjecture that the cavity process captures the limiting behavior of the system as its size tends to infinity. We study this functional differential equation in more detail for a variety of load balancing policies and propose a numerical method to solve it. The numerical method relies on a fixed point iteration or a simple Euler iteration depending on the type of functional differential equation involved. We further show that additional simplifications can be made if certain distributions are assumed to be phase-type. Various numerical examples are included that validate the numerical method and illustrate its strength and flexibility.},
     journal = {Proc. ACM Meas. Anal. Comput. Syst.},
-    month = jun,
     articleno = {35},
     numpages = {35},
     keywords = {workload, load balancing, differential equation, redundancy, large scale computer network, fixed point equation}
@@ -176,30 +174,22 @@
     doi = {10.1109/TCNS.2015.2428331} }
 }
 
-@article{power,
-    author = {Mitzenmacher, Michael},
-    title = {The Power of Two Choices in Randomized Load Balancing},
-    year = {2001},
-    issue_date = {October 2001},
-    publisher = {IEEE Press},
-    volume = {12},
-    number = {10},
-    issn = {1045-9219},
-    url = {https://doi.org/10.1109/71.963420},
-    doi = {10.1109/71.963420},
-    abstract = {We consider the following natural model: Customers arrive as a Poisson stream of rate lambda n, lambda < 1, at a collection of n servers. Each customer chooses some constant d servers independently and uniformly at random from the n servers and waits for service at the one with the fewest customers. Customers are served according to the first-in first-out (FIFO) protocol and the service time for a customer is exponentially distributed with mean 1. We call this problem the supermarket model. We wish to know how the system behaves and in particular we are interested in the effect that the parameter d has on expected time a customer spends in the system in equilibrium. Our approach uses a limiting, deterministic model representing the behavior as n rightarrow infty to approximate the behavior of finite systems. The analysis of the deterministic model is interesting in its own right. Along with a theoretical justification of this approach, we provide simulations that demonstrate that the method accurately predicts system behavior, even for relatively small systems. Our analysis provides surprising implications: Having d = 2 choices leads to exponential improvements in the expected time a customer spends in the system over d = 1, whereas having d=3 choices is only a constant factor better than d=2. We discuss the possible implications for system design.},
-    journal = {IEEE Trans. Parallel Distrib. Syst.},
-    month = oct,
-    pages = {1094–1104},
-    numpages = {11},
-    keywords = {distributed systems, choices., limiting systems, queuing theory, Load balancing}
+@article{jointindep,
+      title={Kernel-based Tests for Joint Independence},
+      author={Niklas Pfister and Peter Bühlmann and Bernhard Schölkopf and Jonas Peters},
+      year={2016},
+      eprint={1603.00285},
+      journal = {arXiv:1603.00285 [math.ST]},
+      archivePrefix={arXiv},
+      primaryClass={math.ST}
 }
-@article{campbell2020local,
-    title = {Local Exchangeability},
-    author = {Trevor Campbell and Saifuddin Syed and Chiao-Yu Yang and Michael I. Jordan and Tamara Broderick},
-    year = {2020},
-    eprint = {1906.09507},
-    journal = {arXiv:1906.09507 [math.ST]},
-    archivePrefix = {arXiv},
-    primaryClass = {math.ST}
+
+@misc{nonstat,
+      title={Kernel Two-Sample and Independence Tests for Non-Stationary Random Processes},
+      author={Felix Laumann and Julius von Kügelgen and Mauricio Barahona},
+      year={2021},
+      eprint={2010.00271},
+      journal = {arXiv:2010.00271 [math.ST]},
+      archivePrefix={arXiv},
+      primaryClass={stat.ME}
 }

@@ -32,7 +32,7 @@ M.~Bramson, Y.~Lu, and B.~Prabhakar, ``Asymptotic independence of queues under
 \bibitem{Hellemans}
 T.~Hellemans, T.~Bodas, and B.~Van~Houdt, ``Performance analysis of workload
   dependent load balancing policies,'' {\em Proc. ACM Meas. Anal. Comput.
-  Syst.}, vol.~3, June 2019.
+  Syst.}, vol.~3, no.~2, 2019.
 
 \bibitem{noauthor_ciwpythonciw_nodate}
 G.~I. Palmer, V.~A. Knight, P.~R. Harper, and A.~L. Hawa, ``Ciw: An open-source
@@ -52,10 +52,12 @@ K.~Gardner, M.~Harchol-Balter, A.~Scheller-Wolf, M.~Velednitsky, and
   S.~Zbarsky, ``Redundancy-d: The power of d choices for redundancy,'' {\em
   Operations Research}, vol.~65, no.~4, pp.~1078--1094, 2017.
 
-\bibitem{campbell2020local}
+\bibitem{jointindep}
+N.~Pfister, P.~Bühlmann, B.~Schölkopf, and J.~Peters, ``Kernel-based tests
+  for joint independence,'' {\em arXiv:1603.00285 [math.ST]}, 2016.
 
-
-\bibitem{power}
-
+\bibitem{nonstat}
+F.~Laumann, J.~von Kügelgen, and M.~Barahona, ``Kernel two-sample and
+  independence tests for non-stationary random processes,'' 2021.
 
 \end{thebibliography}

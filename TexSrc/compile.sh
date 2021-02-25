@@ -1,5 +1,5 @@
 #!/bin/bash
-read -p "Makeindex? Default: N" MAKEINDEX
+read -p "Makeindex? [Default: N] : " MAKEINDEX
 pdflatex -interaction nonstopmode main # Run for bibtex init
 bibtex main
 if [ MAKEINDEX == "Y" ]; then
