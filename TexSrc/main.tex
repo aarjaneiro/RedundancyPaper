@@ -176,7 +176,8 @@ urlcolor=black}
 % If glossaries-extra is not in your LaTeX distribution, get it from CTAN (http://ctan.org/pkg/glossaries-extra),
 % although it's supposed to be in both the TeX Live and MikTeX distributions. There are also documentation and
 % installation instructions there.
-
+\usepackage{multirow}
+\usepackage{color}
 % Setting up the page margins...
 % uWaterloo thesis requirements specify a minimum of 1 inch (72pt) margin at the
 % top, bottom, and outside page edges and a 1.125 in. (81pt) gutter
@@ -252,7 +253,23 @@ urlcolor=black}
 %}
 %\lstset{basicstyle=\ttfamily}
 %\makeglossaries
-
+\lstdefinestyle{mystyle}{
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,
+    breaklines=true,
+    captionpos=b,
+    keepspaces=true,
+    numbers=left,
+    numbersep=5pt,
+    showspaces=false,
+    showstringspaces=false,
+    showtabs=false,
+    tabsize=2
+}
 %======================================================================
 %   L O G I C A L    D O C U M E N T
 % The logical document contains the main content of your thesis.
@@ -316,10 +333,8 @@ urlcolor=black}
 % The \appendix statement indicates the beginning of the appendices.
     \appendix
 % Add a title page before the appendices and a line in the Table of Contents
-    \chapter*{APPENDICES}
-    \addcontentsline{toc}{chapter}{APPENDICES}
 % Appendices are just more chapters, with different labeling.
-%%\input{appendix-matlab_plots.tex}
+\input{appendix-hsic.tex}
 
 %----------------------------------------------------------------------
 \end{document} % end of logical document

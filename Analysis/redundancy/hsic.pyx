@@ -11,7 +11,6 @@ DHSIC -- https://arxiv.org/pdf/1603.00285.pdf
 """
 import random
 from copy import deepcopy
-
 import numpy as np
 cimport numpy as np
 from scipy.stats import gamma

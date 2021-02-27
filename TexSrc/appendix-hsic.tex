@@ -1,0 +1,91 @@
+%! Author = ajst
+%! Date = 2021-02-26
+
+\chapter{$d$HSIC Resampling Cython Implementation}\label{sec:sic}
+
+\begin{lstlisting}[label={lst:cyhsic}, language=Cython, style=mystyle]
+#cython: language_level=3
+#cython: infer_types=True
+import random
+from copy import deepcopy
+import numpy as np
+cimport numpy as np
+from sklearn.metrics import pairwise_distances
+from sklearn.metrics import pairwise_kernels
+
+cpdef width(Z):
+    dist_mat = pairwise_distances(Z, metric='euclidean')
+    return np.median(dist_mat[dist_mat > 0])
+
+cdef center_k(X, width_X, m=None):
+    if m is None:
+        m = X.shape[0]
+    H = np.eye(m) - (1 / m) * (np.ones((m, m)))
+    K = pairwise_kernels(X, X, metric='rbf', gamma=0.5 / (width_X ** 2))
+    K = H @ K @ H
+    return K
+
+cpdef list time_sampler(X, time_samples, max_time = 1000):
+    """
+    For a list of runs of the same process, returns array of each at specified times.
+    Samples using binary search algorithm (https://numpy.org/doc/stable/reference/generated/numpy.searchsorted.html).
+    
+    :param X: list of time-indexed (sorted) data of the same process with the same max running time.
+    :param time_samples: list of times to sample at.
+    :param max_time: maximum allotted time per simulation.
+    :return: data at sampled times.
+    """
+    cdef list ret = []
+    for time in time_samples:
+        data_slice = []
+        for proc in X:
+            time_list = list(proc.keys())
+            insertion_point = np.searchsorted(time_list, time)  # a[i-1] < v <= a[i] via binary search algo
+            if time_list[insertion_point] != time:
+                insertion_point = time_list[insertion_point - 1]  # Cadlag
+            data_slice.append(proc[insertion_point])
+        ret.append(data_slice)
+    return ret
+
+cdef dHSIC_hat(Xs):
+    """https://arxiv.org/pdf/1603.00285.pdf -- see algorithm 1"""
+    cdef int x_len = Xs[0].shape[0]
+    #inits
+    t1 = 1
+    t2 = 1
+    t3 = (2 / x_len)
+    for x in Xs:
+        K = center_k(x, width(x))
+        t1 = np.multiply(t1, K)
+        t2 = (1 / x_len ** 2) * t2 * np.sum(K)
+        t3 = (1 / x_len) * t3 + np.sum(K, axis=0)
+    return (1 / x_len ** 2) * np.sum(t1) + t2 - np.sum(t3)
+
+cpdef dHSIC_resample_test(list Xs, int shuffle=500, float alpha = 0.05):
+    """Resampling implementation -- see sec 4.3. of https://arxiv.org/pdf/1603.00285.pdf
+     Returns stat and threshold (if possible)."""
+    init = dHSIC_hat(Xs)
+    locX = deepcopy(Xs) # deep copy
+    cdef int hits = 0
+    cdef list dXs = []
+    for i in range(shuffle):
+        random.shuffle(locX)  # void shuffles
+        permed = dHSIC_hat(locX)
+        if permed >= init:
+            hits += 1
+        dXs.append(permed)
+    dXs.sort()
+    critIndex = 0
+    for i in range(shuffle):
+        if dXs[i] == init:
+            critIndex += 1
+    critIndex += np.ceil((1-alpha) * (shuffle + 1))
+    critIndex = int(critIndex)
+    if critIndex < shuffle:
+        thrsh = dXs[critIndex]
+    else:
+        thrsh = None
+    #stat, threshold
+    return (hits + 1) / (shuffle + 1), thrsh
+\end{lstlisting}
+
