@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Arch Linux) (preloaded format=pdflatex 2021.2.10)  27 FEB 2021 07:10
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Arch Linux) (preloaded format=pdflatex 2021.2.10)  27 FEB 2021 16:32
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1516,7 +1516,49 @@ Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-) [15] [16] [17] (./main.bbl [18
+
+! Package amsmath Error: \hat allowed only in math mode.
+
+See the amsmath package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.196         \textit{Note:} * \hat{p}
+                                      (H_{a}) < 0.1. \\
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.196         \textit{Note:} * \hat{p}(H_
+                                         {a}) < 0.1. \\
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.197         D
+               ata are drawn from 20 simulations run for each $N$.
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+[15]
+
+! Package amsmath Error: Multiple \label's: label 'set 1' will be lost.
+
+See the amsmath package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.253 \end{align*}
+                  
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+) [16] [17] (./main.bbl [18
 
 
 
@@ -2429,7 +2471,7 @@ LaTeX Warning: There were undefined references.
 Here is how much of TeX's memory you used:
  22102 strings out of 479383
  415031 string characters out of 5875830
- 1360977 words of memory out of 5000000
+ 1360978 words of memory out of 5000000
  38560 multiletter control sequences out of 15000+600000
  416911 words of font info for 77 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -2451,10 +2493,10 @@ cmti7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb></usr
 /share/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texmf-d
 ist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texmf-dist/fonts
 /type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on main.pdf (29 pages, 435921 bytes).
+Output written on main.pdf (29 pages, 437869 bytes).
 PDF statistics:
- 511 PDF objects out of 1000 (max. 8388607)
- 448 compressed objects within 5 object streams
+ 514 PDF objects out of 1000 (max. 8388607)
+ 451 compressed objects within 5 object streams
  185 named destinations out of 1000 (max. 500000)
  113 words of extra memory for PDF output out of 10000 (max. 10000000)
 

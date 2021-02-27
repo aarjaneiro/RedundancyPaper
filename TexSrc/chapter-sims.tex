@@ -150,13 +150,13 @@ Utilizing the procedure outlined in~\ref{subsec:methodology}, we test the follow
 \begin{align*}
     \label{set 2}
     H_{0}:& \text{ as } N\rightarrow \infty, \text{ queues in queueing system } \mathbf{X}_{t}^{(N)} \text{ become jointly independent.}  \\
-    H_{a}:& \text{ as } N\rightarrow \infty, \text{ queues in queueing system } \mathbf{X}_{t}^{(N)} \text{ do not become jointly independent.}
+    H_{1}:& \text{ as } N\rightarrow \infty, \text{ queues in queueing system } \mathbf{X}_{t}^{(N)} \text{ do not become jointly independent.}
 \end{align*}
 Moreover, we are also interested in the case of $t \rightarrow \infty$ and thus also analyze the following:
 \begin{align*}
     \label{set 1}
     H_{0}:& \text{ as } t\rightarrow \infty, \text{ queues in queueing system } \mathbf{X}_{t}^{(N)} \text{ become jointly independent.}  \\
-    H_{a}:& \text{ as } t\rightarrow \infty, \text{ queues in queueing system } \mathbf{X}_{t}^{(N)} \text{ do not become jointly independent.}
+    H_{1}:& \text{ as } t\rightarrow \infty, \text{ queues in queueing system } \mathbf{X}_{t}^{(N)} \text{ do not become jointly independent.}
 \end{align*}
 
 Altogether, these hypotheses comprise the behaviour expected of the system outlined in Figure~\ref{fig:1} for the limits of $\mathbf{X}^{(N)}(t)$
@@ -238,15 +238,19 @@ $\rho$ & $N$ & Thresh & $d$HSIC \\
  & 100 & 5.00e-16 & 3.99e-01  \\
 \hline
     \end{tabular}
-
     \begin{tabular}{p{10cm}}
         \textit{Note:} Sampled times comprise every 5th value of the set $[900,1000]$.
         Data are drawn from 12 simulations run for each $N$ and are used to derive the test at $\alpha = 0.05$.
     \end{tabular}
 \end{table}
 
-
-
+Lastly, to test whether the system becomes asymptotically deterministic and reaches a fixed point, a chi square
+    goodness of fit test is employed to test the following:
+\begin{align*}
+    \label{chi 1}
+    H_{0}:& \mathbf{X}^{(N)}_{t} \overset{N,t \rightarrow \infty}{\rightarrow} \mathbf{\pi} \text{, a process which is degenerate in law}  \\
+    H_{1}:& \mathbf{X}^{(N)}_{t} \overset{N,t \rightarrow \infty}{\not \rightarrow} \mathbf{\pi} \text{, a process which is degenerate in law}
+\end{align*}
 
 
 
