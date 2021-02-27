@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Arch Linux) (preloaded format=pdflatex 2021.2.10)  27 FEB 2021 05:58
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Arch Linux) (preloaded format=pdflatex 2021.2.10)  27 FEB 2021 07:10
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1502,12 +1502,26 @@ l.113 ...}^{(N)}(t) |t \in [0,T_{\xi_{1}}) \right)
                                                    = 1$ $P_{r}(A) := P(\math...
 I'm ignoring a \right that had no matching \left.
 
-[13] [14]) [15] [16] (./main.bbl [17
+[13] [14]
+
+! Package amsmath Error: Multiple \label's: label 'set 2' will be lost.
+
+See the amsmath package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.160 \end{align*}
+                  
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+) [15] [16] [17] (./main.bbl [18
 
 
 
 
-]) (./appendix-hsic.tex [18]
+]) (./appendix-hsic.tex [19]
 Appendix A.
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
@@ -1853,7 +1867,7 @@ l.31
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
-[19
+[20
 
 
 ]
@@ -2097,7 +2111,8 @@ Type  H <return>  for immediate help.
  ...                                              
                                                   
 l.51  
-         """https://arxiv.org/pdf/1603.00285.pdf -- see algorithm 1"""
+         """https://arxiv.org/pdf/1603.00285.pdf -- see algorithm 1. Tests a...
+
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
@@ -2109,7 +2124,7 @@ Type  H <return>  for immediate help.
  ...                                              
                                                   
 l.52  
-         cdef int x_len = Xs[0].shape[0]
+         binary betyween all elements of Xs."""
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
@@ -2121,7 +2136,7 @@ Type  H <return>  for immediate help.
  ...                                              
                                                   
 l.53  
-         #inits
+         cdef int x_len = Xs[0].shape[0]
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
@@ -2133,7 +2148,7 @@ Type  H <return>  for immediate help.
  ...                                              
                                                   
 l.54  
-         t1 = 1
+         #inits
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
@@ -2145,7 +2160,7 @@ Type  H <return>  for immediate help.
  ...                                              
                                                   
 l.55  
-         t2 = 1
+         t1 = 1
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
@@ -2157,7 +2172,7 @@ Type  H <return>  for immediate help.
  ...                                              
                                                   
 l.56  
-         t3 = (2 / x_len)
+         t2 = 1
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
@@ -2169,7 +2184,7 @@ Type  H <return>  for immediate help.
  ...                                              
                                                   
 l.57  
-         for x in Xs:
+         t3 = (2 / x_len)
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
@@ -2181,7 +2196,7 @@ Type  H <return>  for immediate help.
  ...                                              
                                                   
 l.58  
-             K = center_k(x, width(x))
+         for x in Xs:
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
@@ -2193,7 +2208,7 @@ Type  H <return>  for immediate help.
  ...                                              
                                                   
 l.59  
-             t1 = np.multiply(t1, K)
+             K = center_k(x, width(x))
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
@@ -2205,7 +2220,7 @@ Type  H <return>  for immediate help.
  ...                                              
                                                   
 l.60  
-             t2 = (1 / x_len ** 2) * t2 * np.sum(K)
+             t1 = np.multiply(t1, K)
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
@@ -2217,7 +2232,7 @@ Type  H <return>  for immediate help.
  ...                                              
                                                   
 l.61  
-             t3 = (1 / x_len) * t3 + np.sum(K, axis=0)
+             t2 = (1 / x_len ** 2) * t2 * np.sum(K)
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
@@ -2229,6 +2244,18 @@ Type  H <return>  for immediate help.
  ...                                              
                                                   
 l.62  
+             t3 = (1 / x_len) * t3 + np.sum(K, axis=0)
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+! Package xcolor Error: Undefined color `codegray'.
+
+See the xcolor package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.63  
          return (1 / x_len ** 2) * np.sum(t1) + t2 - np.sum(t3)
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -2240,8 +2267,8 @@ See the xcolor package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.64 cpdef 
-           dHSIC_resample_test(list Xs, int shuffle=500, float alpha = 0.05):
+l.65 cpdef 
+           float dHSIC_resample_test(list Xs, int shuffle=500):
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
@@ -2252,21 +2279,8 @@ See the xcolor package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.64 cpdef 
-           dHSIC_resample_test(list Xs, int shuffle=500, float alpha = 0.05):
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! Package xcolor Error: Undefined color `codegray'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.65  
-         """Resampling implementation -- see sec 4.3. of https://arxiv.org/p...
-
+l.65 cpdef 
+           float dHSIC_resample_test(list Xs, int shuffle=500):
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
@@ -2278,7 +2292,8 @@ Type  H <return>  for immediate help.
  ...                                              
                                                   
 l.66  
-          Returns stat and threshold (if possible)."""
+         """Resampling implementation -- see sec 4.2. of https://arxiv.org/p...
+
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
@@ -2290,7 +2305,7 @@ Type  H <return>  for immediate help.
  ...                                              
                                                   
 l.67  
-         init = dHSIC_hat(Xs)
+          Returns stat and threshold (if possible)."""
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
@@ -2302,7 +2317,7 @@ Type  H <return>  for immediate help.
  ...                                              
                                                   
 l.68  
-         locX = deepcopy(Xs) # deep copy
+         init = dHSIC_hat(Xs)
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
@@ -2314,7 +2329,7 @@ Type  H <return>  for immediate help.
  ...                                              
                                                   
 l.69  
-         cdef int hits = 0
+         locX = deepcopy(Xs) # deep copy
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
@@ -2326,7 +2341,7 @@ Type  H <return>  for immediate help.
  ...                                              
                                                   
 l.70  
-         cdef list dXs = []
+         cdef int hits = 0
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
@@ -2342,6 +2357,7 @@ l.71
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
+[21]
 
 ! Package xcolor Error: Undefined color `codegray'.
 
@@ -2354,7 +2370,6 @@ l.72
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
-[20]
 
 ! Package xcolor Error: Undefined color `codegray'.
 
@@ -2399,167 +2414,11 @@ Type  H <return>  for immediate help.
  ...                                              
                                                   
 l.76  
-             dXs.append(permed)
+         return (hits + 1) / (shuffle + 1)
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
-
-! Package xcolor Error: Undefined color `codegray'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.77  
-         dXs.sort()
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! Package xcolor Error: Undefined color `codegray'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.78  
-         critIndex = 0
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! Package xcolor Error: Undefined color `codegray'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.79  
-         for i in range(shuffle):
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! Package xcolor Error: Undefined color `codegray'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.80  
-             if dXs[i] == init:
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! Package xcolor Error: Undefined color `codegray'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.81  
-                 critIndex += 1
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! Package xcolor Error: Undefined color `codegray'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.82  
-         critIndex += np.ceil((1-alpha) * (shuffle + 1))
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! Package xcolor Error: Undefined color `codegray'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.83  
-         critIndex = int(critIndex)
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! Package xcolor Error: Undefined color `codegray'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.84  
-         if critIndex < shuffle:
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! Package xcolor Error: Undefined color `codegray'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.85  
-             thrsh = dXs[critIndex]
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! Package xcolor Error: Undefined color `codegray'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.86  
-         else:
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! Package xcolor Error: Undefined color `codegray'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.87  
-             thrsh = None
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! Package xcolor Error: Undefined color `codegray'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.88  
-         #stat, threshold
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! Package xcolor Error: Undefined color `codegray'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.89  
-         return (hits + 1) / (shuffle + 1), thrsh
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-) [21] (./main.aux)
+) [22] (./main.aux)
 Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: FB807A1DD69BC700EACFF20355DA5C24;579.
 
@@ -2568,10 +2427,10 @@ LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 22113 strings out of 479383
- 415194 string characters out of 5875830
- 1363977 words of memory out of 5000000
- 38559 multiletter control sequences out of 15000+600000
+ 22102 strings out of 479383
+ 415031 string characters out of 5875830
+ 1360977 words of memory out of 5000000
+ 38560 multiletter control sequences out of 15000+600000
  416911 words of font info for 77 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  108i,16n,111p,1491b,2076s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -2592,10 +2451,10 @@ cmti7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb></usr
 /share/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texmf-d
 ist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texmf-dist/fonts
 /type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on main.pdf (28 pages, 434130 bytes).
+Output written on main.pdf (29 pages, 435921 bytes).
 PDF statistics:
- 517 PDF objects out of 1000 (max. 8388607)
- 455 compressed objects within 5 object streams
- 197 named destinations out of 1000 (max. 500000)
+ 511 PDF objects out of 1000 (max. 8388607)
+ 448 compressed objects within 5 object streams
+ 185 named destinations out of 1000 (max. 500000)
  113 words of extra memory for PDF output out of 10000 (max. 10000000)
 

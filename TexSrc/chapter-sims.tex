@@ -126,7 +126,7 @@ simulation consisting of $N_{\text{MC}}$ simulations for the queueing process $\
     In order to test the hypotheses of
     \[H_{0}: P_{XY} = P_{X}P_{Y}, H_{a}: P_{XY} \not = P_{X}P_{Y},\]
     where $P_{Z}$ denotes the marginal distribution of $Z$,~\cite{nonstat} suggest a resampling procedure.
-    Specifically, for any estimator of $\text{HSIC}(XY)$, ${H_{\text{HSIC}}}(XY)$, sample a common set of $N_{\text{time}}$ times, $\{\tau_{\ell}\}_{ell \leq N_{\text{time}}} \subset T$, and calculate \[K :=\{H_{\text{HSIC}}(X_{(\{\tau_{N_{\text{time}}}\})}Y_{\gamma(\tau_{N_{\text{time}}})}))\}_{\gamma \in \Gamma}\] where $X_{(\{\tau_{N_{\text{time}}}\})}$ denotes $X_{t}$ restricted to the sampled times $\{\tau_{N_{\text{time}}}\}$ and $\Gamma$ is a set of permutations on these $N_{\text{time}}$ samples ordered such that $K_{i} \leq K_{i+1}$.
+    Specifically, for any estimator of $\text{HSIC}(XY)$, ${H_{\text{HSIC}}}(XY)$, sample a common set of $N_{\text{time}}$ times, $\{\tau_{\ell}\}_{\ell \leq N_{\text{time}}} \subset T$, and calculate \[K :=\{H_{\text{HSIC}}(X_{(\{\tau_{N_{\text{time}}}\})}Y_{\gamma(\tau_{N_{\text{time}}})}))\}_{\gamma \in \Gamma}\] where $X_{(\{\tau_{N_{\text{time}}}\})}$ denotes $X_{t}$ restricted to the sampled times $\{\tau_{N_{\text{time}}}\}$ and $\Gamma$ is a set of permutations on these $N_{\text{time}}$ samples ordered such that $K_{i} \leq K_{i+1}$.
     After taking $c_{\alpha} :=  K_{(1-\alpha)N_{\text{time}}}$, the null hypothesis is rejected if $H_{\text{HSIC}}(XY) > c_{\alpha}$.
 \end{definition}
 
@@ -146,7 +146,29 @@ The particular means of estimation used in this research is outlined in Sections
 implemented in the codebase used for our simulations as outlined in Appendix~\ref{sec:sic}.
 
 \subsection{Simulation Results}\label{subsec:simulation-results}
+Utilizing the procedure outlined in~\ref{subsec:methodology}, we test the following hypotheses:
+\begin{align*}
+    \label{set 2}
+    H_{0}:& \text{ as } N\rightarrow \infty, \text{ queues in queueing system } \mathbf{X}_{t}^{(N)} \text{ become jointly independent.}  \\
+    H_{a}:& \text{ as } N\rightarrow \infty, \text{ queues in queueing system } \mathbf{X}_{t}^{(N)} \text{ do not become jointly independent.}
+\end{align*}
+Moreover, we are also interested in the case of $t \rightarrow \infty$ and thus also analyze the following:
+\begin{align*}
+    \label{set 1}
+    H_{0}:& \text{ as } t\rightarrow \infty, \text{ queues in queueing system } \mathbf{X}_{t}^{(N)} \text{ become jointly independent.}  \\
+    H_{a}:& \text{ as } t\rightarrow \infty, \text{ queues in queueing system } \mathbf{X}_{t}^{(N)} \text{ do not become jointly independent.}
+\end{align*}
 
+Altogether, these hypotheses comprise the behaviour expected of the system outlined in Figure~\ref{fig:1} for the limits of $\mathbf{X}^{(N)}(t)$
+in terms of $t$ and $N$ respectively according to Conjecture~\ref{conj}.
+
+To test the first hypothesis, we calculate $d$HSIC under the Gaussian reproducing kernel at $\alpha = 0.1$ across $N \in {5, 10, 25, 50, 100}$ for time samples
+in $\{100, 105, \dots, 200\}$.
+Moreover, we test across varying $\rho \in \{0.8, 0.9, 0.99\}$ while keeping $\mu \equiv 1$.
+As such, we have $\rho \overset{\Delta}= \frac{d\lambda}{N\mu} \iff \lambda = \frac{N \rho}{d}$ for each simulated system.
+Simulations are run for 12 repetitions at each $N\times\rho$ combination and each test is resampled $999$ times, being the maximum suggested in~\cite{jointindep}.
+In all, as Table~\ref{tab:reg} summarizes, the hypothesis was rejected only for values of $N = 2, \rho \in \{.9,.99\}$.
+It is of note that JSQ($d$) of course also exhibits this property~\cite{bramson_asymptotic_2012}.
 \begin{table}
     \centering
     \caption{$d$HSIC for Varying $N$}

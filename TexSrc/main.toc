@@ -6,5 +6,5 @@
 \contentsline {section}{\numberline {3.2}Results}{12}{section.3.2}%
 \contentsline {subsection}{\numberline {3.2.1}Methodology}{12}{subsection.3.2.1}%
 \contentsline {subsection}{\numberline {3.2.2}Simulation Results}{15}{subsection.3.2.2}%
-\contentsline {chapter}{\textbf {References}}{17}{section*.5}%
-\contentsline {chapter}{\numberline {A}$d$HSIC Resampling Cython Implementation}{19}{appendix.A}%
+\contentsline {chapter}{\textbf {References}}{18}{section*.5}%
+\contentsline {chapter}{\numberline {A}$d$HSIC Resampling Cython Implementation}{20}{appendix.A}%
