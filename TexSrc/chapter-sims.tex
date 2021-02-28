@@ -175,25 +175,43 @@ It is of note that JSQ($d$) of course also exhibits this property~\cite{bramson_
     \label{tab:reg}
     \begin{tabular}{|c|c|c|c|}
 \hline
-$\rho$ & $N$ & $r$ & $\hat{p}(H_{a})$ \\
+$\rho$ & $N$ & $r$ & $\hat p(H_{a})$ \\
 \hline
 \hline
- & 5 & 2 & 2.77e-01  \\
-0.8 & 50 & 2 & 4.95e-02 * \\
- & 100 & 2 & 9.90e-02 * \\
- & 500 & 2 & 1.09e-01  \\
- & 5 & 2 & 2.28e-01  \\
-0.9 & 50 & 2 & 5.84e-01  \\
- & 100 & 2 & 2.18e-01  \\
- & 500 & 2 & 7.13e-01  \\
- & 5 & 2 & 7.92e-01  \\
-0.99 & 50 & 2 & 6.93e-02 * \\
- & 100 & 2 & 5.94e-02 * \\
- & 500 & 2 & 9.70e-01  \\
+ & 5 & 1 & 0.089 * \\
+ & 50 & 1 & 0.198  \\
+& 100 & 1 & 1.0  \\
+ & 500 & 1 & 0.109  \\
+ 0.8 & 5 & 2 & 0.921  \\
+ & 50 & 2 & 0.228  \\
+& 100 & 2 & 0.02 ** \\
+ & 500 & 2 & 0.129  \\
+\hline
+& 5 & 1 & 0.089 * \\
+ & 50 & 1 & 0.891  \\
+& 100 & 1 & 0.693  \\
+ & 500 & 1 & 0.861  \\
+0.9 & 5 & 2 & 1.0  \\
+ & 50 & 2 & 0.178  \\
+& 100 & 2 & 0.109  \\
+ & 500 & 2 & 0.634  \\
+\hline
+
+ & 5 & 1 & 0.782  \\
+ & 50 & 1 & 0.01 *** \\
+& 100 & 1 & 0.386  \\
+ & 500 & 1 & 0.347  \\
+0.99 & 5 & 2 & 0.406  \\
+ & 50 & 2 & 0.327  \\
+& 100 & 2 & 0.485  \\
+ & 500 & 2 & 0.475  \\
+        \hline
+
+
     \end{tabular}
 
     \begin{tabular}{p{10cm}}
-        \textit{Note:} * \hat{p}(H_{a}) < 0.1. \\
+        \textit{Note:} * $\hat{p}(H_{a}) < 0.1$, ** $\hat{p}(H_{a}) < 0.05$, *** $\hat{p}(H_{a}) < 0.01$ \\
         Data are drawn from 20 simulations run for each $N$.
     \end{tabular}
 \end{table}
@@ -248,10 +266,11 @@ Lastly, to test whether the system becomes asymptotically deterministic and reac
     goodness of fit test is employed to test the following:
 \begin{align*}
     \label{chi 1}
-    H_{0}:& \mathbf{X}^{(N)}_{t} \overset{N,t \rightarrow \infty}{\rightarrow} \mathbf{\pi} \text{, a process which is degenerate in law}  \\
-    H_{1}:& \mathbf{X}^{(N)}_{t} \overset{N,t \rightarrow \infty}{\not \rightarrow} \mathbf{\pi} \text{, a process which is degenerate in law}
+    H_{0} :& \text{ }\mathbf{X}^{(N)}_{t} \overset{N,t \rightarrow \infty}{\rightarrow} \boldsymbol{\pi} \text{, a process which is degenerate in law.}  \\
+    H_{1} :& \text{ }\mathbf{X}^{(N)}_{t} \overset{N,t \rightarrow \infty}{\not \rightarrow} \boldsymbol{\pi} \text{, a process which is degenerate in law.}
 \end{align*}
 
+-----TODO-------
 
 
 

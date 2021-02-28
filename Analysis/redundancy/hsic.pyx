@@ -103,7 +103,12 @@ cpdef list time_sampler(X, time_samples):
             if time_list[insertion_point] != time and insertion_point > 0:
                 insertion_point = time_list[insertion_point - 1]  # take left
             else:
-                insertion_point = 0
+                try:
+                    insertion_point = 0
+                except IndexError as e:
+                    print(e.__str__())
+                    data_slice.append(0)
+                    pass
             data_slice.append(proc[insertion_point])
         ret.append(data_slice)
     return ret
