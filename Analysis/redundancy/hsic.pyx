@@ -1,5 +1,5 @@
-#cython: language_level=3
-#cython: infer_types=True
+#cython: boundscheck=False, wraparound=False, nonecheck=False, language_level=3, infer_types=True
+
 """
 Methods for testing independence using the Hilbert-Schmidt information criterion.
 
