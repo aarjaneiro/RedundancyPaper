@@ -141,14 +141,14 @@ cpdef dHSIC_resample_test(list Xs, int shuffle=500):
             hits += 1
     return (hits + 1) / (shuffle + 1)
 
-cpdef list[float] spanning_grid_uniform(float length = 1000):
+cpdef list[float] spanning_grid_uniform(float length = 1000, float min_val = 0):
     """
     for values arranged in a grid, provides a draw from a uniform distribution for each int until max length.
     """
     cdef int max_val = int(np.round(length))
-    cdef int step = 0
+    cdef int step = int(np.round(min_val))
     cdef list ret = []
-    while max_val > 0:
+    while max_val > min_val:
         ret.append(random.uniform(0,1) + step)
         step += 1
         max_val -= 1
