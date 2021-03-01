@@ -225,7 +225,7 @@ rather than full exchangeability might provide a more-appropriate means of asses
 
 Carrying on to the case of $t \rightarrow \infty$, we perform the same analysis but change the sampled times to
 $\{\tau_{i} | \tau_{i} \sim U[i,i-1]\}_{900 \leq i \leq 1000}$.
-Doing so, we restrict ourselves to a domain wherein the process is sufficiently burnt-in.
+By doing so, we restrict ourselves to a domain wherein the process is sufficiently burnt-in and thus likely approaching stationarity.
 As summarized in Table~\ref{tab:longtime}, we see a similar pattern as in our prior testing which is, once again, indicative
 of what would be expected under the conjecture.
 \begin{table}
@@ -234,31 +234,39 @@ of what would be expected under the conjecture.
     \label{tab:longtime}
     \begin{tabular}{|c|c|c|c|}
 \hline
-$\rho$ & $N$ & Thresh & $d$HSIC \\
+$\rho$ & $N$ & $r$ & $\hat p(H_{a})$ \\
 \hline
 \hline
- & 2 & 1.00e+00 & 1.00e+00 * \\
- & 5 & 8.80e-04 & 2.71e-01  \\
-0.8 & 25 & 1.36e-12 & 1.68e-01  \\
- & 50 & 4.70e-16 & 4.07e-01  \\
- & 100 & 5.14e-16 & 8.86e-01  \\
+ & 5 & 1 & 0.089 *** \\
+ & 50 & 1 & 0.198  \\
+& 100 & 1 & 1.0  \\
+ & 500 & 1 & 0.109  \\
+ 0.8 & 5 & 2 & 0.921  \\
+ & 50 & 2 & 0.228  \\
+& 100 & 2 & 0.02 ** \\
+ & 500 & 2 & 0.129  \\
 \hline
- & 2 & 1.00e+00 & 1.00e+00 * \\
- & 5 & 7.60e-04 & 7.52e-01  \\
-0.9 & 25 & 3.88e-13 & 7.98e-02  \\
- & 50 & 2.82e-16 & 3.39e-01  \\
- & 100 & 3.71e-16 & 4.27e-01  \\
+& 5 & 1 & 0.089 *** \\
+ & 50 & 1 & 0.891  \\
+& 100 & 1 & 0.693  \\
+ & 500 & 1 & 0.861  \\
+0.9 & 5 & 2 & 1.0  \\
+ & 50 & 2 & 0.178  \\
+& 100 & 2 & 0.109  \\
+ & 500 & 2 & 0.634  \\
 \hline
- & 2 & 1.00e+00 & 1.00e+00 * \\
- & 5 & 8.77e-04 & 2.69e-01  \\
- 0.99 & 25 & 4.54e-11 & 8.32e-01  \\
- & 50 & 4.02e-16 & 5.03e-01  \\
- & 100 & 5.00e-16 & 3.99e-01  \\
-\hline
+ & 5 & 1 & 0.782  \\
+ & 50 & 1 & 0.01 * \\
+& 100 & 1 & 0.386  \\
+ & 500 & 1 & 0.347  \\
+0.99 & 5 & 2 & 0.406  \\
+ & 50 & 2 & 0.327  \\
+& 100 & 2 & 0.485  \\
+ & 500 & 2 & 0.475  \\
     \end{tabular}
     \begin{tabular}{p{10cm}}
-        \textit{Note:} Sampled times comprise every 5th value of the set $[900,1000]$.
-        Data are drawn from 12 simulations run for each $N$ and are used to derive the test at $\alpha = 0.05$.
+        \textit{Note:} * $\hat{p}(H_{a}) < 0.1$, ** $\hat{p}(H_{a}) < 0.05$, *** $\hat{p}(H_{a}) < 0.01$ \\
+        Data are drawn from 20 simulations run for each $N$.
     \end{tabular}
 \end{table}
 
