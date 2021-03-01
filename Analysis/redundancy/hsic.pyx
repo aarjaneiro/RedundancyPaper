@@ -100,16 +100,16 @@ cpdef list time_sampler(X, time_samples):
         for proc in X:
             time_list = list(proc.keys())
             insertion_point = np.searchsorted(time_list, time)  # a[i-1] < v <= a[i] via binary search algo
-            if time_list[insertion_point] != time and insertion_point > 0:
-                insertion_point = time_list[insertion_point - 1]  # take left
-            else:
-                try:
+            try:
+                if time_list[insertion_point] != time and insertion_point > 0:
+                    insertion_point = time_list[insertion_point - 1]  # take left
+                else:
                     insertion_point = 0
-                except IndexError as e:
-                    print(e.__str__())
-                    data_slice.append(0)
-                    pass
-            data_slice.append(proc[insertion_point])
+                data_slice.append(proc[insertion_point])
+            except IndexError as e: # Handles unexpected errors while printing cause
+                print(e.__str__())
+                data_slice.append(0)
+                pass
         ret.append(data_slice)
     return ret
 
