@@ -107,7 +107,7 @@ cpdef list time_sampler(X, time_samples):
                     insertion_point = 0
                 data_slice.append(proc[insertion_point])
             except IndexError as e: # Handles unexpected errors while printing cause
-                print(e.__str__())
+                print(f"Error: {e.__str__()} handled at point {insertion_point}")
                 data_slice.append(0)
                 pass
         ret.append(data_slice)
@@ -141,17 +141,17 @@ cpdef dHSIC_resample_test(list Xs, int shuffle=500):
             hits += 1
     return (hits + 1) / (shuffle + 1)
 
-cpdef list[float] spanning_grid_uniform(float length = 1000, float min_val = 0):
+cpdef list[float] spanning_grid_uniform(float length = 1000, float min_val = 0, float step_by=1):
     """
-    for values arranged in a grid, provides a draw from a uniform distribution for each int until max length.
+    for values arranged in a grid, provides a draw from a uniform distribution for each step_by until max length.
     """
-    cdef int max_val = int(np.round(length))
-    cdef int step = int(np.round(min_val))
+    cdef float max_val = int(np.round(length))
+    cdef float step = int(np.round(min_val))
     cdef list ret = []
     while max_val > min_val:
-        ret.append(random.uniform(0,1) + step)
-        step += 1
-        max_val -= 1
+        ret.append(random.uniform(0,step_by) + step)
+        step += step_by
+        max_val -= step_by
     return ret
 
 
