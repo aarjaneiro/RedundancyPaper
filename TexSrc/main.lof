@@ -1,10 +1,10 @@
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {1.1}{\ignorespaces Commutativity of Limits}}{3}{figure.1.1}%
+\contentsline {figure}{\numberline {1.1}{\ignorespaces Commutativity of limits\relax }}{3}{figure.caption.9}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {2.1}{\ignorespaces A graphical representation of queues with replicated jobs as hyperedges.}}{8}{figure.2.1}%
+\contentsline {figure}{\numberline {2.1}{\ignorespaces A graphical representation of queues with replicated jobs as hyperedges.\relax }}{8}{figure.caption.10}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Plot using \lstinline {totals} of Figure\nobreakspace {}\ref {fig:red}}}{10}{figure.3.1}%
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Overview of the ParallelQueue API}}{11}{figure.3.2}%
-\contentsline {figure}{\numberline {3.3}{\ignorespaces Comparisons of Systems: Values are averaged over 30 independent iterations each, running for $t=1000$)}}{12}{figure.3.3}%
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Queue size processes for $\text {Red}(2)$\relax }}{10}{figure.caption.11}%
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Overview of the \textit {ParallelQueue} API\relax }}{11}{figure.caption.12}%
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Comparison of routing schemes\relax }}{12}{figure.caption.13}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }

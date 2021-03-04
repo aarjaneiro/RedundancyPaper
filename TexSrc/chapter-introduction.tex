@@ -68,14 +68,14 @@ one would be interested in their ability to achieve such a system in practice.
         \mathbf{X}^{(N)}(\infty)\arrow[r, "N \rightarrow \infty"]
         & \mathbf{\boldsymbol{\pi}}
     \end{tikzcd}
-    \caption{Commutativity of Limits}
+    \caption{Commutativity of limits}
     \label{fig:1}
 \end{figure}
 
 For the sake of brevity, the notation of $[n] := \{i \in \mathbb{N} | i \leq n\}$ will be used, along with the understanding of $\mathbf{X}^{[n]} \equiv \mathbf{X}^{(n)}$ for maximal element $n$.
 Moreover, accepting this set-index notation, $\mathbf{X}^{\psi}$ will refer to the general case of $[n]$, given we will also consider $[n] \overset{n\rightarrow \infty}\longrightarrow \mathbb{N}$.
 
-\begin{definition}[Threshold($R,d$)]
+\begin{definition}[$Threshold(R,d)$]
     \hfill \\
     \textbf{Threshold(R,d)}, denoted by $\mathcal{D}_{\text{Thresh}(R,d,Z)}$, selects $d$ queues upon a job arrival.
     Next:
@@ -83,8 +83,9 @@ Moreover, accepting this set-index notation, $\mathbf{X}^{\psi}$ will refer to t
         \item For $i \leq d$ queues which have workload less than or equal to $R$, place copies in these $i$ queues.
         \item If $i=0$, place the original arrival in a queue from the $d$ chosen at random.
     \end{enumerate}
-    $Z$ refers to any imposed job cancellation cost (e.g., an added temporary workload). In this paper we will concern
-    ourselves to the cancellation cost-free case, denoted $\mathcal{D}_{\text{Thresh}(R,d)}$.
+    $Z$ refers to any imposed job cancellation cost (e.g., an added temporary workload).
+    In this paper, we will concern
+    ourselves only with the cancellation cost-free case, denoted $\mathcal{D}_{\text{Thresh}(R,d)}$.
 \end{definition}
 
 
@@ -94,7 +95,7 @@ This leads us to the following conjecture for which this paper aims to demonstra
 \begin{conjecture}
     \hfill \\
     As $N \longrightarrow \infty$, the system $\mathcal{D}_{\text{Thresh}(R,d)}$ becomes $(\psi, \Gamma)$-exchangeable.
-    Moreover, As $t \longrightarrow \infty$, the system becomes deterministic.
+    Moreover, as $t \longrightarrow \infty$, the system becomes deterministic.
     \label{conj}
 \end{conjecture}
 

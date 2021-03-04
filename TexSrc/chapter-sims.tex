@@ -1,3 +1,5 @@
+%! suppress = MissingLabel
+
 \chapter{Simulation Study}\label{ch:simulation-study}
 
 
@@ -11,10 +13,10 @@ The package currently allows for the studying of parallel systems with or withou
 Moreover, the package allows one to specify any inter-arrival and service time distribution as well as their own \lstinline{Monitor}s, being a class which can gather data from the ongoing simulation to be distributed back to the user upon the completion of a simulation.
 In particular, the \lstinline{Monitor}s are currently configured to collect data upon arrival, routing, and job completion as demonstrated by Figure~\ref{fig:API}.
 
-Take Listing~\ref{red} and Figure~\ref{fig:redpic} for example, which permits one to simulate a Redundancy-2 queueing system with 100 queues in parallel for 1000 units of time while returning the total queue counts over time (which are updated upon a change in queue count).
+Take Listing~\ref{lst:red} for example, which permits one to simulate a Redundancy-2 queueing system with 100 queues in parallel for 1000 units of time while returning the total queue counts over time (which are updated upon a change in queue count).
+By merely calling \textit{totals.plot()} after importing \textit{Matplotlib}, Figure~\ref{fig:redpic} is easily retrieved.
 
-
-    \begin{lstlisting}[label={fig:red}, caption={Python code using \textit{ParallelQueue} to simulate a Redundancy-2 System.}, language=Python, style=mystyle]
+\begin{lstlisting}[label={lst:red}, caption={Using \textit{ParallelQueue} to simulate a Redundancy(2) system}, language={Python}, style={mystyle}]
 #!/usr/bin/python3
 from parallelqueue.base_models import RedundancyQueueSystem
 from parallelqueue.monitors import TimeQueueSize
@@ -23,18 +25,20 @@ import random
 sim = RedundancyQueueSystem(
                     maxTime=1000.0,parallelism=100, seed=1234,
                     d=2, Arrival=random.expovariate,
-                    AArgs=9, Service=random.expovariate,
+                    AArgs=9,Q3 Service=random.expovariate,
                     SArgs=0.08, Monitors = [TimeQueueSize])
 # Note RedundancyQueueSystem is a ParallelQueueSystem wrapper
 sim.RunSim()
 totals = sim.MonitorOutput["TimeQueueSize"]
-    \end{lstlisting}
+\end{lstlisting}
 
 \begin{figure}
     \centering
     \includegraphics[scale=0.8]{redundancy}
-    \caption{Plot using \lstinline{totals} of Figure~\ref{fig:red}}
-    \label{fig:redpic}
+    \caption{Queue size processes for $\text{Red}(2)$}
+        \label{fig:redpic}
+
+    \medskip
 \end{figure}
 
 Remarkably, the simulation itself is performed speedily on consumer hardware despite the size of the system as demonstrated in Listing~\ref{fig:lstlisting2}.
@@ -67,7 +71,7 @@ the \textit{Dict} object as a reference.
 \begin{figure}
     \centering
     \includegraphics[scale=0.7]{pq}
-    \caption{Overview of the ParallelQueue API}
+    \caption{Overview of the \textit{ParallelQueue} API}
     \label{fig:API}
 \end{figure}
 
@@ -82,7 +86,9 @@ rest of the simulations), Redundancy(2)) and Threshold(2,2) policies are rather 
 \begin{figure}
     \centering
     \includegraphics[width=0.7\linewidth]{attimes} %
-    \caption{Comparisons of Systems: Values are averaged over 30 independent iterations each, running for $t=1000$)}
+    \caption{Comparison of routing schemes}
+    \medskip
+    Values are averaged over 30 independent iterations each, running for $t=1000$
     \label{fig:img}
 \end{figure}
 

@@ -109,13 +109,19 @@
 \tikzstyle{larrow}=[<-]
 
 \usepackage{tikz-cd}
+\usepackage{caption}
 \usepackage{svg}
 \usepackage{listings}
+\usepackage[titletoc]{appendix}% https://ctan.org/pkg/appendix
+\documentclass{report}
 \usepackage{amsthm}
 \newboolean{PrintVersion}
 \setboolean{PrintVersion}{false}
 % CHANGE THIS VALUE TO "true" as necessary, to improve printed results for hard copies
 % by overriding some options of the hyperref package, called below.
+\renewcommand\lstlistingname{Listing}
+\renewcommand\lstlistlistingname{List of Listings}
+
 
 %\usepackage{nomencl} % For a nomenclature (optional; available from ctan.org)
 \usepackage{amsmath,amssymb,amstext} % Lots of math symbols and environments
@@ -209,6 +215,7 @@ urlcolor=black}
 % changes (e.g., perhaps "1.2"), if any, should be made.
 \renewcommand{\baselinestretch}{1} % this is the default line space setting
 
+
 % By default, each chapter will start on a recto (right-hand side)
 % page.  We also force each section of the front pages to start on
 % a recto page by inserting \cleardoublepage commands.
@@ -271,6 +278,10 @@ urlcolor=black}
     showtabs=false,
     tabsize=2
 }
+
+\renewcommand{\cftchappresnum}{\normalfont}
+
+
 %======================================================================
 %   L O G I C A L    D O C U M E N T
 % The logical document contains the main content of your thesis.
@@ -331,12 +342,12 @@ urlcolor=black}
 %----------------------------------------------------------------------
 
 % Appendices
-
 % The \appendix statement indicates the beginning of the appendices.
-    \appendix
+    \begin{appendices}
+        \input{appendix-hsic.tex}
+    \end{appendices}
 % Add a title page before the appendices and a line in the Table of Contents
 % Appendices are just more chapters, with different labeling.
-\input{appendix-hsic.tex}
 
 %----------------------------------------------------------------------
 \end{document} % end of logical document

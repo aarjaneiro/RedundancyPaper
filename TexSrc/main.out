@@ -1,11 +1,13 @@
-\BOOKMARK [0][-]{section*.2}{List of Figures}{}% 1
-\BOOKMARK [0][-]{chapter.1}{Introduction}{}% 2
-\BOOKMARK [0][-]{chapter.2}{Model Specification}{}% 3
-\BOOKMARK [0][-]{chapter.3}{Simulation Study}{}% 4
-\BOOKMARK [1][-]{section.3.1}{ParallelQueue Package}{chapter.3}% 5
-\BOOKMARK [1][-]{section.3.2}{Results}{chapter.3}% 6
-\BOOKMARK [2][-]{subsection.3.2.1}{Methodology}{section.3.2}% 7
-\BOOKMARK [2][-]{subsection.3.2.2}{Simulation Results}{section.3.2}% 8
-\BOOKMARK [0][-]{chapter.4}{Discussion}{}% 9
-\BOOKMARK [0][-]{section*.5}{References}{}% 10
-\BOOKMARK [0][-]{appendix.A}{dHSIC Resampling Cython Implementation}{}% 11
+\BOOKMARK [0][-]{section*.2}{List of Tables}{}% 1
+\BOOKMARK [0][-]{section*.4}{List of Figures}{}% 2
+\BOOKMARK [0][-]{section*.6}{List of Listings}{}% 3
+\BOOKMARK [0][-]{chapter.1}{Introduction}{}% 4
+\BOOKMARK [0][-]{chapter.2}{Model Specification}{}% 5
+\BOOKMARK [0][-]{chapter.3}{Simulation Study}{}% 6
+\BOOKMARK [1][-]{section.3.1}{ParallelQueue Package}{chapter.3}% 7
+\BOOKMARK [1][-]{section.3.2}{Results}{chapter.3}% 8
+\BOOKMARK [2][-]{subsection.3.2.1}{Methodology}{section.3.2}% 9
+\BOOKMARK [2][-]{subsection.3.2.2}{Simulation Results}{section.3.2}% 10
+\BOOKMARK [0][-]{chapter.4}{Concluding Remarks}{}% 11
+\BOOKMARK [0][-]{section*.16}{References}{}% 12
+\BOOKMARK [0][-]{appendix.a.A}{Appendix dHSIC Resampling Cython Implementation}{}% 13
