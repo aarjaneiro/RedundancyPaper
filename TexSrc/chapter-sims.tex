@@ -1,5 +1,6 @@
 %! suppress = MissingLabel
 
+
 \chapter{Simulation Study}\label{ch:simulation-study}
 
 
@@ -16,7 +17,7 @@ In particular, the \lstinline{Monitor}s are currently configured to collect data
 Take Listing~\ref{lst:red} for example, which permits one to simulate a Redundancy-2 queueing system with 100 queues in parallel for 1000 units of time while returning the total queue counts over time (which are updated upon a change in queue count).
 By merely calling \textit{totals.plot()} after importing \textit{Matplotlib}, Figure~\ref{fig:redpic} is easily retrieved.
 
-\begin{lstlisting}[label={lst:red}, caption={Using \textit{ParallelQueue} to simulate a Redundancy(2) system}, language={Python}, style={mystyle}]
+\begin{lstlisting}[label={lst:red}, caption={Simulation of a redundancy system}, language={Python}, style={mystyle}]
 #!/usr/bin/python3
 from parallelqueue.base_models import RedundancyQueueSystem
 from parallelqueue.monitors import TimeQueueSize
@@ -25,7 +26,7 @@ import random
 sim = RedundancyQueueSystem(
                     maxTime=1000.0,parallelism=100, seed=1234,
                     d=2, Arrival=random.expovariate,
-                    AArgs=9,Q3 Service=random.expovariate,
+                    AArgs=9, Service=random.expovariate,
                     SArgs=0.08, Monitors = [TimeQueueSize])
 # Note RedundancyQueueSystem is a ParallelQueueSystem wrapper
 sim.RunSim()
@@ -36,17 +37,17 @@ totals = sim.MonitorOutput["TimeQueueSize"]
     \centering
     \includegraphics[scale=0.8]{redundancy}
     \caption{Queue size processes for $\text{Red}(2)$}
-        \label{fig:redpic}
+    \label{fig:redpic}
 
     \medskip
 \end{figure}
 
 Remarkably, the simulation itself is performed speedily on consumer hardware despite the size of the system as demonstrated in Listing~\ref{fig:lstlisting2}.
-    \begin{lstlisting}[label={fig:lstlisting2},style=mystyle, caption={Runtime Statistics Using the Master ParallelQueue Branch}]
+\begin{lstlisting}[label={fig:lstlisting2},style=mystyle, caption={Runtime Statistics Using the Master ParallelQueue Branch}]
 CPU times: user 2.02 s, sys: 9.57 ms, total: 2.03 s
 Wall time: 2.05 s
 Intel i5-8250U (8) @ 3.400GHz
-    \end{lstlisting}
+\end{lstlisting}
 
 
 Altogether, this makes the package easy to parallelize with and thus to compare systems of different sizes
@@ -102,9 +103,9 @@ As~\cite{gardner_redundancy-d_2017} show, a Redundancy($d$) system is asymptotic
 \begin{definition}[Coupled Process]
     \label{coupled}
     \\~\\
-    For stochastic processes $X_{t} \in Pr(\Omega_{x}, \mathcal{F}_{x}, \mathcal{F}_{t,x})$ and $X_{t} \in Pr(\Omega_{y}, \mathcal{F}_{y}, \mathcal{F}_{t,y})$.
-    $X_{t}$ and $Y_{t}$ are said to be coupled over the probability space $Pr(\Omega, \mathcal{F}, \mathcal{F}_{t})$ if there exist
-    $\hat X_{t}, \hat Y_{t} \in Pr(\Omega, \mathcal{F}, \mathcal{F}_{t})$ such that $\hat X_{t} \overset{d}{=}X_{t}$ and $\hat Y_{t} \overset{d}{=}Y_{t}$ \cite{bramson_asymptotic_2012}.
+    For stochastic processes $X_{t} \in \Pr(\Omega_{x}, \mathcal{F}_{x}, \mathcal{F}_{t,x})$ and $X_{t} \in \Pr(\Omega_{y}, \mathcal{F}_{y}, \mathcal{F}_{t,y})$.
+    $X_{t}$ and $Y_{t}$ are said to be coupled over the probability space $\Pr(\Omega, \mathcal{F}, \mathcal{F}_{t})$ if there exist
+    $\hat X_{t}, \hat Y_{t} \in \Pr(\Omega, \mathcal{F}, \mathcal{F}_{t})$ such that $\hat X_{t} \overset{d}{=}X_{t}$ and $\hat Y_{t} \overset{d}{=}Y_{t}$ \cite{bramson_asymptotic_2012}.
 \end{definition}
 
 \begin{lemma}
@@ -113,7 +114,7 @@ As~\cite{gardner_redundancy-d_2017} show, a Redundancy($d$) system is asymptotic
 \end{lemma}
 \textit{Proof}:
 
-To show the sequence of routing algorithms to be convergent, we will construct a coupling in such a manner that $\forall r \in \mathbb{R}^{+}$, the system is stochastically dominated by another which is made to be finite~\cite{baccelli_elements_2003} . To do so, for $\mathbf{X}_{1}^{(N)}$ under $\text{Thresh}(r,d)$, denote the first arrival as $T_{\xi_{1}}$, at which time it is the case that a selection set, $\nu \subset [N] $, is prescribed wherein there exists $\hat X \in \{X_{i}\}_{i \in \nu} $ such that $ \# (\hat X) > r $. Thus, for  $ t \in [0,T_{\xi_{1}})$, we have $\mathcal{D}_{\text{Thresh(r,d)}}\mathbf(X^{(n)}) = \mathcal{D}_{\text{Red(d)}}\mathbf(X^{(n)})$. For clarity, let us now consider $\mathbf{Y}^{(N)}$ to be a copy of  $\mathbf{X}^{(N)}$ such that they are independent, identical in distribution and in terms of the marks of \textit{arrival process and job-size draws} along with the queues parsed (as was similarly done in~\cite{bramson_asymptotic_2012} in Lemma 4.1 using Definition \ref{coupled}). Effectively, the only difference being left between these copies is $r$ changing which queues receive clones and thus, too, the mark of queue-dependency. At time $T_{\xi_{1}}$ we clearly have $\mathcal{D}_{\text{Red(d)}}\mathbf(X^{(n)}) = \mathcal{D}_{\text{Thresh(r,d)}}\mathbf(Y^{(n)})$ due to there being no existing jobs for which the threshold would perclude cloning in the case of Thresh($r,d$).
+To show the sequence of routing algorithms to be convergent, we will construct a coupling in such a manner that $\forall r \in \mathbb{R}^{+}$, the system is stochastically dominated by another which is made to be finite~\cite{baccelli_elements_2003} . To do so, for $\mathbf{X}_{1}^{(N)}$ under $\text{Thresh}(r,d)$, denote the first arrival as $T_{\xi_{1}}$, at which time it is the case that a selection set, $\nu \subset [N] $, is prescribed wherein there exists $\hat X \in \{X_{i}\}_{i \in \nu} $ such that $ \# (\hat X) > r $. Thus, for  $ t \in [0,T_{\xi_{1}})$, we have $\mathcal{D}_{\text{Thresh(r,d)}}\mathbf(X^{(n)}) = \mathcal{D}_{\text{Red(d)}}\mathbf(X^{(n)})$. For clarity, let us now consider $\mathbf{Y}^{(N)}$ to be a copy of  $\mathbf{X}^{(N)}$ such that they are independent, identical in distribution and in terms of the marks of \textit{arrival process and job-size draws} along with the queues parsed (as was similarly done in~\cite{bramson_asymptotic_2012} in Lemma 4.1 using Definition~\ref{coupled}). Effectively, the only difference being left between these copies is $r$ changing which queues receive clones and thus, too, the mark of queue-dependency. At time $T_{\xi_{1}}$ we clearly have $\mathcal{D}_{\text{Red(d)}}\mathbf(X^{(n)}) = \mathcal{D}_{\text{Thresh(r,d)}}\mathbf(Y^{(n)})$ due to there being no existing jobs for which the threshold would perclude cloning in the case of Thresh($r,d$).
 As such, we also have $\mathcal{D}_{\text{Thresh}(r,d)}(Y^{(N)}(T_{\xi_{1}}))\leq_{st}\mathcal{D}_{\text{Red}(d)}(X^{(N)}(T_{\xi_{1}}))$.
 
 Now, assume $\rho < 1$, giving us $ \# Y_{i}  < \infty \quad \forall t \in \mathbb{R}^{+}$ with probability 1~\cite{gardner_redundancy-d_2017}. As such, we have that $\forall r \in \mathbb{R}^{+}$ there exists $ \xi_{1}(r) $ such that $ P_{r}(\mathbf{X}^{(N)}(t) = \mathbf{Y}^{(N)}(t) |t \in [0,T_{\xi_{1}}) \right) = 1$ $P_{r}(A) := P(\mathcal{D}_{M(r)}(A))$ wherein $M$ denotes the routing algorithm of process $A$. Note that $\xi_{1} (r)$ is monotone increasing in $r$. Letting $r \rightarrow \infty \Rightarrow \xi_{1} \rightarrow \infty$, we then have $\mathbf{X}^{(N)}(t) =  \mathbf{Y}^{(N)}(t) \quad \forall t \in \mathbb{R}^{+}$ in terms of distribution (i.e., as the result holds $\forall t \in \mathbb{R}^{+}$ as $r\rightarrow \infty$), implying the required weak convergence from below for $\mathcal{D}$ in law over system  $\mathbf{X}^{(N)}(t)$.  \qed
@@ -180,44 +181,45 @@ It is of note that JSQ($d$) of course also exhibits this property~\cite{bramson_
     \caption{$d$HSIC for Varying $N$}
     \label{tab:reg}
     \begin{tabular}{|c|c|c|c|}
-\hline
-$\rho$ & $N$ & $r$ & $\hat p(H_{a})$ \\
-\hline
-\hline
- & 5 & 1 & 0.089 * \\
- & 50 & 1 & 0.198  \\
-& 100 & 1 & 1.0  \\
- & 500 & 1 & 0.109  \\
- 0.8 & 5 & 2 & 0.921  \\
- & 50 & 2 & 0.228  \\
-& 100 & 2 & 0.02 ** \\
- & 500 & 2 & 0.129  \\
-\hline
-& 5 & 1 & 0.089 * \\
- & 50 & 1 & 0.891  \\
-& 100 & 1 & 0.693  \\
- & 500 & 1 & 0.861  \\
-0.9 & 5 & 2 & 1.0  \\
- & 50 & 2 & 0.178  \\
-& 100 & 2 & 0.109  \\
- & 500 & 2 & 0.634  \\
-\hline
+        \hline
+        $\rho$ & $N$ & $r$ & $\hat p(H_{a})$ \\
+        \hline
+        \hline
+        & 5   & 1   & 0.089 *         \\
+        & 50  & 1   & 0.198           \\
+        & 100 & 1   & 1.0             \\
+        & 500 & 1   & 0.109           \\
+        0.8    & 5   & 2   & 0.921           \\
+        & 50  & 2   & 0.228           \\
+        & 100 & 2   & 0.02 **         \\
+        & 500 & 2   & 0.129           \\
+        \hline
+        & 5   & 1   & 0.089 *         \\
+        & 50  & 1   & 0.891           \\
+        & 100 & 1   & 0.693           \\
+        & 500 & 1   & 0.861           \\
+        0.9    & 5   & 2   & 1.0             \\
+        & 50  & 2   & 0.178           \\
+        & 100 & 2   & 0.109           \\
+        & 500 & 2   & 0.634           \\
+        \hline
 
- & 5 & 1 & 0.782  \\
- & 50 & 1 & 0.01 *** \\
-& 100 & 1 & 0.386  \\
- & 500 & 1 & 0.347  \\
-0.99 & 5 & 2 & 0.406  \\
- & 50 & 2 & 0.327  \\
-& 100 & 2 & 0.485  \\
- & 500 & 2 & 0.475  \\
+        & 5   & 1   & 0.782           \\
+        & 50  & 1   & 0.01 ***        \\
+        & 100 & 1   & 0.386           \\
+        & 500 & 1   & 0.347           \\
+        0.99   & 5   & 2   & 0.406           \\
+        & 50  & 2   & 0.327           \\
+        & 100 & 2   & 0.485           \\
+        & 500 & 2   & 0.475           \\
         \hline
 
 
     \end{tabular}
 
     \begin{tabular}{p{10cm}}
-        \textit{Note:} * $\hat{p}(H_{a}) < 0.1$, ** $\hat{p}(H_{a}) < 0.05$, *** $\hat{p}(H_{a}) < 0.01$ \\
+        \textit{Note:} * $\hat{p}(H_{a}) < 0.1$, ** $\hat{p}(H_{a}) < 0.05$, *** $\hat{p}(H_{a}) < 0.01$
+        \\
         Data are drawn from 20 simulations run for each $N$.
     \end{tabular}
 \end{table}
@@ -239,52 +241,67 @@ of what would be expected under the conjecture.
     \caption{$d$HSIC Test for Large $t$}
     \label{tab:longtime}
     \begin{tabular}{|c|c|c|c|}
-\hline
-$\rho$ & $N$ & $r$ & $\hat p(H_{a})$ \\
-\hline
-\hline
- & 5 & 1 & 0.089 *** \\
- & 50 & 1 & 0.198  \\
-& 100 & 1 & 1.0  \\
- & 500 & 1 & 0.109  \\
- 0.8 & 5 & 2 & 0.921  \\
- & 50 & 2 & 0.228  \\
-& 100 & 2 & 0.02 ** \\
- & 500 & 2 & 0.129  \\
-\hline
-& 5 & 1 & 0.089 *** \\
- & 50 & 1 & 0.891  \\
-& 100 & 1 & 0.693  \\
- & 500 & 1 & 0.861  \\
-0.9 & 5 & 2 & 1.0  \\
- & 50 & 2 & 0.178  \\
-& 100 & 2 & 0.109  \\
- & 500 & 2 & 0.634  \\
-\hline
- & 5 & 1 & 0.782  \\
- & 50 & 1 & 0.01 * \\
-& 100 & 1 & 0.386  \\
- & 500 & 1 & 0.347  \\
-0.99 & 5 & 2 & 0.406  \\
- & 50 & 2 & 0.327  \\
-& 100 & 2 & 0.485  \\
- & 500 & 2 & 0.475  \\
+        \hline
+        $\rho$ & $N$ & $r$ & $\hat p(H_{a})$ \\
+        \hline
+        \hline
+        & 5   & 1   & 0.089 ***       \\
+        & 50  & 1   & 0.198           \\
+        & 100 & 1   & 1.0             \\
+        & 500 & 1   & 0.109           \\
+        0.8    & 5   & 2   & 0.921           \\
+        & 50  & 2   & 0.228           \\
+        & 100 & 2   & 0.02 **         \\
+        & 500 & 2   & 0.129           \\
+        \hline
+        & 5   & 1   & 0.089 ***       \\
+        & 50  & 1   & 0.891           \\
+        & 100 & 1   & 0.693           \\
+        & 500 & 1   & 0.861           \\
+        0.9    & 5   & 2   & 1.0             \\
+        & 50  & 2   & 0.178           \\
+        & 100 & 2   & 0.109           \\
+        & 500 & 2   & 0.634           \\
+        \hline
+        & 5   & 1   & 0.782           \\
+        & 50  & 1   & 0.01 *          \\
+        & 100 & 1   & 0.386           \\
+        & 500 & 1   & 0.347           \\
+        0.99   & 5   & 2   & 0.406           \\
+        & 50  & 2   & 0.327           \\
+        & 100 & 2   & 0.485           \\
+        & 500 & 2   & 0.475           \\
     \end{tabular}
     \begin{tabular}{p{10cm}}
-        \textit{Note:} * $\hat{p}(H_{a}) < 0.1$, ** $\hat{p}(H_{a}) < 0.05$, *** $\hat{p}(H_{a}) < 0.01$ \\
+        \textit{Note:} * $\hat{p}(H_{a}) < 0.1$, ** $\hat{p}(H_{a}) < 0.05$, *** $\hat{p}(H_{a}) < 0.01$
+        \\
         Data are drawn from 20 simulations run for each $N$.
     \end{tabular}
 \end{table}
 
-Lastly, to test whether the system becomes asymptotically deterministic and reaches a fixed point, a chi square
-    goodness of fit test is employed to test the following:
+Lastly, to test whether the system becomes asymptotically deterministic and reaches a fixed point, we concern ourselves with the hypotheses of:
 \begin{align*}
     \label{chi 1}
     H_{0} :& \text{ }\mathbf{X}^{(N)}_{t} \overset{N,t \rightarrow \infty}{\rightarrow} \boldsymbol{\pi} \text{, a process which is degenerate in law.}  \\
     H_{1} :& \text{ }\mathbf{X}^{(N)}_{t} \overset{N,t \rightarrow \infty}{\not \rightarrow} \boldsymbol{\pi} \text{, a process which is degenerate in law.}
 \end{align*}
+We proceed in assessing the model by means of simulating a system at $N=500$ across $\rho \in \{0.8, 0.9 ,0.99\}$ and $r \in \{1,2\}$ for sampled times drawn from a uniform grid with a step size of $0.25$.
+After $20$ repetitions, we average the size of each queue at each sampled time across each run.
+From this, we calculate an ACF for the average queue size at each combination of parameters, for which results are summarized in Figure~\ref{fig:autocor}.
 
------TODO-------
+\begin{figure}
+    \centering
+    \begin{tabular}{ccc}
+        \includegraphics[width=50mm]{autocor/1_0_0.8_1614784150.46764}   & \includegraphics[width=50mm]{autocor/1_0_0.9_1614789195.7596514}
+        & \includegraphics[width=50mm]{autocor/1_0_0.99_1614794552.4804938}\\
+        (a) $r = 1, \rho = 0.8$                                          & (b) $r = 1, \rho = 0.9$                                          & (c) $r = 1, \rho = 0.99$ \\[6pt]
+        \includegraphics[width=50mm]{autocor/2_0_0.8_1614786651.7051768} & \includegraphics[width=50mm]{autocor/2_0_0.9_1614791739.9236946}
+        & \includegraphics[width=50mm]{autocor/2_0_0.99_1614797400.487133}\\
+        (c) $r = 2, \rho = 0.8$                                          & (d) $r = 2, \rho = 0.9$                                          & (e) $r = 2, \rho = 0.99$ \\[6pt]
+    \end{tabular}
+    \caption{Autocorrelations of $E(\#X_{n}(t))$ at $N = 500, t \in [900,1000]$ for varying $\rho, r$}
+    \label{fig:autocor}
+\end{figure}
 
-
-
+At $\alpha = 0.05$, we observe that a statistically significant degree of serial dependence exists for lags near each tested point.
+Inspection of the graphs reveal that, at such lags, autocorrelations are positive and decreasing in strength, as would be expected in a system having reached a fixed point.

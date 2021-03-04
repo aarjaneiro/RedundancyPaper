@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Arch Linux) (preloaded format=pdflatex 2021.2.10)  4 MAR 2021 06:33
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Arch Linux) (preloaded format=pdflatex 2021.2.10)  4 MAR 2021 10:30
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -354,6 +354,22 @@ Package caption Info: Standard document class detected.
 \c@caption@flags=\count273
 \c@continuedfloat=\count274
 )
+(/usr/share/texmf-dist/tex/latex/subfig/subfig.sty
+Package: subfig 2005/06/28 ver: 1.3 subfig package
+\c@KVtest=\count275
+\sf@farskip=\skip49
+\sf@captopadj=\dimen258
+\sf@capskip=\skip50
+\sf@nearskip=\skip51
+\c@subfigure=\count276
+\c@subfigure@save=\count277
+\c@lofdepth=\count278
+\c@subtable=\count279
+\c@subtable@save=\count280
+\c@lotdepth=\count281
+\sf@top=\skip52
+\sf@bottom=\skip53
+)
 (/usr/local/share/texmf/tex/latex/svg/svg.sty
 Package: svg 2020/11/26 v2.02k (include SVG pictures)
 
@@ -473,9 +489,9 @@ Package: trimspaces 2009/09/17 v1.1 Trim spaces around a token list
 Package: shellesc 2019/11/08 v1.0c unified shell escape interface for LaTeX
 Package shellesc Info: Restricted shell escape enabled on input line 77.
 )
-\c@svg@param@lastpage=\count275
+\c@svg@param@lastpage=\count282
 \svg@box=\box62
-\c@svg@param@currpage=\count276
+\c@svg@param@currpage=\count283
 )
 (/usr/local/share/texmf/tex/latex/transparent/transparent.sty
 Package: transparent 2019/11/29 v1.4 Transparency via pdfTeX's color stack (HO)
@@ -485,23 +501,23 @@ Package: transparent 2019/11/29 v1.4 Transparency via pdfTeX's color stack (HO)
 Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
 ))
 (/usr/share/texmf-dist/tex/latex/listings/listings.sty
-\lst@mode=\count277
+\lst@mode=\count284
 \lst@gtempboxa=\box63
 \lst@token=\toks28
-\lst@length=\count278
-\lst@currlwidth=\dimen258
-\lst@column=\count279
-\lst@pos=\count280
-\lst@lostspace=\dimen259
-\lst@width=\dimen260
-\lst@newlines=\count281
-\lst@lineno=\count282
-\lst@maxwidth=\dimen261
+\lst@length=\count285
+\lst@currlwidth=\dimen259
+\lst@column=\count286
+\lst@pos=\count287
+\lst@lostspace=\dimen260
+\lst@width=\dimen261
+\lst@newlines=\count288
+\lst@lineno=\count289
+\lst@maxwidth=\dimen262
 
 (/usr/share/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2020/03/24 1.8d (Carsten Heinz)
-\c@lstnumber=\count283
-\lst@skipnumbers=\count284
+\c@lstnumber=\count290
+\lst@skipnumbers=\count291
 \lst@framebox=\box64
 )
 (/usr/share/texmf-dist/tex/latex/listings/listings.cfg
@@ -511,9 +527,9 @@ Package: listings 2020/03/24 1.8d (Carsten Heinz)
 
 (/usr/local/share/texmf/tex/latex/appendix/appendix.sty
 Package: appendix 2020/02/08 v1.2c extra appendix facilities
-\c@@pps=\count285
-\c@@ppsavesec=\count286
-\c@@ppsaveapp=\count287
+\c@@pps=\count292
+\c@@ppsavesec=\count293
+\c@@ppsaveapp=\count294
 )
 
 ! LaTeX Error: Two \documentclass or \documentstyle commands.
@@ -522,7 +538,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.116 \documentclass{
+l.118 \documentclass{
                      report}
 The document may only declare one class.
 
@@ -533,14 +549,14 @@ Package: amsthm 2020/05/29 v2.20.6
 \thm@headfont=\toks31
 \thm@notefont=\toks32
 \thm@headpunct=\toks33
-\thm@preskip=\skip49
-\thm@postskip=\skip50
-\thm@headsep=\skip51
+\thm@preskip=\skip54
+\thm@postskip=\skip55
+\thm@headsep=\skip56
 \dth@everypar=\toks34
 )
 (/usr/share/texmf-dist/tex/latex/amsmath/amsmath.sty
 Package: amsmath 2020/09/23 v2.17i AMS math features
-\@mathmargin=\skip52
+\@mathmargin=\skip57
 
 For additional information on amsmath, use the `?' option.
 (/usr/share/texmf-dist/tex/latex/amsmath/amstext.sty
@@ -549,49 +565,49 @@ Package: amstext 2000/06/29 v2.01 AMS text
 (/usr/share/texmf-dist/tex/latex/amsmath/amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0 generic functions
 \@emptytoks=\toks35
-\ex@=\dimen262
+\ex@=\dimen263
 ))
 (/usr/share/texmf-dist/tex/latex/amsmath/amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d Bold Symbols
-\pmbraise@=\dimen263
+\pmbraise@=\dimen264
 )
 (/usr/share/texmf-dist/tex/latex/amsmath/amsopn.sty
 Package: amsopn 2016/03/08 v2.02 operator names
 )
-\inf@bad=\count288
+\inf@bad=\count295
 LaTeX Info: Redefining \frac on input line 234.
-\uproot@=\count289
-\leftroot@=\count290
+\uproot@=\count296
+\leftroot@=\count297
 LaTeX Info: Redefining \overline on input line 399.
-\classnum@=\count291
-\DOTSCASE@=\count292
+\classnum@=\count298
+\DOTSCASE@=\count299
 LaTeX Info: Redefining \ldots on input line 496.
 LaTeX Info: Redefining \dots on input line 499.
 LaTeX Info: Redefining \cdots on input line 620.
 \Mathstrutbox@=\box65
 \strutbox@=\box66
-\big@size=\dimen264
+\big@size=\dimen265
 LaTeX Font Info:    Redeclaring font encoding OML on input line 743.
 LaTeX Font Info:    Redeclaring font encoding OMS on input line 744.
-\macc@depth=\count293
-\c@MaxMatrixCols=\count294
+\macc@depth=\count300
+\c@MaxMatrixCols=\count301
 \dotsspace@=\muskip16
-\c@parentequation=\count295
-\dspbrk@lvl=\count296
+\c@parentequation=\count302
+\dspbrk@lvl=\count303
 \tag@help=\toks36
-\row@=\count297
-\column@=\count298
-\maxfields@=\count299
+\row@=\count304
+\column@=\count305
+\maxfields@=\count306
 \andhelp@=\toks37
-\eqnshift@=\dimen265
-\alignsep@=\dimen266
-\tagshift@=\dimen267
-\tagwidth@=\dimen268
-\totwidth@=\dimen269
-\lineht@=\dimen270
+\eqnshift@=\dimen266
+\alignsep@=\dimen267
+\tagshift@=\dimen268
+\tagwidth@=\dimen269
+\totwidth@=\dimen270
+\lineht@=\dimen271
 \@envbody=\toks38
-\multlinegap=\skip53
-\multlinetaggap=\skip54
+\multlinegap=\skip58
+\multlinetaggap=\skip59
 \mathdisplay@stack=\toks39
 LaTeX Info: Redefining \[ on input line 2923.
 LaTeX Info: Redefining \] on input line 2924.
@@ -622,7 +638,7 @@ Package: expl3 2020-12-03 L3 programming layer (loader)
 
 (/usr/share/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2020-09-24 L3 backend support: PDF output (pdfTeX)
-\l__kernel_color_stack_int=\count300
+\l__kernel_color_stack_int=\count307
 \l__pdf_internal_box=\box67
 ))
 Package: xparse 2020-10-27 L3 Experimental document command parser
@@ -630,7 +646,7 @@ Package: xparse 2020-10-27 L3 Experimental document command parser
 (/usr/share/texmf-dist/tex/latex/l3packages/xparse/xparse-generic.tex))
 (/usr/share/texmf-dist/tex/latex/etoolbox/etoolbox.sty
 Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
-\etb@tempcnta=\count301
+\etb@tempcnta=\count308
 )
 (/usr/local/share/texmf/tex/latex/zref/zref-abspage.sty
 Package: zref-abspage 2020-07-03 v2.32 Module abspage for zref (HO)
@@ -653,53 +669,53 @@ Package: atbegshi-ltx 2020/08/17 v1.0a Emulation of the original atbegshi packa
 ge
 with kernel methods
 )
-\c@abspage=\count302
+\c@abspage=\count309
 Package zref Info: New property: abspage on input line 66.
 )
 (/usr/local/share/texmf/tex/latex/needspace/needspace.sty
 Package: needspace 2010/09/12 v1.3d reserve vertical space
 )
-\mdf@templength=\skip55
-\c@mdf@globalstyle@cnt=\count303
-\mdf@skipabove@length=\skip56
-\mdf@skipbelow@length=\skip57
-\mdf@leftmargin@length=\skip58
-\mdf@rightmargin@length=\skip59
-\mdf@innerleftmargin@length=\skip60
-\mdf@innerrightmargin@length=\skip61
-\mdf@innertopmargin@length=\skip62
-\mdf@innerbottommargin@length=\skip63
-\mdf@splittopskip@length=\skip64
-\mdf@splitbottomskip@length=\skip65
-\mdf@outermargin@length=\skip66
-\mdf@innermargin@length=\skip67
-\mdf@linewidth@length=\skip68
-\mdf@innerlinewidth@length=\skip69
-\mdf@middlelinewidth@length=\skip70
-\mdf@outerlinewidth@length=\skip71
-\mdf@roundcorner@length=\skip72
-\mdf@footenotedistance@length=\skip73
-\mdf@userdefinedwidth@length=\skip74
-\mdf@needspace@length=\skip75
-\mdf@frametitleaboveskip@length=\skip76
-\mdf@frametitlebelowskip@length=\skip77
-\mdf@frametitlerulewidth@length=\skip78
-\mdf@frametitleleftmargin@length=\skip79
-\mdf@frametitlerightmargin@length=\skip80
-\mdf@shadowsize@length=\skip81
-\mdf@extratopheight@length=\skip82
-\mdf@subtitleabovelinewidth@length=\skip83
-\mdf@subtitlebelowlinewidth@length=\skip84
-\mdf@subtitleaboveskip@length=\skip85
-\mdf@subtitlebelowskip@length=\skip86
-\mdf@subtitleinneraboveskip@length=\skip87
-\mdf@subtitleinnerbelowskip@length=\skip88
-\mdf@subsubtitleabovelinewidth@length=\skip89
-\mdf@subsubtitlebelowlinewidth@length=\skip90
-\mdf@subsubtitleaboveskip@length=\skip91
-\mdf@subsubtitlebelowskip@length=\skip92
-\mdf@subsubtitleinneraboveskip@length=\skip93
-\mdf@subsubtitleinnerbelowskip@length=\skip94
+\mdf@templength=\skip60
+\c@mdf@globalstyle@cnt=\count310
+\mdf@skipabove@length=\skip61
+\mdf@skipbelow@length=\skip62
+\mdf@leftmargin@length=\skip63
+\mdf@rightmargin@length=\skip64
+\mdf@innerleftmargin@length=\skip65
+\mdf@innerrightmargin@length=\skip66
+\mdf@innertopmargin@length=\skip67
+\mdf@innerbottommargin@length=\skip68
+\mdf@splittopskip@length=\skip69
+\mdf@splitbottomskip@length=\skip70
+\mdf@outermargin@length=\skip71
+\mdf@innermargin@length=\skip72
+\mdf@linewidth@length=\skip73
+\mdf@innerlinewidth@length=\skip74
+\mdf@middlelinewidth@length=\skip75
+\mdf@outerlinewidth@length=\skip76
+\mdf@roundcorner@length=\skip77
+\mdf@footenotedistance@length=\skip78
+\mdf@userdefinedwidth@length=\skip79
+\mdf@needspace@length=\skip80
+\mdf@frametitleaboveskip@length=\skip81
+\mdf@frametitlebelowskip@length=\skip82
+\mdf@frametitlerulewidth@length=\skip83
+\mdf@frametitleleftmargin@length=\skip84
+\mdf@frametitlerightmargin@length=\skip85
+\mdf@shadowsize@length=\skip86
+\mdf@extratopheight@length=\skip87
+\mdf@subtitleabovelinewidth@length=\skip88
+\mdf@subtitlebelowlinewidth@length=\skip89
+\mdf@subtitleaboveskip@length=\skip90
+\mdf@subtitlebelowskip@length=\skip91
+\mdf@subtitleinneraboveskip@length=\skip92
+\mdf@subtitleinnerbelowskip@length=\skip93
+\mdf@subsubtitleabovelinewidth@length=\skip94
+\mdf@subsubtitlebelowlinewidth@length=\skip95
+\mdf@subsubtitleaboveskip@length=\skip96
+\mdf@subsubtitlebelowskip@length=\skip97
+\mdf@subsubtitleinneraboveskip@length=\skip98
+\mdf@subsubtitleinnerbelowskip@length=\skip99
 
 (/usr/local/share/texmf/tex/latex/mdframed/md-frame-0.mdf
 File: md-frame-0.mdf 2013/07/01\ 1.9b: md-frame-0
@@ -709,43 +725,43 @@ File: md-frame-0.mdf 2013/07/01\ 1.9b: md-frame-0
 \mdf@splitbox@one=\box70
 \mdf@splitbox@two=\box71
 \mdf@splitbox@save=\box72
-\mdfsplitboxwidth=\skip95
-\mdfsplitboxtotalwidth=\skip96
-\mdfsplitboxheight=\skip97
-\mdfsplitboxdepth=\skip98
-\mdfsplitboxtotalheight=\skip99
-\mdfframetitleboxwidth=\skip100
-\mdfframetitleboxtotalwidth=\skip101
-\mdfframetitleboxheight=\skip102
-\mdfframetitleboxdepth=\skip103
-\mdfframetitleboxtotalheight=\skip104
-\mdffootnoteboxwidth=\skip105
-\mdffootnoteboxtotalwidth=\skip106
-\mdffootnoteboxheight=\skip107
-\mdffootnoteboxdepth=\skip108
-\mdffootnoteboxtotalheight=\skip109
-\mdftotallinewidth=\skip110
-\mdfboundingboxwidth=\skip111
-\mdfboundingboxtotalwidth=\skip112
-\mdfboundingboxheight=\skip113
-\mdfboundingboxdepth=\skip114
-\mdfboundingboxtotalheight=\skip115
-\mdf@freevspace@length=\skip116
-\mdf@horizontalwidthofbox@length=\skip117
-\mdf@verticalmarginwhole@length=\skip118
-\mdf@horizontalspaceofbox=\skip119
-\mdfsubtitleheight=\skip120
-\mdfsubsubtitleheight=\skip121
-\c@mdfcountframes=\count304
+\mdfsplitboxwidth=\skip100
+\mdfsplitboxtotalwidth=\skip101
+\mdfsplitboxheight=\skip102
+\mdfsplitboxdepth=\skip103
+\mdfsplitboxtotalheight=\skip104
+\mdfframetitleboxwidth=\skip105
+\mdfframetitleboxtotalwidth=\skip106
+\mdfframetitleboxheight=\skip107
+\mdfframetitleboxdepth=\skip108
+\mdfframetitleboxtotalheight=\skip109
+\mdffootnoteboxwidth=\skip110
+\mdffootnoteboxtotalwidth=\skip111
+\mdffootnoteboxheight=\skip112
+\mdffootnoteboxdepth=\skip113
+\mdffootnoteboxtotalheight=\skip114
+\mdftotallinewidth=\skip115
+\mdfboundingboxwidth=\skip116
+\mdfboundingboxtotalwidth=\skip117
+\mdfboundingboxheight=\skip118
+\mdfboundingboxdepth=\skip119
+\mdfboundingboxtotalheight=\skip120
+\mdf@freevspace@length=\skip121
+\mdf@horizontalwidthofbox@length=\skip122
+\mdf@verticalmarginwhole@length=\skip123
+\mdf@horizontalspaceofbox=\skip124
+\mdfsubtitleheight=\skip125
+\mdfsubsubtitleheight=\skip126
+\c@mdfcountframes=\count311
 
 ****** mdframed patching \endmdf@trivlist
 
 ****** -- success******
 
-\mdf@envdepth=\count305
-\c@mdf@env@i=\count306
-\c@mdf@env@ii=\count307
-\c@mdf@zref@counter=\count308
+\mdf@envdepth=\count312
+\c@mdf@env@i=\count313
+\c@mdf@env@ii=\count314
+\c@mdf@zref@counter=\count315
 Package zref Info: New property: mdf@pagevalue on input line 895.
 )
 (/usr/local/share/texmf/tex/latex/lipsum/lipsum.sty
@@ -754,11 +770,11 @@ Package: lipsum 2019/01/02 v2.2 150 paragraphs of Lorem Ipsum dummy text
 (/usr/local/share/texmf/tex/latex/lipsum/lipsum.ltd.tex
 File: lipsum.ltd.tex 2019/01/02 v2.2 The Lorem ipsum dummy text
 ))
-\c@conjecture=\count309
-\c@definition=\count310
-\c@theorem=\count311
-\c@proposition=\count312
-\c@lemma=\count313
+\c@conjecture=\count316
+\c@definition=\count317
+\c@theorem=\count318
+\c@proposition=\count319
+\c@lemma=\count320
 
 (/usr/share/texmf-dist/tex/latex/hyperref/hyperref.sty
 Package: hyperref 2020-05-15 v7.00e Hypertext links for LaTeX
@@ -772,9 +788,9 @@ Package: hycolor 2020-01-27 v1.10 Color options for hyperref/bookmark (HO)
 (/usr/share/texmf-dist/tex/latex/letltxmacro/letltxmacro.sty
 Package: letltxmacro 2019/12/03 v1.6 Let assignment for LaTeX macros (HO)
 )
-\@linkdim=\dimen271
-\Hy@linkcounter=\count314
-\Hy@pagecounter=\count315
+\@linkdim=\dimen272
+\Hy@linkcounter=\count321
+\Hy@pagecounter=\count322
 
 (/usr/share/texmf-dist/tex/latex/hyperref/pd1enc.def
 File: pd1enc.def 2020-05-15 v7.00e Hyperref: PDFDocEncoding definition (HO)
@@ -784,7 +800,7 @@ Now handling font encoding PD1 ...
 (/usr/share/texmf-dist/tex/generic/intcalc/intcalc.sty
 Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
 )
-\Hy@SavedSpaceFactor=\count316
+\Hy@SavedSpaceFactor=\count323
 Package hyperref Info: Option `final' set `true' on input line 4338.
 Package hyperref Info: Hyper figures OFF on input line 4464.
 Package hyperref Info: Link nesting OFF on input line 4469.
@@ -793,14 +809,14 @@ Package hyperref Info: Plain pages OFF on input line 4479.
 Package hyperref Info: Backreferencing OFF on input line 4484.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
 Package hyperref Info: Bookmarks ON on input line 4717.
-\c@Hy@tempcnt=\count317
+\c@Hy@tempcnt=\count324
 
 (/usr/share/texmf-dist/tex/latex/url/url.sty
 \Urlmuskip=\muskip17
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
 LaTeX Info: Redefining \url on input line 5076.
-\XeTeXLinkMargin=\dimen272
+\XeTeXLinkMargin=\dimen273
 
 (/usr/share/texmf-dist/tex/generic/bitset/bitset.sty
 Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
@@ -809,9 +825,9 @@ Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
 Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
 )
 ))
-\Fld@menulength=\count318
-\Field@Width=\dimen273
-\Fld@charsize=\dimen274
+\Fld@menulength=\count325
+\Field@Width=\dimen274
+\Fld@charsize=\dimen275
 Package hyperref Info: Hyper figures OFF on input line 6347.
 Package hyperref Info: Link nesting OFF on input line 6352.
 Package hyperref Info: Hyper index ON on input line 6355.
@@ -821,9 +837,9 @@ Package hyperref Info: Link coloring with OCG OFF on input line 6372.
 Package hyperref Info: PDF/A mode OFF on input line 6377.
 LaTeX Info: Redefining \ref on input line 6417.
 LaTeX Info: Redefining \pageref on input line 6421.
-\Hy@abspage=\count319
-\c@Item=\count320
-\c@Hfootnote=\count321
+\Hy@abspage=\count326
+\c@Item=\count327
+\c@Hfootnote=\count328
 )
 Package hyperref Info: Driver: hpdftex.
 
@@ -835,9 +851,9 @@ Package: atveryend-ltx 2020/08/19 v1.0a Emulation of the original atvery packag
 e
 with kernel methods
 )
-\HyAnn@Count=\count322
-\Fld@listcount=\count323
-\c@bookmark@seq@number=\count324
+\HyAnn@Count=\count329
+\Fld@listcount=\count330
+\c@bookmark@seq@number=\count331
 
 (/usr/share/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
 Package: rerunfilecheck 2019/12/05 v1.9 Rerun checks for auxiliary files (HO)
@@ -848,15 +864,15 @@ Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 86.
 )
-\Hy@SectionHShift=\skip122
+\Hy@SectionHShift=\skip127
 )
-Package hyperref Info: Option `plainpages' set `false' on input line 170.
-Package hyperref Info: Option `unicode' set `false' on input line 170.
-Package hyperref Info: Option `pdftoolbar' set `true' on input line 170.
-Package hyperref Info: Option `pdfmenubar' set `true' on input line 170.
-Package hyperref Info: Option `pdffitwindow' set `false' on input line 170.
-Package hyperref Info: Option `pdfnewwindow' set `true' on input line 170.
-Package hyperref Info: Option `colorlinks' set `true' on input line 170.
+Package hyperref Info: Option `plainpages' set `false' on input line 172.
+Package hyperref Info: Option `unicode' set `false' on input line 172.
+Package hyperref Info: Option `pdftoolbar' set `true' on input line 172.
+Package hyperref Info: Option `pdfmenubar' set `true' on input line 172.
+Package hyperref Info: Option `pdffitwindow' set `false' on input line 172.
+Package hyperref Info: Option `pdfnewwindow' set `true' on input line 172.
+Package hyperref Info: Option `colorlinks' set `true' on input line 172.
 
 (/usr/share/texmf-dist/tex/latex/tools/bm.sty
 Package: bm 2019/07/24 v1.2d Bold Symbol Support (DPC/FMi)
@@ -868,10 +884,10 @@ LaTeX Info: Redefining \bm on input line 209.
 )
 (/usr/local/share/texmf/tex/latex/multirow/multirow.sty
 Package: multirow 2021/01/29 v2.7 Span multiple rows of a table
-\multirow@colwidth=\skip123
-\multirow@cntb=\count325
-\multirow@dima=\skip124
-\bigstrutjot=\dimen275
+\multirow@colwidth=\skip128
+\multirow@cntb=\count332
+\multirow@dima=\skip129
+\bigstrutjot=\dimen276
 )
 
 ! LaTeX Error: Command \cftchappresnum undefined.
@@ -880,40 +896,40 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.282 \renewcommand{\cftchappresnum}
+l.284 \renewcommand{\cftchappresnum}
                                     {\normalfont}
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 (./main.aux)
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 292.
-LaTeX Font Info:    ... okay on input line 292.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 292.
-LaTeX Font Info:    ... okay on input line 292.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 292.
-LaTeX Font Info:    ... okay on input line 292.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 292.
-LaTeX Font Info:    ... okay on input line 292.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 292.
-LaTeX Font Info:    ... okay on input line 292.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 292.
-LaTeX Font Info:    ... okay on input line 292.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 292.
-LaTeX Font Info:    ... okay on input line 292.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 292.
-LaTeX Font Info:    ... okay on input line 292.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 294.
+LaTeX Font Info:    ... okay on input line 294.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 294.
+LaTeX Font Info:    ... okay on input line 294.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 294.
+LaTeX Font Info:    ... okay on input line 294.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 294.
+LaTeX Font Info:    ... okay on input line 294.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 294.
+LaTeX Font Info:    ... okay on input line 294.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 294.
+LaTeX Font Info:    ... okay on input line 294.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 294.
+LaTeX Font Info:    ... okay on input line 294.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 294.
+LaTeX Font Info:    ... okay on input line 294.
  (/usr/share/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count326
-\scratchdimen=\dimen276
+\scratchcounter=\count333
+\scratchdimen=\dimen277
 \scratchbox=\box73
-\nofMPsegments=\count327
-\nofMParguments=\count328
+\nofMPsegments=\count334
+\nofMParguments=\count335
 \everyMPshowfont=\toks40
-\MPscratchCnt=\count329
-\MPscratchDim=\dimen277
-\MPnumerator=\count330
-\makeMPintoPDFobject=\count331
+\MPscratchCnt=\count336
+\MPscratchDim=\dimen278
+\MPnumerator=\count337
+\makeMPintoPDFobject=\count338
 \everyMPtoPDFconversion=\toks41
 ) (/usr/share/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
@@ -925,11 +941,12 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
 Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: subfig package v1.3 is loaded.
 Package caption Info: hyperref package is loaded.
 Package caption Info: listings package is loaded.
 Package caption Info: End \AtBeginDocument code.
-\c@lstlisting=\count332
-Package hyperref Info: Link coloring ON on input line 292.
+\c@lstlisting=\count339
+Package hyperref Info: Link coloring ON on input line 294.
 
 (/usr/share/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2019/09/16 v2.46 Cross-referencing by name of section
@@ -940,11 +957,11 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 (/usr/share/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count333
+\c@section@level=\count340
 )
-LaTeX Info: Redefining \ref on input line 292.
-LaTeX Info: Redefining \pageref on input line 292.
-LaTeX Info: Redefining \nameref on input line 292.
+LaTeX Info: Redefining \ref on input line 294.
+LaTeX Info: Redefining \pageref on input line 294.
+LaTeX Info: Redefining \nameref on input line 294.
 
 (./main.out) (./main.out)
 \@outlinefile=\write5
@@ -1016,7 +1033,7 @@ Chapter 2.
 
 
 ] [6]
-<systemredun.png, id=211, 363.60844pt x 337.26pt>
+<systemredun.png, id=213, 363.60844pt x 337.26pt>
 File: systemredun.png Graphic file (type png)
 <use systemredun.png>
 Package pdftex.def Info: systemredun.png  used on input line 72.
@@ -1025,507 +1042,26 @@ Package pdftex.def Info: systemredun.png  used on input line 72.
 Chapter 3.
 (/usr/share/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2020/03/24 1.8d listings language file
-)
-
-! Package xcolor Error: Undefined color `codegray'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.20 #
-      !/usr/bin/python3
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! Package xcolor Error: Undefined color `codegreen'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.20 #
-      !/usr/bin/python3
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! Package xcolor Error: Undefined color `codegreen'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.20 #!/us
-          r/bin/python3
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! Package xcolor Error: Undefined color `codegreen'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.20 #!/usr/
-            bin/python3
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! Package xcolor Error: Undefined color `codegreen'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.20 #!/usr/b
-             in/python3
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! Package xcolor Error: Undefined color `codegreen'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.20 #!/usr/bin/
-                python3
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! Package xcolor Error: Undefined color `codegreen'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.20 #!/usr/bin/p
-                 ython3
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! Package xcolor Error: Undefined color `codegreen'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.20 #!/usr/bin/python3
-                       
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! Package xcolor Error: Undefined color `codegray'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.21 from 
-          parallelqueue.base_models import RedundancyQueueSystem
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! Package xcolor Error: Undefined color `codegray'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.22 from 
-          parallelqueue.monitors import TimeQueueSize
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! Package xcolor Error: Undefined color `codegray'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.23 import 
-            random
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-[9
+) [9
 
 
 ]
-
-! Package xcolor Error: Undefined color `codegray'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.25 sim 
-         = RedundancyQueueSystem(
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! Package xcolor Error: Undefined color `codegray'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.25 sim 
-         = RedundancyQueueSystem(
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! Package xcolor Error: Undefined color `codegray'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.26  
-                         maxTime=1000.0,parallelism=100, seed=1234,
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! Package xcolor Error: Undefined color `codegray'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.27  
-                         d=2, Arrival=random.expovariate,
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! Package xcolor Error: Undefined color `codegray'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.28  
-                         AArgs=9,Q3 Service=random.expovariate,
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! Package xcolor Error: Undefined color `codegray'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.29  
-                         SArgs=0.08, Monitors = [TimeQueueSize])
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! Package xcolor Error: Undefined color `codegray'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.30 #
-       Note RedundancyQueueSystem is a ParallelQueueSystem wrapper
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! Package xcolor Error: Undefined color `codegreen'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.30 #
-       Note RedundancyQueueSystem is a ParallelQueueSystem wrapper
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! Package xcolor Error: Undefined color `codegreen'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.30 # 
-       Note RedundancyQueueSystem is a ParallelQueueSystem wrapper
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! Package xcolor Error: Undefined color `codegreen'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.30 # Note 
-            RedundancyQueueSystem is a ParallelQueueSystem wrapper
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! Package xcolor Error: Undefined color `codegreen'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.30 # Note 
-            RedundancyQueueSystem is a ParallelQueueSystem wrapper
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! Package xcolor Error: Undefined color `codegreen'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.30 # Note RedundancyQueueSystem 
-                                  is a ParallelQueueSystem wrapper
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! Package xcolor Error: Undefined color `codegreen'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.30 # Note RedundancyQueueSystem 
-                                  is a ParallelQueueSystem wrapper
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! Package xcolor Error: Undefined color `codegreen'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.30 # Note RedundancyQueueSystem is 
-                                     a ParallelQueueSystem wrapper
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! Package xcolor Error: Undefined color `codegreen'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.30 # Note RedundancyQueueSystem is 
-                                     a ParallelQueueSystem wrapper
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! Package xcolor Error: Undefined color `codegreen'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.30 # Note RedundancyQueueSystem is a 
-                                       ParallelQueueSystem wrapper
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! Package xcolor Error: Undefined color `codegreen'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.30 # Note RedundancyQueueSystem is a 
-                                       ParallelQueueSystem wrapper
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! Package xcolor Error: Undefined color `codegreen'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.30 ...dancyQueueSystem is a ParallelQueueSystem 
-                                                  wrapper
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! Package xcolor Error: Undefined color `codegreen'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.30 ...dancyQueueSystem is a ParallelQueueSystem 
-                                                  wrapper
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! Package xcolor Error: Undefined color `codegreen'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.30 ...eueSystem is a ParallelQueueSystem wrapper
-                                                  
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! Package xcolor Error: Undefined color `codegray'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.31 sim.
-         RunSim()
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! Package xcolor Error: Undefined color `codegray'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.32 totals 
-            = sim.MonitorOutput["TimeQueueSize"]
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! Package xcolor Error: Undefined color `codepurple'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.32 totals = sim.MonitorOutput["T
-                                  imeQueueSize"]
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! Package xcolor Error: Undefined color `codepurple'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.32 totals = sim.MonitorOutput["TimeQueueSize"]
-                                                
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! Package xcolor Error: Undefined color `codepurple'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.32 totals = sim.MonitorOutput["TimeQueueSize"]
-                                                
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-<redundancy.png, id=250, 369.38pt x 264.99pt>
+<redundancy.png, id=252, 369.38pt x 264.99pt>
 File: redundancy.png Graphic file (type png)
 <use redundancy.png>
-Package pdftex.def Info: redundancy.png  used on input line 37.
+Package pdftex.def Info: redundancy.png  used on input line 38.
 (pdftex.def)             Requested size: 295.5044pt x 211.99228pt.
-
-! Package xcolor Error: Undefined color `codegray'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.46 CPU 
-         times: user 2.02 s, sys: 9.57 ms, total: 2.03 s
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! Package xcolor Error: Undefined color `codegray'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.47 Wall 
-          time: 2.05 s
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! Package xcolor Error: Undefined color `codegray'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.48 Intel 
-           i5-8250U (8) @ 3.400GHz
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! Package xcolor Error: Undefined color `codegray'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.49  
-         \end{lstlisting}
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-[10 <./redundancy.png>]
-<pq.png, id=274, 421.575pt x 304.88907pt>
+ [10 <./redundancy.png>]
+<pq.png, id=275, 421.575pt x 304.88907pt>
 File: pq.png Graphic file (type png)
 <use pq.png>
-Package pdftex.def Info: pq.png  used on input line 73.
+Package pdftex.def Info: pq.png  used on input line 74.
 (pdftex.def)             Requested size: 295.10048pt x 213.42088pt.
  [11 <./pq.png>]
-<attimes.png, id=281, 642.4pt x 481.8pt>
+<attimes.png, id=282, 642.4pt x 481.8pt>
 File: attimes.png Graphic file (type png)
 <use attimes.png>
-Package pdftex.def Info: attimes.png  used on input line 88.
+Package pdftex.def Info: attimes.png  used on input line 89.
 (pdftex.def)             Requested size: 322.50345pt x 241.88452pt.
  [12 <./attimes.png (PNG copy)>]
 
@@ -1535,7 +1071,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.97     \\
+l.98     \\
            ~\\
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -1548,14 +1084,14 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.104     \\
+l.105     \\
             ~\\
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 ! Extra \right.
-l.119 ...}^{(N)}(t) |t \in [0,T_{\xi_{1}}) \right)
+l.120 ...}^{(N)}(t) |t \in [0,T_{\xi_{1}}) \right)
                                                    = 1$ $P_{r}(A) := P(\math...
 I'm ignoring a \right that had no matching \left.
 
@@ -1567,7 +1103,7 @@ See the amsmath package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.166 \end{align*}
+l.167 \end{align*}
                   
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -1581,13 +1117,57 @@ See the amsmath package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.285 \end{align*}
+l.287 \end{align*}
                   
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-) (./chapter-conclusion.tex [18]
+<autocor/1_0_0.8_1614784150.46764.png, id=346, 433.62pt x 289.08pt>
+File: autocor/1_0_0.8_1614784150.46764.png Graphic file (type png)
+<use autocor/1_0_0.8_1614784150.46764.png>
+Package pdftex.def Info: autocor/1_0_0.8_1614784150.46764.png  used on input li
+ne 295.
+(pdftex.def)             Requested size: 142.26378pt x 94.8409pt.
+<autocor/1_0_0.9_1614789195.7596514.png, id=347, 433.62pt x 289.08pt>
+File: autocor/1_0_0.9_1614789195.7596514.png Graphic file (type png)
+<use autocor/1_0_0.9_1614789195.7596514.png>
+Package pdftex.def Info: autocor/1_0_0.9_1614789195.7596514.png  used on input 
+line 295.
+(pdftex.def)             Requested size: 142.26378pt x 94.8409pt.
+<autocor/1_0_0.99_1614794552.4804938.png, id=348, 433.62pt x 289.08pt>
+File: autocor/1_0_0.99_1614794552.4804938.png Graphic file (type png)
+<use autocor/1_0_0.99_1614794552.4804938.png>
+Package pdftex.def Info: autocor/1_0_0.99_1614794552.4804938.png  used on input
+ line 296.
+(pdftex.def)             Requested size: 142.26378pt x 94.8409pt.
+<autocor/2_0_0.8_1614786651.7051768.png, id=349, 433.62pt x 289.08pt>
+File: autocor/2_0_0.8_1614786651.7051768.png Graphic file (type png)
+<use autocor/2_0_0.8_1614786651.7051768.png>
+Package pdftex.def Info: autocor/2_0_0.8_1614786651.7051768.png  used on input 
+line 298.
+(pdftex.def)             Requested size: 142.26378pt x 94.8409pt.
+<autocor/2_0_0.9_1614791739.9236946.png, id=350, 433.62pt x 289.08pt>
+File: autocor/2_0_0.9_1614791739.9236946.png Graphic file (type png)
+<use autocor/2_0_0.9_1614791739.9236946.png>
+Package pdftex.def Info: autocor/2_0_0.9_1614791739.9236946.png  used on input 
+line 298.
+(pdftex.def)             Requested size: 142.26378pt x 94.8409pt.
+<autocor/2_0_0.99_1614797400.487133.png, id=351, 433.62pt x 289.08pt>
+File: autocor/2_0_0.99_1614797400.487133.png Graphic file (type png)
+<use autocor/2_0_0.99_1614797400.487133.png>
+Package pdftex.def Info: autocor/2_0_0.99_1614797400.487133.png  used on input 
+line 299.
+(pdftex.def)             Requested size: 142.26378pt x 94.8409pt.
+
+Overfull \hbox (2.07014pt too wide) in paragraph at lines 294--302
+ [][] 
+ []
+
+) (./chapter-conclusion.tex [18 <./autocor/1_0_0.8_1614784150.46764.png> <./aut
+ocor/1_0_0.9_1614789195.7596514.png> <./autocor/1_0_0.99_1614794552.4804938.png
+> <./autocor/2_0_0.8_1614786651.7051768.png> <./autocor/2_0_0.9_1614791739.9236
+946.png> <./autocor/2_0_0.99_1614797400.487133.png>]
 Chapter 4.
 [19
 
@@ -1641,868 +1221,18 @@ l.6 ...st:cyhsic}, language=Cython, style=mystyle]
 The language is not loadable. Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
-
-! Package xcolor Error: Undefined color `codegray'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.7 #c
-      ython: language_level=3
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! Package xcolor Error: Undefined color `codegray'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.8 #c
-      ython: infer_types=True
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! Package xcolor Error: Undefined color `codegray'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.9 import 
-           random
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! Package xcolor Error: Undefined color `codegray'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.10 from 
-          copy import deepcopy
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! Package xcolor Error: Undefined color `codegray'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.11 import 
-            numpy as np
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! Package xcolor Error: Undefined color `codegray'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.12 cimport 
-             numpy as np
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! Package xcolor Error: Undefined color `codegray'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.13 from 
-          sklearn.metrics import pairwise_distances
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! Package xcolor Error: Undefined color `codegray'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.14 from 
-          sklearn.metrics import pairwise_kernels
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! Package xcolor Error: Undefined color `codegray'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.16 cpdef 
-           width(Z):
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! Package xcolor Error: Undefined color `codegray'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.16 cpdef 
-           width(Z):
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! Package xcolor Error: Undefined color `codegray'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.17  
-         dist_mat = pairwise_distances(Z, metric='euclidean')
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! Package xcolor Error: Undefined color `codegray'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.18  
-         return np.median(dist_mat[dist_mat > 0])
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! Package xcolor Error: Undefined color `codegray'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.20 cdef 
-          center_k(X, width_X, m=None):
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! Package xcolor Error: Undefined color `codegray'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.20 cdef 
-          center_k(X, width_X, m=None):
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! Package xcolor Error: Undefined color `codegray'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.21  
-         if m is None:
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! Package xcolor Error: Undefined color `codegray'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.22  
-             m = X.shape[0]
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! Package xcolor Error: Undefined color `codegray'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.23  
-         H = np.eye(m) - (1 / m) * (np.ones((m, m)))
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! Package xcolor Error: Undefined color `codegray'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.24  
-         K = pairwise_kernels(X, X, metric='rbf', gamma=0.5 / (width_X ** 2))
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! Package xcolor Error: Undefined color `codegray'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.25  
-         K = H @ K @ H
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! Package xcolor Error: Undefined color `codegray'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.26  
-         return K
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! Package xcolor Error: Undefined color `codegray'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.28 cpdef 
-           list time_sampler(X, time_samples, max_time = 1000):
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! Package xcolor Error: Undefined color `codegray'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.28 cpdef 
-           list time_sampler(X, time_samples, max_time = 1000):
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! Package xcolor Error: Undefined color `codegray'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.29  
-         """
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! Package xcolor Error: Undefined color `codegray'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.30  
-         For a list of runs of the same process, returns array of each at sp...
-
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! Package xcolor Error: Undefined color `codegray'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.31  
-         Samples using binary search algorithm (https://numpy.org/doc/stable...
-
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
 [23
 
 
-]
-
-! Package xcolor Error: Undefined color `codegray'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.33  
-         :param X: list of time-indexed (sorted) data of the same process wi...
-
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! Package xcolor Error: Undefined color `codegray'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.33  
-         :param X: list of time-indexed (sorted) data of the same process wi...
-
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! Package xcolor Error: Undefined color `codegray'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.34  
-         :param time_samples: list of times to sample at.
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! Package xcolor Error: Undefined color `codegray'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.35  
-         :param max_time: maximum allotted time per simulation.
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! Package xcolor Error: Undefined color `codegray'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.36  
-         :return: data at sampled times.
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! Package xcolor Error: Undefined color `codegray'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.37  
-         """
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! Package xcolor Error: Undefined color `codegray'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.38  
-         cdef list ret = []
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! Package xcolor Error: Undefined color `codegray'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.39  
-         for time in time_samples:
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! Package xcolor Error: Undefined color `codegray'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.40  
-             data_slice = []
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! Package xcolor Error: Undefined color `codegray'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.41  
-             for proc in X:
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! Package xcolor Error: Undefined color `codegray'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.42  
-                 time_list = list(proc.keys())
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! Package xcolor Error: Undefined color `codegray'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.43  
-                 insertion_point = np.searchsorted(time_list, time)  # a[i-1...
-
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! Package xcolor Error: Undefined color `codegray'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.44  
-                 if time_list[insertion_point] != time:
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! Package xcolor Error: Undefined color `codegray'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.45  
-                     insertion_point = time_list[insertion_point - 1]  # Cadlag
-
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! Package xcolor Error: Undefined color `codegray'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.46  
-                 data_slice.append(proc[insertion_point])
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! Package xcolor Error: Undefined color `codegray'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.47  
-             ret.append(data_slice)
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! Package xcolor Error: Undefined color `codegray'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.48  
-         return ret
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! Package xcolor Error: Undefined color `codegray'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.50 cdef 
-          dHSIC_hat(Xs):
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! Package xcolor Error: Undefined color `codegray'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.50 cdef 
-          dHSIC_hat(Xs):
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! Package xcolor Error: Undefined color `codegray'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.51  
-         """https://arxiv.org/pdf/1603.00285.pdf -- see algorithm 1. Tests a...
-
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! Package xcolor Error: Undefined color `codegray'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.52  
-         binary betyween all elements of Xs."""
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! Package xcolor Error: Undefined color `codegray'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.53  
-         cdef int x_len = Xs[0].shape[0]
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! Package xcolor Error: Undefined color `codegray'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.54  
-         #inits
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! Package xcolor Error: Undefined color `codegray'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.55  
-         t1 = 1
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! Package xcolor Error: Undefined color `codegray'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.56  
-         t2 = 1
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! Package xcolor Error: Undefined color `codegray'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.57  
-         t3 = (2 / x_len)
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! Package xcolor Error: Undefined color `codegray'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.58  
-         for x in Xs:
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! Package xcolor Error: Undefined color `codegray'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.59  
-             K = center_k(x, width(x))
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! Package xcolor Error: Undefined color `codegray'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.60  
-             t1 = np.multiply(t1, K)
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! Package xcolor Error: Undefined color `codegray'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.61  
-             t2 = (1 / x_len ** 2) * t2 * np.sum(K)
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! Package xcolor Error: Undefined color `codegray'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.62  
-             t3 = (1 / x_len) * t3 + np.sum(K, axis=0)
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! Package xcolor Error: Undefined color `codegray'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.63  
-         return (1 / x_len ** 2) * np.sum(t1) + t2 - np.sum(t3)
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! Package xcolor Error: Undefined color `codegray'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.65 cpdef 
-           float dHSIC_resample_test(list Xs, int shuffle=500):
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! Package xcolor Error: Undefined color `codegray'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.65 cpdef 
-           float dHSIC_resample_test(list Xs, int shuffle=500):
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! Package xcolor Error: Undefined color `codegray'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.66  
-         """Resampling implementation -- see sec 4.2. of https://arxiv.org/p...
-
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! Package xcolor Error: Undefined color `codegray'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.67  
-          Returns stat and threshold (if possible)."""
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! Package xcolor Error: Undefined color `codegray'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.68  
-         init = dHSIC_hat(Xs)
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! Package xcolor Error: Undefined color `codegray'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.69  
-         locX = deepcopy(Xs) # deep copy
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! Package xcolor Error: Undefined color `codegray'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.70  
-         cdef int hits = 0
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! Package xcolor Error: Undefined color `codegray'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.71  
-         for i in range(shuffle):
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-[24]
-
-! Package xcolor Error: Undefined color `codegray'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.72  
-             random.shuffle(locX)  # void shuffles
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! Package xcolor Error: Undefined color `codegray'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.73  
-             permed = dHSIC_hat(locX)
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! Package xcolor Error: Undefined color `codegray'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.74  
-             if permed >= init:
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! Package xcolor Error: Undefined color `codegray'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.75  
-                 hits += 1
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! Package xcolor Error: Undefined color `codegray'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.76  
-         return (hits + 1) / (shuffle + 1)
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-) [25] (./main.aux)
+] [24]) [25] (./main.aux)
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: D41AF110BD54E603941764B064ECCA7E;749.
+(rerunfilecheck)             Checksum: CDC004ADD849B79A0C77008526F76153;749.
  ) 
 Here is how much of TeX's memory you used:
- 23506 strings out of 479383
- 441087 string characters out of 5875830
- 1377390 words of memory out of 5000000
- 39928 multiletter control sequences out of 15000+600000
+ 23711 strings out of 479383
+ 445414 string characters out of 5875830
+ 1382490 words of memory out of 5000000
+ 40110 multiletter control sequences out of 15000+600000
  420591 words of font info for 89 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  108i,16n,111p,1491b,2063s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -2524,10 +1254,10 @@ sr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb></usr/share/texmf-
 dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texmf-dist/fonts/typ
 e1/public/amsfonts/symbols/msam10.pfb></usr/share/texmf-dist/fonts/type1/public
 /amsfonts/symbols/msbm10.pfb>
-Output written on main.pdf (34 pages, 449632 bytes).
+Output written on main.pdf (34 pages, 488893 bytes).
 PDF statistics:
- 563 PDF objects out of 1000 (max. 8388607)
- 494 compressed objects within 5 object streams
+ 577 PDF objects out of 1000 (max. 8388607)
+ 496 compressed objects within 5 object streams
  194 named destinations out of 1000 (max. 500000)
- 137 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 167 words of extra memory for PDF output out of 10000 (max. 10000000)
 
