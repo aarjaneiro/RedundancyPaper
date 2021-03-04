@@ -56,10 +56,10 @@ While currently not implemented in any development branch of \textit{ParallelQue
 \textit{multiprocessing} is used in throughout this paper when simulating for the same system across parameters.
 In general, the main caveat when processing many models is that the storage of the simulation results can quickly begin
 to consume storage;
-when processing many models, therefore ensure that they are saved (e.g., using \textit{pickle}) and removed from
+when processing many models, it is therefore important to ensure that they are saved (e.g., using \textit{pickle}) and removed from
 the local environment when doing analysis.
 
-In terms of development, the models implemented in the \textit{base\_models} module use the framework established in~\ref{ch:model-specification}.
+In terms of development, the models implemented in the \textit{base\_models} module use the framework established in Chapter~\ref{ch:model-specification}.
 That is, modelling redundancy, a hyperedge of sorts is generated whence the dispatcher
 receives a job to be cloned.
 This hyperedge then exists for the duration of time for which the replica class is in the system and is defined in such
@@ -81,7 +81,7 @@ the \textit{Dict} object as a reference.
 
 \subsection{Methodology}\label{subsec:methodology}
 First, we examine each model in terms of their respective performance in $E(T)$, the expected time each job spends in the system.
-As Figure~\ref{fig:img} shows, for a load $\rho \triangleq \frac{\lambda}{\mu} = 0.5$ by taking $\mu=1, \lambda = 0.5$ (we will assume $\mu \equiv 1$ for the
+As Figure~\ref{fig:img} shows, for a load $\rho \triangleq \frac{\lambda}{\mu} = 0.5$ by taking $\mu=1$ and $\lambda = 0.5$ (we will assume $\mu \equiv 1$ for the
 rest of the simulations), Redundancy(2)) and Threshold(2,2) policies are rather alike with low loads as $N \rightarrow \infty$. This is to be expected, of course, given that even such a low threshold is unlikely to be exceeded with the processors acting faster than arrivals on average. Ignoring cancellation costs, this clearly demonstrates how utilizing otherwise dormant queues comes to benefit the system's performance. Note that the figure is generated with the \textit{same} seed generation scheme for 30 different seeds per iteration, making the overlap a product of the two accessing random numbers from the system at the same points in time (in their respective simulations).
 
 \begin{figure}
@@ -93,31 +93,34 @@ rest of the simulations), Redundancy(2)) and Threshold(2,2) policies are rather 
     \label{fig:img}
 \end{figure}
 
-As~\cite{gardner_redundancy-d_2017} show, a Redundancy($d$) system is asymptotically stable if and only if $\rho < 1 $. Given that, in premise, Threshold($r,d$) models are more or less a superclass of Join-The-Shortest queue and Redundancy($d$) (trivially with rising $r$  implying no threshold exists and thus copies should always be made as in the case of Redundancy($d$), it is perhaps most interesting to examine if Threshold models are better able to handle high-load environments. Proving the superclass property in terms of Redundancy is relatively easy and is done in Lemma~\ref{sup}. By contrast, after merely setting $r \equiv 0$, we get $ \mathcal{D}_{\text{Thresh(0,d)}} \overset{d}{=} \mathcal{D}_{\text{JSQ(d)}}$ by definition. To prove the lemma, we first must introduce the concepts of stochastic domination and coupling.
+As shown in~\cite{gardner_redundancy-d_2017}, a Redundancy($d$) system is asymptotically stable if and only if $\rho < 1 $. Given that, in premise, Threshold($r,d$) models are more or less a superclass of Join-The-Shortest queue and Redundancy($d$) (trivially with rising $r$  implying no threshold exists and thus copies should always be made as in the case of Redundancy($d$)), it is perhaps most interesting to examine if Threshold models are better able to handle high-load environments. Proving the superclass property in terms of redundancy is relatively easy and is done in Lemma~\ref{sup}. By contrast, after merely setting $r \equiv 0$, we get $ \mathcal{D}_{\text{Thresh(0,d)}} \overset{d}{=} \mathcal{D}_{\text{JSQ(d)}}$ by definition. To prove the lemma, we first must introduce the concepts of stochastic domination and coupling.
 \begin{definition}[Stochastic Domination]
     \\~\\
-    $\mathbf{X}_{1}^{(N)}$ is said to dominate $\mathbf{X}_{2}^{(N)}$, using the notation $\leq_{st}$, when ~\cite{bramson_asymptotic_2012}
+    $\mathbf{X}_{1}^{(N)}$ is said to dominate $\mathbf{X}_{2}^{(N)}$, using the notation $\leq_{st}$, when
     \[\mathbf{X}_{1}^{(N)}\leq_{st}\mathbf{X}_{2}^{(N)} \iff\# X_{1,i} \leq \# X_{2,i}  \quad \forall i \in [N] \quad P-a.s.\]
 \end{definition}
 
 \begin{definition}[Coupled Process]
     \label{coupled}
     \\~\\
-    For stochastic processes $X_{t} \in \Pr(\Omega_{x}, \mathcal{F}_{x}, \mathcal{F}_{t,x})$ and $X_{t} \in \Pr(\Omega_{y}, \mathcal{F}_{y}, \mathcal{F}_{t,y})$.
-    $X_{t}$ and $Y_{t}$ are said to be coupled over the probability space $\Pr(\Omega, \mathcal{F}, \mathcal{F}_{t})$ if there exist
+    For stochastic processes $X_{t} \in \Pr(\Omega_{x}, \mathcal{F}_{x}, \mathcal{F}_{t,x})$ and $Y_{t} \in \Pr(\Omega_{y}, \mathcal{F}_{y}, \mathcal{F}_{t,y})$,
+    $X_{t}$ and $Y_{t}$ are said to be coupled over the probability space $\Pr(\Omega, \mathcal{F}, \mathcal{F}_{t})$ if there exists
     $\hat X_{t}, \hat Y_{t} \in \Pr(\Omega, \mathcal{F}, \mathcal{F}_{t})$ such that $\hat X_{t} \overset{d}{=}X_{t}$ and $\hat Y_{t} \overset{d}{=}Y_{t}$ \cite{bramson_asymptotic_2012}.
 \end{definition}
 
 \begin{lemma}
     \label{sup}
-    For $\mathbf{X}^{(N)}$ being a system of queues such that $\rho < 1$, \[\mathcal{D}_{\text{Thresh(r,d)}}\mathbf(X^{(N)}) \overset{r \rightarrow \infty}{\rightsquigarrow} \mathcal{D}_{\text{Red(d)}}\mathbf(X^{(N)}).\]
+    For $\mathbf{X}^{(N)}$ being a system of queues such that $\rho < 1$,
+    \normalfont \[\mathcal{D}_{\text{Thresh}(r,d)}\mathbf(X^{(N)}) \overset{r \rightarrow \infty}{\rightsquigarrow} \mathcal{D}_{\text{Red}(d)}\mathbf(X^{(N)}).\]
 \end{lemma}
 \textit{Proof}:
 
-To show the sequence of routing algorithms to be convergent, we will construct a coupling in such a manner that $\forall r \in \mathbb{R}^{+}$, the system is stochastically dominated by another which is made to be finite~\cite{baccelli_elements_2003} . To do so, for $\mathbf{X}_{1}^{(N)}$ under $\text{Thresh}(r,d)$, denote the first arrival as $T_{\xi_{1}}$, at which time it is the case that a selection set, $\nu \subset [N] $, is prescribed wherein there exists $\hat X \in \{X_{i}\}_{i \in \nu} $ such that $ \# (\hat X) > r $. Thus, for  $ t \in [0,T_{\xi_{1}})$, we have $\mathcal{D}_{\text{Thresh(r,d)}}\mathbf(X^{(n)}) = \mathcal{D}_{\text{Red(d)}}\mathbf(X^{(n)})$. For clarity, let us now consider $\mathbf{Y}^{(N)}$ to be a copy of  $\mathbf{X}^{(N)}$ such that they are independent, identical in distribution and in terms of the marks of \textit{arrival process and job-size draws} along with the queues parsed (as was similarly done in~\cite{bramson_asymptotic_2012} in Lemma 4.1 using Definition~\ref{coupled}). Effectively, the only difference being left between these copies is $r$ changing which queues receive clones and thus, too, the mark of queue-dependency. At time $T_{\xi_{1}}$ we clearly have $\mathcal{D}_{\text{Red(d)}}\mathbf(X^{(n)}) = \mathcal{D}_{\text{Thresh(r,d)}}\mathbf(Y^{(n)})$ due to there being no existing jobs for which the threshold would perclude cloning in the case of Thresh($r,d$).
+To show the sequence of routing algorithms to be convergent, we will construct a coupling in such a manner that $\forall r \in \mathbb{R}^{+}$, the system is stochastically dominated by another which is made to be finite~\cite{baccelli_elements_2003} . To do so, for $\mathbf{X}_{1}^{(N)}$ under $\text{Thresh}(r,d)$, let us denote the first arrival as $T_{\xi_{1}}$, at which time it is the case that a selection set, $\nu \subset [N] $, is prescribed wherein there exists $\hat X \in \{X_{i}\}_{i \in \nu} $ such that $ \# (\hat X) > r $. Thus, for  $ t \in [0,T_{\xi_{1}})$, we have $\mathcal{D}_{\text{Thresh(r,d)}}\mathbf(X^{(n)}) = \mathcal{D}_{\text{Red(d)}}\mathbf(X^{(n)})$. For clarity, let us now consider $\mathbf{Y}^{(N)}$ to be a copy of  $\mathbf{X}^{(N)}$ such that they are independent, identical in distribution and in terms of the marks of \textit{arrival process and job-size draws} along with the queues parsed (as was similarly done in~\cite{bramson_asymptotic_2012} via Lemma 4.1 using Definition~\ref{coupled}). Effectively, the only difference being left between these copies is $r$ changing which queues receive clones and thus, too, the mark of queue-dependency.
+At time $T_{\xi_{1}}$, we clearly have $\mathcal{D}_{\text{Red(d)}}\mathbf(X^{(n)}) = \mathcal{D}_{\text{Thresh(r,d)}}\mathbf(Y^{(n)})$ due to there being no existing jobs for which the threshold would preclude cloning in the case of Thresh($r,d$).
 As such, we also have $\mathcal{D}_{\text{Thresh}(r,d)}(Y^{(N)}(T_{\xi_{1}}))\leq_{st}\mathcal{D}_{\text{Red}(d)}(X^{(N)}(T_{\xi_{1}}))$.
 
-Now, assume $\rho < 1$, giving us $ \# Y_{i}  < \infty \quad \forall t \in \mathbb{R}^{+}$ with probability 1~\cite{gardner_redundancy-d_2017}. As such, we have that $\forall r \in \mathbb{R}^{+}$ there exists $ \xi_{1}(r) $ such that $ P_{r}(\mathbf{X}^{(N)}(t) = \mathbf{Y}^{(N)}(t) |t \in [0,T_{\xi_{1}}) \right) = 1$ $P_{r}(A) := P(\mathcal{D}_{M(r)}(A))$ wherein $M$ denotes the routing algorithm of process $A$. Note that $\xi_{1} (r)$ is monotone increasing in $r$. Letting $r \rightarrow \infty \Rightarrow \xi_{1} \rightarrow \infty$, we then have $\mathbf{X}^{(N)}(t) =  \mathbf{Y}^{(N)}(t) \quad \forall t \in \mathbb{R}^{+}$ in terms of distribution (i.e., as the result holds $\forall t \in \mathbb{R}^{+}$ as $r\rightarrow \infty$), implying the required weak convergence from below for $\mathcal{D}$ in law over system  $\mathbf{X}^{(N)}(t)$.  \qed
+Now, assume $\rho < 1$, thereby giving us $ \# Y_{i}  < \infty \quad \forall t \in \mathbb{R}^{+}$ with probability 1~\cite{gardner_redundancy-d_2017}. As such, we have that $\forall r \in \mathbb{R}^{+}$ there exists $ \xi_{1}(r) $ such that $ \Pr(\mathbf{X}^{(N)} (t) = \mathbf{Y}^{(N)}(t) |t \in [0,T_{\xi_{1}})) = 1$.
+Furthermore $P_{r}(A) := P(\mathcal{D}_{M(r)}(A))$, wherein $M$ denotes the routing algorithm of process $A$. Note that $\xi_{1} (r)$ is monotone increasing in $r$. Letting $r \rightarrow \infty \Rightarrow \xi_{1} \rightarrow \infty$, and so we then have $\mathbf{X}^{(N)}(t) =  \mathbf{Y}^{(N)}(t) \quad \forall t \in \mathbb{R}^{+}$ in terms of distribution (i.e., as the result holds $\forall t \in \mathbb{R}^{+}$ as $r\rightarrow \infty$), implying the required weak convergence from below for $\mathcal{D}$ in law over system  $\mathbf{X}^{(N)}(t)$.  \qed
 
 In order to actually test the hypothesized results with respect to independence, we employ the joint Hilbert-Schmidt Independence Criterion (HSIC)~\cite{jointindep} to test the independence of queue counting processes $\{\#X_{n}(t)\}_{n \in [N]}$ in a Monte Carlo-styled
 simulation consisting of $N_{\text{MC}}$ simulations for the queueing process $\mathbf{X}^{(N)}$.
@@ -125,15 +128,17 @@ simulation consisting of $N_{\text{MC}}$ simulations for the queueing process $\
 
     \label{hsichat}
     Following~\cite{nonstat}, for processes $X_{t}$ and $Y_{t}$ with common time domain $t \in T$, denote by $\kappa_{x}, \kappa_{y}$ the kernels which
-    map each process to a seperable reproducing kernel Hilbert space ($\mathcal{H}_{x}, \mathcal{H}_{y}$, respectively).
-    Define HSIC to be the $\mathcal{H}_{x} \otimes \mathcal{H}_{y}$ norm of form:
+    map each process to a separable reproducing kernel Hilbert space ($\mathcal{H}_{x}, \mathcal{H}_{y}$, respectively).
+    Define HSIC to be the $\mathcal{H}_{x} \otimes \mathcal{H}_{y}$ norm of the form
     \[\text{HSIC}(\mathcal{H}_{x},\mathcal{H}_{y}) = \|\mu_{XY} - \mu_{X} \otimes \mu_{Y}\|^{2}_{\mathcal{H}_{x} \otimes \mathcal{H}_{y}},\]
     where $\mu_{Z}$ denotes a mean embedding of process $Z$ onto space $\mathcal{H}_{Z}$.
     \\~\\
     In order to test the hypotheses of
-    \[H_{0}: P_{XY} = P_{X}P_{Y}, H_{a}: P_{XY} \not = P_{X}P_{Y},\]
-    where $P_{Z}$ denotes the marginal distribution of $Z$,~\cite{nonstat} suggest a resampling procedure.
-    Specifically, for any estimator of $\text{HSIC}(XY)$, ${H_{\text{HSIC}}}(XY)$, sample a common set of $N_{\text{time}}$ times, $\{\tau_{\ell}\}_{\ell \leq N_{\text{time}}} \subset T$, and calculate \[K :=\{H_{\text{HSIC}}(X_{(\{\tau_{N_{\text{time}}}\})}Y_{\gamma(\tau_{N_{\text{time}}})}))\}_{\gamma \in \Gamma}\] where $X_{(\{\tau_{N_{\text{time}}}\})}$ denotes $X_{t}$ restricted to the sampled times $\{\tau_{N_{\text{time}}}\}$ and $\Gamma$ is a set of permutations on these $N_{\text{time}}$ samples ordered such that $K_{i} \leq K_{i+1}$.
+    \[H_{0}: P_{XY} = P_{X}P_{Y} \quad vs. \quad H_{a}: P_{XY} \not = P_{X}P_{Y},\]
+    where $P_{Z}$ denotes the marginal distribution of $Z$,~\cite{nonstat} suggests a resampling procedure.
+    Specifically, for any estimator of $\text{HSIC}(XY)$, ${H_{\text{HSIC}}}(XY)$, sample a common set of $N_{\text{time}}$ times, $\{\tau_{\ell}\}_{\ell \leq N_{\text{time}}} \subset T$, and calculate
+    \[K :=\{H_{\text{HSIC}}(X_{(\{\tau_{N_{\text{time}}}\})}Y_{\gamma(\tau_{N_{\text{time}}})}))\}_{\gamma \in \Gamma},\]
+    where $X_{(\{\tau_{N_{\text{time}}}\})}$ denotes $X_{t}$ restricted to the sampled times $\{\tau_{N_{\text{time}}}\}$ and $\Gamma$ is a set of permutations on these $N_{\text{time}}$ samples ordered such that $K_{i} \leq K_{i+1}$.
     After taking $c_{\alpha} :=  K_{(1-\alpha)N_{\text{time}}}$, the null hypothesis is rejected if $H_{\text{HSIC}}(XY) > c_{\alpha}$.
 \end{definition}
 
@@ -145,7 +150,7 @@ While retaining the time sampling procedure of~\cite{nonstat}, we are instead co
 
     \label{dhsic}
     For a set of $d$ stochastic processes $\mathcal{X} = \{X_{i}\}_{i \leq d}$, define $d\text{HSIC}$ as:
-    \[d\text{HSIC}(\mathcal{X}) := \|\mu_{\bigotimes_{i \leq d}(P_{X_{i}})} - \mu_{\{P_{X_{i}}\}_{i \leq d}}\|_{\bigotimes_{i \leq d}\mathcal{H}_{X_{i}}}\]
+    \[d\text{HSIC}(\mathcal{X}) := \|\mu_{\bigotimes_{i \leq d}(P_{X_{i}})} - \mu_{\{P_{X_{i}}\}_{i \leq d}}\|_{\bigotimes_{i \leq d}\mathcal{H}_{X_{i}}}.\]
 \end{definition}
 
 Much like the procedure described in Definition~\ref{hsichat}, an estimator and critical value can also be calculated in order to test for independence.
@@ -167,7 +172,7 @@ Moreover, we are also interested in the case of $t \rightarrow \infty$ and thus 
 \end{align*}
 
 Altogether, these hypotheses comprise the behaviour expected of the system outlined in Figure~\ref{fig:1} for the limits of $\mathbf{X}^{(N)}(t)$
-in terms of $t$ and $N$ respectively according to Conjecture~\ref{conj}.
+in terms of $t$ and $N$, respectively, according to Conjecture~\ref{conj}.
 
 To test the first hypothesis, we calculate $d$HSIC under the chi square kernel at $\alpha = 0.1$ across $N \in {5, 25, 50, 100, 500}$
 for time samples $\{\tau_{i} | \tau_{i} \sim U[i,i-1]\}_{0 < i \leq 100}$ where 100 is the simulation time-length.
