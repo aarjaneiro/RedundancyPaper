@@ -5,12 +5,12 @@
 \chapter{Concluding Remarks}\label{ch:discussion}
 
 In all, with respect to the hypothesized behaviour specified in Conjecture~\ref{conj}, we were able to find support for asymptotic independence between queues in
-$\mathbf{X}^{(N)}_{t}$ as $t\rightarrow \infty$ and $N\rightarrow \infty$, respectively at $r \in {1,2}, d \equiv 2$.
+$\mathbf{X}^{(N)}_{t}$ as $t\rightarrow \infty$ and $N\rightarrow \infty$, respectively at $r \in \{1,2\}, d = 2$.
 Moreover, after iterating the limits, we found support for the system turning deterministic in law.
 Along with the model developed for the system as outlined in Chapter~\ref{ch:model-specification}, a framework for formally proving the result in a manner similar to~\cite{bramson_asymptotic_2012}
 is both introduced and demonstrated to likely be true for the tested parameters.
 
-Outside of demonstrating the conjectured behaviour, this research has also highlighted some potentially-interesting directions
+Outside of demonstrating the conjectured behaviour, this research has also highlighted some potentiallyinteresting directions
 for future research into stochastic simulation and independence testing. 
 With respect to simulations, \textit{ParallelQueue} was of course developed primarily for the systems studied in this paper.
 While it was demonstrably fast in terms of single-process simulation, parallelizing in order to efficiently simulate multiple replications of the process
@@ -18,9 +18,9 @@ at once proved to be a memory-intensive task and necessitated porting the codeba
 This highlights the need for the development of a low-level DES framework which can efficiently manage memory and resources between simultaneous simulations of a process.
 
 In terms of independence testing, this research has demonstrated the need for further exploration into methods for discrete processes and group independence.
-Clearly for a queueing process which does not ``explode'', we would expect that queue counts do not increase indefinitely~\cite{gardner_redundancy-d_2017}.
-In our tests, such seems to have left queues with relatively little variance to study (in most cases, queue counts were binary for $N>5$), perhaps biasing results against the null.
+Clearly, for a queueing process which does not ``explode'', we would expect that queue counts do not increase indefinitely~\cite{gardner_redundancy-d_2017}.
+In our tests, such seems to have left queues with relatively little variance to study (in most cases, queue counts were binary for $N>5$), perhaps biasing results against the null hypothesis.
 Lastly, with respect to group dependence, the fact that a counting process would have only been able to depend on a maximum of $d-1$ others could perhaps have been utilized when determining a statistic for group independence
 across time samples.
-Future research in independence testing, especially with respect to $d$HSIC/HSIC might therefore benefit from exploring bootstrap estimators for constrained groupings.
+Future research in independence testing, especially with respect to $d$HSIC/HSIC, might therefore benefit from exploring bootstrap estimators for constrained groupings.
 

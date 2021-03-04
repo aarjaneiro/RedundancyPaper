@@ -164,7 +164,7 @@ Utilizing the procedure outlined in~\ref{subsec:methodology}, we test the follow
     H_{0}:& \text{ as } N\rightarrow \infty, \text{ queues in queueing system } \mathbf{X}_{t}^{(N)} \text{ become jointly independent.}  \\
     H_{1}:& \text{ as } N\rightarrow \infty, \text{ queues in queueing system } \mathbf{X}_{t}^{(N)} \text{ do not become jointly independent.}
 \end{align*}
-Moreover, we are also interested in the case of $t \rightarrow \infty$ and thus also analyze the following:
+Moreover, we are also interested in the case of $t \rightarrow \infty$ and thus also analyze the hypotheses:
 \begin{align*}
     \label{set 1}
     H_{0}:& \text{ as } t\rightarrow \infty, \text{ queues in queueing system } \mathbf{X}_{t}^{(N)} \text{ become jointly independent.}  \\
@@ -174,13 +174,13 @@ Moreover, we are also interested in the case of $t \rightarrow \infty$ and thus 
 Altogether, these hypotheses comprise the behaviour expected of the system outlined in Figure~\ref{fig:1} for the limits of $\mathbf{X}^{(N)}(t)$
 in terms of $t$ and $N$, respectively, according to Conjecture~\ref{conj}.
 
-To test the first hypothesis, we calculate $d$HSIC under the chi square kernel at $\alpha = 0.1$ across $N \in {5, 25, 50, 100, 500}$
+To test the first hypothesis, we calculate $d$HSIC under the chi square kernel at $\alpha = 0.1$ across $N \in \{5, 25, 50, 100, 500\}$
 for time samples $\{\tau_{i} | \tau_{i} \sim U[i,i-1]\}_{0 < i \leq 100}$ where 100 is the simulation time-length.
 Moreover, we test across varying $\rho \in \{0.8, 0.9, 0.99\}$ while keeping $\mu \equiv 1$.
 As such, we have $\rho \overset{\Delta}= \frac{d\lambda}{N\mu} \iff \lambda = \frac{N \rho}{d}$ for each simulated system.
 Simulations are run for 20 independent seeds at each $N\times\rho$ combination while each test is resampled $500$ times, being the maximum suggested in~\cite{jointindep}.
-In all, as Table~\ref{tab:reg} summarizes, the hypothesis was rejected only for values of $N = 2, \rho \in \{.9,.99\}$.
-It is of note that JSQ($d$) of course also exhibits this property~\cite{bramson_asymptotic_2012}.
+In all, as Table~\ref{tab:reg} summarizes, the hypothesis was rejected only for values of $N = 2, \rho \in \{0.9,0.99\}$.
+It is noteworthy that JSQ($d$) of course also exhibits this property~\cite{bramson_asymptotic_2012}.
 \begin{table}
     \centering
     \caption{$d$HSIC for Varying $N$}
@@ -233,8 +233,8 @@ Indeed, it is apparent from Table~\ref{tab:reg} that the highest tested value co
 the null hypothesis.
 Interestingly, $N=2$ also prevented rejection of the hypothesis, however this might instead point to
 the choice of kernel being inappropriate.
-While out of the scope of this project, utilization of $(\Lambda,\lambda)$ exchangeability
-rather than full exchangeability might provide a more-appropriate means of assessing independence.
+While beyond the scope of this project, utilization of $(\Lambda,\lambda)$ exchangeability
+rather than full exchangeability might provide a more appropriate means of assessing independence.
 
 Carrying on to the case of $t \rightarrow \infty$, we perform the same analysis but change the sampled times to
 $\{\tau_{i} | \tau_{i} \sim U[i,i-1]\}_{900 \leq i \leq 1000}$.

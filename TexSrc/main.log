@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Arch Linux) (preloaded format=pdflatex 2021.2.10)  4 MAR 2021 15:24
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Arch Linux) (preloaded format=pdflatex 2021.2.10)  4 MAR 2021 16:24
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1098,13 +1098,13 @@ See the amsmath package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.170 \end{align*}
+l.172 \end{align*}
                   
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-[15] [16] [17]
+[15] [16]
 
 ! Package amsmath Error: Multiple \label's: label 'set 1' will be lost.
 
@@ -1112,57 +1112,57 @@ See the amsmath package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.290 \end{align*}
+l.292 \end{align*}
                   
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-<autocor/1_0_0.8_1614784150.46764.png, id=345, 433.62pt x 289.08pt>
+<autocor/1_0_0.8_1614784150.46764.png, id=341, 433.62pt x 289.08pt>
 File: autocor/1_0_0.8_1614784150.46764.png Graphic file (type png)
 <use autocor/1_0_0.8_1614784150.46764.png>
 Package pdftex.def Info: autocor/1_0_0.8_1614784150.46764.png  used on input li
-ne 298.
+ne 300.
 (pdftex.def)             Requested size: 142.26378pt x 94.8409pt.
-<autocor/1_0_0.9_1614789195.7596514.png, id=346, 433.62pt x 289.08pt>
+<autocor/1_0_0.9_1614789195.7596514.png, id=342, 433.62pt x 289.08pt>
 File: autocor/1_0_0.9_1614789195.7596514.png Graphic file (type png)
 <use autocor/1_0_0.9_1614789195.7596514.png>
 Package pdftex.def Info: autocor/1_0_0.9_1614789195.7596514.png  used on input 
-line 298.
+line 300.
 (pdftex.def)             Requested size: 142.26378pt x 94.8409pt.
-<autocor/1_0_0.99_1614794552.4804938.png, id=347, 433.62pt x 289.08pt>
+<autocor/1_0_0.99_1614794552.4804938.png, id=343, 433.62pt x 289.08pt>
 File: autocor/1_0_0.99_1614794552.4804938.png Graphic file (type png)
 <use autocor/1_0_0.99_1614794552.4804938.png>
 Package pdftex.def Info: autocor/1_0_0.99_1614794552.4804938.png  used on input
- line 299.
+ line 301.
 (pdftex.def)             Requested size: 142.26378pt x 94.8409pt.
-<autocor/2_0_0.8_1614786651.7051768.png, id=348, 433.62pt x 289.08pt>
+<autocor/2_0_0.8_1614786651.7051768.png, id=344, 433.62pt x 289.08pt>
 File: autocor/2_0_0.8_1614786651.7051768.png Graphic file (type png)
 <use autocor/2_0_0.8_1614786651.7051768.png>
 Package pdftex.def Info: autocor/2_0_0.8_1614786651.7051768.png  used on input 
-line 301.
+line 303.
 (pdftex.def)             Requested size: 142.26378pt x 94.8409pt.
-<autocor/2_0_0.9_1614791739.9236946.png, id=349, 433.62pt x 289.08pt>
+<autocor/2_0_0.9_1614791739.9236946.png, id=345, 433.62pt x 289.08pt>
 File: autocor/2_0_0.9_1614791739.9236946.png Graphic file (type png)
 <use autocor/2_0_0.9_1614791739.9236946.png>
 Package pdftex.def Info: autocor/2_0_0.9_1614791739.9236946.png  used on input 
-line 301.
+line 303.
 (pdftex.def)             Requested size: 142.26378pt x 94.8409pt.
-<autocor/2_0_0.99_1614797400.487133.png, id=350, 433.62pt x 289.08pt>
+<autocor/2_0_0.99_1614797400.487133.png, id=346, 433.62pt x 289.08pt>
 File: autocor/2_0_0.99_1614797400.487133.png Graphic file (type png)
 <use autocor/2_0_0.99_1614797400.487133.png>
 Package pdftex.def Info: autocor/2_0_0.99_1614797400.487133.png  used on input 
-line 302.
+line 304.
 (pdftex.def)             Requested size: 142.26378pt x 94.8409pt.
 
-Overfull \hbox (2.07014pt too wide) in paragraph at lines 297--305
+Overfull \hbox (2.07014pt too wide) in paragraph at lines 299--307
  [][] 
  []
 
-) (./chapter-conclusion.tex [18 <./autocor/1_0_0.8_1614784150.46764.png> <./aut
+) (./chapter-conclusion.tex [17 <./autocor/1_0_0.8_1614784150.46764.png> <./aut
 ocor/1_0_0.9_1614789195.7596514.png> <./autocor/1_0_0.99_1614794552.4804938.png
 > <./autocor/2_0_0.8_1614786651.7051768.png> <./autocor/2_0_0.9_1614791739.9236
-946.png> <./autocor/2_0_0.99_1614797400.487133.png>]
+946.png> <./autocor/2_0_0.99_1614797400.487133.png>] [18]
 Chapter 4.
 [19
 
@@ -1249,7 +1249,7 @@ sr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb></usr/share/texmf-
 dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texmf-dist/fonts/typ
 e1/public/amsfonts/symbols/msam10.pfb></usr/share/texmf-dist/fonts/type1/public
 /amsfonts/symbols/msbm10.pfb>
-Output written on main.pdf (34 pages, 488291 bytes).
+Output written on main.pdf (34 pages, 488296 bytes).
 PDF statistics:
  576 PDF objects out of 1000 (max. 8388607)
  495 compressed objects within 5 object streams
