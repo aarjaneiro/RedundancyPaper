@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Arch Linux) (preloaded format=pdflatex 2021.2.10)  4 MAR 2021 16:24
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Arch Linux) (preloaded format=pdflatex 2021.2.10)  6 MAR 2021 07:06
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1058,12 +1058,12 @@ File: pq.png Graphic file (type png)
 Package pdftex.def Info: pq.png  used on input line 74.
 (pdftex.def)             Requested size: 295.10048pt x 213.42088pt.
  [11 <./pq.png>]
-<attimes.png, id=282, 642.4pt x 481.8pt>
-File: attimes.png Graphic file (type png)
-<use attimes.png>
-Package pdftex.def Info: attimes.png  used on input line 89.
+<compare_red_thr.png, id=282, 642.4pt x 481.8pt>
+File: compare_red_thr.png Graphic file (type png)
+<use compare_red_thr.png>
+Package pdftex.def Info: compare_red_thr.png  used on input line 91.
 (pdftex.def)             Requested size: 322.50345pt x 241.88452pt.
- [12 <./attimes.png (PNG copy)>]
+ [12 <./compare_red_thr.png (PNG copy)>]
 
 ! LaTeX Error: There's no line here to end.
 
@@ -1071,8 +1071,8 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.98     \\
-           ~\\
+l.100     \\
+            ~\\
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
@@ -1084,7 +1084,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.105     \\
+l.107     \\
             ~\\
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -1098,13 +1098,12 @@ See the amsmath package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.172 \end{align*}
+l.174 \end{align*}
                   
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-[15] [16]
 
 ! Package amsmath Error: Multiple \label's: label 'set 1' will be lost.
 
@@ -1112,57 +1111,58 @@ See the amsmath package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.292 \end{align*}
+l.297 \end{align*}
                   
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-<autocor/1_0_0.8_1614784150.46764.png, id=341, 433.62pt x 289.08pt>
+[15] [16] [17]
+<autocor/1_0_0.8_1614784150.46764.png, id=345, 433.62pt x 289.08pt>
 File: autocor/1_0_0.8_1614784150.46764.png Graphic file (type png)
 <use autocor/1_0_0.8_1614784150.46764.png>
 Package pdftex.def Info: autocor/1_0_0.8_1614784150.46764.png  used on input li
-ne 300.
+ne 305.
 (pdftex.def)             Requested size: 142.26378pt x 94.8409pt.
-<autocor/1_0_0.9_1614789195.7596514.png, id=342, 433.62pt x 289.08pt>
+<autocor/1_0_0.9_1614789195.7596514.png, id=346, 433.62pt x 289.08pt>
 File: autocor/1_0_0.9_1614789195.7596514.png Graphic file (type png)
 <use autocor/1_0_0.9_1614789195.7596514.png>
 Package pdftex.def Info: autocor/1_0_0.9_1614789195.7596514.png  used on input 
-line 300.
+line 305.
 (pdftex.def)             Requested size: 142.26378pt x 94.8409pt.
-<autocor/1_0_0.99_1614794552.4804938.png, id=343, 433.62pt x 289.08pt>
+<autocor/1_0_0.99_1614794552.4804938.png, id=347, 433.62pt x 289.08pt>
 File: autocor/1_0_0.99_1614794552.4804938.png Graphic file (type png)
 <use autocor/1_0_0.99_1614794552.4804938.png>
 Package pdftex.def Info: autocor/1_0_0.99_1614794552.4804938.png  used on input
- line 301.
+ line 306.
 (pdftex.def)             Requested size: 142.26378pt x 94.8409pt.
-<autocor/2_0_0.8_1614786651.7051768.png, id=344, 433.62pt x 289.08pt>
+<autocor/2_0_0.8_1614786651.7051768.png, id=348, 433.62pt x 289.08pt>
 File: autocor/2_0_0.8_1614786651.7051768.png Graphic file (type png)
 <use autocor/2_0_0.8_1614786651.7051768.png>
 Package pdftex.def Info: autocor/2_0_0.8_1614786651.7051768.png  used on input 
-line 303.
+line 308.
 (pdftex.def)             Requested size: 142.26378pt x 94.8409pt.
-<autocor/2_0_0.9_1614791739.9236946.png, id=345, 433.62pt x 289.08pt>
+<autocor/2_0_0.9_1614791739.9236946.png, id=349, 433.62pt x 289.08pt>
 File: autocor/2_0_0.9_1614791739.9236946.png Graphic file (type png)
 <use autocor/2_0_0.9_1614791739.9236946.png>
 Package pdftex.def Info: autocor/2_0_0.9_1614791739.9236946.png  used on input 
-line 303.
+line 308.
 (pdftex.def)             Requested size: 142.26378pt x 94.8409pt.
-<autocor/2_0_0.99_1614797400.487133.png, id=346, 433.62pt x 289.08pt>
+<autocor/2_0_0.99_1614797400.487133.png, id=350, 433.62pt x 289.08pt>
 File: autocor/2_0_0.99_1614797400.487133.png Graphic file (type png)
 <use autocor/2_0_0.99_1614797400.487133.png>
 Package pdftex.def Info: autocor/2_0_0.99_1614797400.487133.png  used on input 
-line 304.
+line 309.
 (pdftex.def)             Requested size: 142.26378pt x 94.8409pt.
 
-Overfull \hbox (2.07014pt too wide) in paragraph at lines 299--307
+Overfull \hbox (2.07014pt too wide) in paragraph at lines 304--312
  [][] 
  []
 
-) (./chapter-conclusion.tex [17 <./autocor/1_0_0.8_1614784150.46764.png> <./aut
+) (./chapter-conclusion.tex [18 <./autocor/1_0_0.8_1614784150.46764.png> <./aut
 ocor/1_0_0.9_1614789195.7596514.png> <./autocor/1_0_0.99_1614794552.4804938.png
 > <./autocor/2_0_0.8_1614786651.7051768.png> <./autocor/2_0_0.9_1614791739.9236
-946.png> <./autocor/2_0_0.99_1614797400.487133.png>] [18]
+946.png> <./autocor/2_0_0.99_1614797400.487133.png>]
 Chapter 4.
 [19
 
@@ -1225,8 +1225,8 @@ Package rerunfilecheck Info: File `main.out' has not changed.
  ) 
 Here is how much of TeX's memory you used:
  23711 strings out of 479383
- 445414 string characters out of 5875830
- 1382484 words of memory out of 5000000
+ 445470 string characters out of 5875830
+ 1382483 words of memory out of 5000000
  40110 multiletter control sequences out of 15000+600000
  420591 words of font info for 89 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -1249,7 +1249,7 @@ sr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb></usr/share/texmf-
 dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texmf-dist/fonts/typ
 e1/public/amsfonts/symbols/msam10.pfb></usr/share/texmf-dist/fonts/type1/public
 /amsfonts/symbols/msbm10.pfb>
-Output written on main.pdf (34 pages, 488296 bytes).
+Output written on main.pdf (34 pages, 469185 bytes).
 PDF statistics:
  576 PDF objects out of 1000 (max. 8388607)
  495 compressed objects within 5 object streams

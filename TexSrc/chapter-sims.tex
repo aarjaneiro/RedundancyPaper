@@ -82,14 +82,16 @@ the \textit{Dict} object as a reference.
 \subsection{Methodology}\label{subsec:methodology}
 First, we examine each model in terms of their respective performance in $E(T)$, the expected time each job spends in the system.
 As Figure~\ref{fig:img} shows, for a load $\rho \triangleq \frac{\lambda}{\mu} = 0.5$ by taking $\mu=1$ and $\lambda = 0.5$ (we will assume $\mu \equiv 1$ for the
-rest of the simulations), Redundancy(2)) and Threshold(2,2) policies are rather alike with low loads as $N \rightarrow \infty$. This is to be expected, of course, given that even such a low threshold is unlikely to be exceeded with the processors acting faster than arrivals on average. Ignoring cancellation costs, this clearly demonstrates how utilizing otherwise dormant queues comes to benefit the system's performance. Note that the figure is generated with the \textit{same} seed generation scheme for 30 different seeds per iteration, making the overlap a product of the two accessing random numbers from the system at the same points in time (in their respective simulations).
+rest of the simulations), Redundancy(2)) and Threshold(2,2) policies are rather alike with low loads as $N \rightarrow \infty$ in terms .
+This is to be expected, of course, given that even such a low threshold is unlikely to be exceeded with the processors acting faster than arrivals on average.
+Ignoring cancellation costs, this clearly demonstrates how utilizing otherwise dormant queues comes to benefit the system's performance.
 
 \begin{figure}
     \centering
-    \includegraphics[width=0.7\linewidth]{attimes} %
+    \includegraphics[width=0.7\linewidth]{compare_red_thr}
     \caption{Comparison of routing schemes}
     \medskip
-    Values are averaged over 30 independent iterations each, running for $t=1000$
+    Values are averaged over 24 independent iterations each, running for $t=1000$
     \label{fig:img}
 \end{figure}
 
@@ -246,37 +248,40 @@ of what would be expected under the conjecture.
     \caption{$d$HSIC Test for Large $t$}
     \label{tab:longtime}
     \begin{tabular}{|c|c|c|c|}
+\hline
+$\rho$ & $N$ & $r$ & $\hat p(H_{a})$ \\
+\hline
+\hline
+ & 5 & 1 & 0.549  \\
+ & 50 & 1 & 0.743  \\
+ & 100 & 1 & 0.443  \\
+ & 500 & 1 & 0.741  \\
+0.8 & 5 & 2 & 0.826  \\
+ & 50 & 2 & 0.493  \\
+ & 100 & 2 & 0.567  \\
+ & 500 & 2 & 0.623  \\
+\hline
+ & 5 & 1 & 0.345  \\
+ & 50 & 1 & 0.389  \\
+ & 100 & 1 & 0.505  \\
+ & 500 & 1 & 0.77  \\
+0.9 & 5 & 2 & 0.948  \\
+ & 50 & 2 & 0.409  \\
+ & 100 & 2 & 0.13  \\
+ & 500 & 2 & 0.405  \\
+\hline
+ & 5 & 1 & 0.275  \\
+ & 50 & 1 & 0.938  \\
+ & 100 & 1 & 0.423  \\
+ & 500 & 1 & 0.525  \\
+0.99 & 5 & 2 & 0.639  \\
+ & 50 & 2 & 0.862  \\
+ & 100 & 2 & 0.25  \\
+ & 500 & 2 & 0.946  \\
         \hline
-        $\rho$ & $N$ & $r$ & $\hat p(H_{a})$ \\
-        \hline
-        \hline
-        & 5   & 1   & 0.089 ***       \\
-        & 50  & 1   & 0.198           \\
-        & 100 & 1   & 1.0             \\
-        & 500 & 1   & 0.109           \\
-        0.8    & 5   & 2   & 0.921           \\
-        & 50  & 2   & 0.228           \\
-        & 100 & 2   & 0.02 **         \\
-        & 500 & 2   & 0.129           \\
-        \hline
-        & 5   & 1   & 0.089 ***       \\
-        & 50  & 1   & 0.891           \\
-        & 100 & 1   & 0.693           \\
-        & 500 & 1   & 0.861           \\
-        0.9    & 5   & 2   & 1.0             \\
-        & 50  & 2   & 0.178           \\
-        & 100 & 2   & 0.109           \\
-        & 500 & 2   & 0.634           \\
-        \hline
-        & 5   & 1   & 0.782           \\
-        & 50  & 1   & 0.01 *          \\
-        & 100 & 1   & 0.386           \\
-        & 500 & 1   & 0.347           \\
-        0.99   & 5   & 2   & 0.406           \\
-        & 50  & 2   & 0.327           \\
-        & 100 & 2   & 0.485           \\
-        & 500 & 2   & 0.475           \\
+
     \end{tabular}
+
     \begin{tabular}{p{10cm}}
         \textit{Note:} * $\hat{p}(H_{a}) < 0.1$, ** $\hat{p}(H_{a}) < 0.05$, *** $\hat{p}(H_{a}) < 0.01$
         \\
