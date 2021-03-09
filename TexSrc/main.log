@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Arch Linux) (preloaded format=pdflatex 2021.3.8)  8 MAR 2021 22:54
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Arch Linux) (preloaded format=pdflatex 2021.3.8)  8 MAR 2021 23:00
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1033,7 +1033,7 @@ Chapter 2.
 
 
 ] [6]
-<systemredun.png, id=214, 363.60844pt x 337.26pt>
+<systemredun.png, id=213, 363.60844pt x 337.26pt>
 File: systemredun.png Graphic file (type png)
 <use systemredun.png>
 Package pdftex.def Info: systemredun.png  used on input line 73.
@@ -1226,7 +1226,7 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 Here is how much of TeX's memory you used:
  23714 strings out of 479383
  445524 string characters out of 5875831
- 1382667 words of memory out of 5000000
+ 1382674 words of memory out of 5000000
  40113 multiletter control sequences out of 15000+600000
  421632 words of font info for 92 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -1249,7 +1249,7 @@ sr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb></usr/share/texmf-
 dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texmf-dist/fonts/typ
 e1/public/amsfonts/symbols/msam10.pfb></usr/share/texmf-dist/fonts/type1/public
 /amsfonts/symbols/msbm10.pfb>
-Output written on main.pdf (34 pages, 470206 bytes).
+Output written on main.pdf (34 pages, 469622 bytes).
 PDF statistics:
  577 PDF objects out of 1000 (max. 8388607)
  496 compressed objects within 5 object streams

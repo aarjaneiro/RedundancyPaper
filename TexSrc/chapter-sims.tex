@@ -36,7 +36,7 @@ totals = sim.MonitorOutput["TimeQueueSize"]
 \begin{figure}
     \centering
     \includegraphics[scale=0.8]{redundancy}
-    \caption{Queue size processes for $\text{Red}(2)$}
+    \caption{Queue size processes for $\text{Redundancy}(2)$}
     \label{fig:redpic}
 
     \medskip
@@ -112,7 +112,7 @@ To prove the lemma, we first must introduce the concepts of stochastic dominatio
 \begin{lemma}
     \label{sup}
     For $\mathbf{X}^{(N)}$ being a system of queues such that $\rho < 1$,
-    \normalfont \[\mathcal{D}_{\text{Thresh}(r,d)}\mathbf(X^{(N)}) \overset{r \rightarrow \infty}{\rightsquigarrow} \mathcal{D}_{\text{Red}(d)}\mathbf(X^{(N)}).\]
+    \normalfont \[\mathcal{D}_{\text{Thresh}(r,d)}\mathbf(X^{(N)}) \overset{r \rightarrow \infty}{\rightsquigarrow} \mathcal{D}_{\text{Redundancy}(d)}\mathbf(X^{(N)}).\]
 \end{lemma}
 \textit{Proof}:
 
@@ -122,7 +122,7 @@ Thus, for  $ t \in [0,T_{\xi_{1}})$, we have $\mathcal{D}_{\text{Thresh}\mathit{
 For clarity, let us now consider $\mathbf{Y}^{(N)}$ to be a copy of  $\mathbf{X}^{(N)}$ such that they are independent, identical in distribution and in terms of the marks of \textit{arrival process and job-size draws} along with the queues parsed (as was similarly done in~\cite{bramson_asymptotic_2012} via Lemma 4.1 using Definition~\ref{coupled}).
 Effectively, the only difference being left between these copies is $r$ changing which queues receive clones and thus, too, the mark of queue-dependency.
 At time $T_{\xi_{1}}$, we clearly have $\mathcal{D}_{\text{Redundancy}\mathit{(d)}}\mathbf(X^{(n)}) = \mathcal{D}_{\text{Thresh}\mathit{(r,d)}}\mathbf(Y^{(n)})$ due to there being no existing jobs for which the threshold would preclude cloning in the case of Thresh($r,d$).
-As such, we also have $\mathcal{D}_{\text{Thresh}(r,d)}(Y^{(N)}(T_{\xi_{1}}))\leq_{st}\mathcal{D}_{\text{Red}(d)}(X^{(N)}(T_{\xi_{1}}))$.
+As such, we also have $\mathcal{D}_{\text{Thresh}(r,d)}(Y^{(N)}(T_{\xi_{1}}))\leq_{st}\mathcal{D}_{\text{Redundancy}(d)}(X^{(N)}(T_{\xi_{1}}))$.
 
 Now, assume $\rho < 1$, thereby giving us $ \# Y_{i}  < \infty \quad \forall t \in \mathbb{R}^{+}$ with probability 1~\cite{gardner_redundancy-d_2017}.
 As such, we have that $\forall r \in \mathbb{R}^{+}$ there exists $ \xi_{1}(r) $ such that $ \Pr(\mathbf{X}^{(N)} (t) = \mathbf{Y}^{(N)}(t) |t \in [0,T_{\xi_{1}})) = 1$.
