@@ -125,8 +125,9 @@ At time $T_{\xi_{1}}$, we clearly have $\mathcal{D}_{\text{Redundancy}\mathit{(d
 As such, we also have $\mathcal{D}_{\text{Thresh}(r,d)}(Y^{(N)}(T_{\xi_{1}}))\leq_{st}\mathcal{D}_{\text{Redundancy}(d)}(X^{(N)}(T_{\xi_{1}}))$.
 
 Now, assume $\rho < 1$, thereby giving us $ \# Y_{i}  < \infty \quad \forall t \in \mathbb{R}^{+}$ with probability 1~\cite{gardner_redundancy-d_2017}.
-As such, we have that $\forall r \in \mathbb{R}^{+}$ there exists $ \xi_{1}(r) $ such that $ \Pr(\mathbf{X}^{(N)} (t) = \mathbf{Y}^{(N)}(t) |t \in [0,T_{\xi_{1}})) = 1$.
-Furthermore $P_{r}(A) := P(\mathcal{D}_{M(r)}(A))$, wherein $M$ denotes the routing algorithm of process $A$.
+As such, we have that $\forall r \in \mathbb{R}^{+}$ there exists $ \xi_{1}(r) $ such that
+\[P_{r}(\mathbf{X}^{(N)} (t) = \mathbf{Y}^{(N)}(t) |t \in [0,T_{\xi_{1}})) = 1\]
+using the notation $P_{r}(A) := P(\mathcal{D}_{M(r)}(A))$, wherein $M$ denotes the routing algorithm of process $A$.
 Note that $\xi_{1} (r)$ is monotone increasing in $r$.
 Letting $r \rightarrow \infty \Rightarrow \xi_{1} \rightarrow \infty$, and so we then have $\mathbf{X}^{(N)}(t) =  \mathbf{Y}^{(N)}(t) \quad \forall t \in \mathbb{R}^{+}$ in terms of distribution (i.e., as the result holds $\forall t \in \mathbb{R}^{+}$ as $r\rightarrow \infty$), implying the required weak convergence from below for $\mathcal{D}$ in law over system  $\mathbf{X}^{(N)}(t)$.  \qed
 

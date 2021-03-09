@@ -6,6 +6,6 @@
 \contentsline {figure}{\numberline {3.1}{\ignorespaces Queue size processes for $\text {Redundancy}(2)$\relax }}{10}{figure.caption.11}%
 \contentsline {figure}{\numberline {3.2}{\ignorespaces Overview of the \textit {ParallelQueue} API\relax }}{11}{figure.caption.12}%
 \contentsline {figure}{\numberline {3.3}{\ignorespaces Comparison of routing schemes: Values are averaged over 24 independent iterations each, running for $t=1000$\relax }}{12}{figure.caption.13}%
-\contentsline {figure}{\numberline {3.4}{\ignorespaces Autocorrelations of $E(\#X_{n}(t))$ at $N = 500, t \in [900,1000]$ for varying $\rho , r$\relax }}{18}{figure.caption.16}%
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Autocorrelations of $E(\#X_{n}(t))$ at $N = 500, t \in [900,1000]$ for varying $\rho , r$\relax }}{17}{figure.caption.16}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
