@@ -14,7 +14,7 @@ The package currently allows for the studying of parallel systems with or withou
 Moreover, the package allows one to specify any inter-arrival and service time distribution as well as their own \lstinline{Monitor}s, being a class which can gather data from the ongoing simulation to be distributed back to the user upon the completion of a simulation.
 In particular, the \lstinline{Monitor}s are currently configured to collect data upon arrival, routing, and job completion as demonstrated by Figure~\ref{fig:API}.
 
-Take Listing~\ref{lst:red} for example, which permits one to simulate a Redundancy-2 queueing system with 100 queues in parallel for 1000 units of time while returning the total queue counts over time (which are updated upon a change in queue count).
+Take Listing~\ref{lst:red} for example, which permits one to simulate a Redundancy(2) queueing system with 100 queues in parallel for 1000 units of time while returning the total queue counts over time (which are updated upon a change in queue count).
 By merely calling \textit{totals.plot()} after importing \textit{Matplotlib}, Figure~\ref{fig:redpic} is easily retrieved.
 
 \begin{lstlisting}[label={lst:red}, caption={Simulation of a redundancy system}, language={Python}, style={mystyle}]
@@ -42,8 +42,8 @@ totals = sim.MonitorOutput["TimeQueueSize"]
     \medskip
 \end{figure}
 
-Remarkably, the simulation itself is performed speedily on consumer hardware despite the size of the system as demonstrated in Listing~\ref{fig:lstlisting2}.
-\begin{lstlisting}[label={fig:lstlisting2},style=mystyle, caption={Runtime Statistics Using the Master ParallelQueue Branch}]
+Remarkably, the simulation itself is performed speedily on consumer hardware despite the size of the system as demonstrated in Listing~\ref{lst:lstlisting2}.
+\begin{lstlisting}[label={lst:lstlisting2},style=mystyle, caption={Runtime statistics using the master \textit{ParallelQueue} branch}]
 CPU times: user 2.02 s, sys: 9.57 ms, total: 2.03 s
 Wall time: 2.05 s
 Intel i5-8250U (8) @ 3.400GHz
@@ -51,7 +51,7 @@ Intel i5-8250U (8) @ 3.400GHz
 
 
 Altogether, this makes the package easy to parallelize with and thus to compare systems of different sizes
-and with large running-times.
+and with large running times.
 While currently not implemented in any development branch of \textit{ParallelQueue}, the base Python package
 \textit{multiprocessing} is used in throughout this paper when simulating for the same system across parameters.
 In general, the main caveat when processing many models is that the storage of the simulation results can quickly begin
@@ -60,7 +60,7 @@ when processing many models, it is therefore important to ensure that they are s
 the local environment when doing analysis.
 
 In terms of development, the models implemented in the \textit{base\_models} module use the framework established in Chapter~\ref{ch:model-specification}.
-That is, modelling redundancy, a hyperedge of sorts is generated whence the dispatcher
+That is, in modelling redundancy, a hyperedge of sorts is generated whence the dispatcher
 receives a job to be cloned.
 This hyperedge then exists for the duration of time for which the replica class is in the system and is defined in such
 a way that \textit{Monitor} class objects can interact with them in order to acquire data.
@@ -89,13 +89,12 @@ Ignoring cancellation costs, this clearly demonstrates how utilizing otherwise d
 \begin{figure}
     \centering
     \includegraphics[width=0.7\linewidth]{compare_red_thr}
-    \caption{Comparison of routing schemes}
-    \medskip
-    Values are averaged over 24 independent iterations each, running for $t=1000$
+    \caption{Comparison of routing schemes: Values are averaged over 24 independent iterations each, running for $t=1000$}
     \label{fig:img}
 \end{figure}
 
-As shown in~\cite{gardner_redundancy-d_2017}, a Redundancy($d$) system is asymptotically stable if and only if $\rho < 1 $. Given that, in premise, Threshold($r,d$) models are more or less a superclass of Join-The-Shortest queue and Redundancy($d$) (trivially with rising $r$  implying no threshold exists and thus copies should always be made as in the case of Redundancy($d$)), it is perhaps most interesting to examine if Threshold models are better able to handle high-load environments. Proving the superclass property in terms of redundancy is relatively easy and is done in Lemma~\ref{sup}. By contrast, after merely setting $r \equiv 0$, we get $ \mathcal{D}_{\text{Thresh(0,d)}} \overset{d}{=} \mathcal{D}_{\text{JSQ(d)}}$ by definition. To prove the lemma, we first must introduce the concepts of stochastic domination and coupling.
+As shown in~\cite{gardner_redundancy-d_2017}, a Redundancy($d$) system is asymptotically stable if and only if $\rho < 1 $. Given that, in premise, Threshold($r,d$) models are more or less a superclass of Join-The-Shortest queue and Redundancy($d$) (trivially with rising $r$  implying no threshold exists and thus copies should always be made as in the case of Redundancy($d$)), it is perhaps most interesting to examine if threshold models are better able to handle high-load environments. Proving the superclass property in terms of redundancy is relatively easy and is done in Lemma~\ref{sup}. By contrast, after merely setting $r \equiv 0$, we get $ \mathcal{D}_{\text{Thresh(0,d)}} \overset{d}{=} \mathcal{D}_{\text{JSQ(d)}}$ by definition.
+To prove the lemma, we first must introduce the concepts of stochastic domination and coupling as defined in~\cite{bramson_asymptotic_2012}.
 \begin{definition}[Stochastic Domination]
     \\~\\
     $\mathbf{X}_{1}^{(N)}$ is said to dominate $\mathbf{X}_{2}^{(N)}$, using the notation $\leq_{st}$, when
@@ -107,7 +106,7 @@ As shown in~\cite{gardner_redundancy-d_2017}, a Redundancy($d$) system is asympt
     \\~\\
     For stochastic processes $X_{t} \in \Pr(\Omega_{x}, \mathcal{F}_{x}, \mathcal{F}_{t,x})$ and $Y_{t} \in \Pr(\Omega_{y}, \mathcal{F}_{y}, \mathcal{F}_{t,y})$,
     $X_{t}$ and $Y_{t}$ are said to be coupled over the probability space $\Pr(\Omega, \mathcal{F}, \mathcal{F}_{t})$ if there exists
-    $\hat X_{t}, \hat Y_{t} \in \Pr(\Omega, \mathcal{F}, \mathcal{F}_{t})$ such that $\hat X_{t} \overset{d}{=}X_{t}$ and $\hat Y_{t} \overset{d}{=}Y_{t}$ \cite{bramson_asymptotic_2012}.
+    $\hat X_{t}, \hat Y_{t} \in \Pr(\Omega, \mathcal{F}, \mathcal{F}_{t})$ such that $\hat X_{t} \overset{d}{=}X_{t}$ and $\hat Y_{t} \overset{d}{=}Y_{t}$.
 \end{definition}
 
 \begin{lemma}
@@ -117,12 +116,19 @@ As shown in~\cite{gardner_redundancy-d_2017}, a Redundancy($d$) system is asympt
 \end{lemma}
 \textit{Proof}:
 
-To show the sequence of routing algorithms to be convergent, we will construct a coupling in such a manner that $\forall r \in \mathbb{R}^{+}$, the system is stochastically dominated by another which is made to be finite~\cite{baccelli_elements_2003} . To do so, for $\mathbf{X}_{1}^{(N)}$ under $\text{Thresh}(r,d)$, let us denote the first arrival as $T_{\xi_{1}}$, at which time it is the case that a selection set, $\nu \subset [N] $, is prescribed wherein there exists $\hat X \in \{X_{i}\}_{i \in \nu} $ such that $ \# (\hat X) > r $. Thus, for  $ t \in [0,T_{\xi_{1}})$, we have $\mathcal{D}_{\text{Thresh(r,d)}}\mathbf(X^{(n)}) = \mathcal{D}_{\text{Red(d)}}\mathbf(X^{(n)})$. For clarity, let us now consider $\mathbf{Y}^{(N)}$ to be a copy of  $\mathbf{X}^{(N)}$ such that they are independent, identical in distribution and in terms of the marks of \textit{arrival process and job-size draws} along with the queues parsed (as was similarly done in~\cite{bramson_asymptotic_2012} via Lemma 4.1 using Definition~\ref{coupled}). Effectively, the only difference being left between these copies is $r$ changing which queues receive clones and thus, too, the mark of queue-dependency.
-At time $T_{\xi_{1}}$, we clearly have $\mathcal{D}_{\text{Red(d)}}\mathbf(X^{(n)}) = \mathcal{D}_{\text{Thresh(r,d)}}\mathbf(Y^{(n)})$ due to there being no existing jobs for which the threshold would preclude cloning in the case of Thresh($r,d$).
+To show the sequence of routing algorithms to be convergent, we will construct a coupling in such a manner that $\forall r \in \mathbb{R}^{+}$, the system is stochastically dominated by another which is made to be finite~\cite{baccelli_elements_2003} .
+To do so, for $\mathbf{X}_{1}^{(N)}$ under $\text{Thresh}(r,d)$, let us denote the first arrival as $T_{\xi_{1}}$, at which time it is the case that a selection set, $\nu \subset [N] $, is prescribed wherein there exists $\hat X \in \{X_{i}\}_{i \in \nu} $ such that $ \# (\hat X) > r $.
+Thus, for  $ t \in [0,T_{\xi_{1}})$, we have $\mathcal{D}_{\text{Thresh}\mathit{(r,d)}}\mathbf(X^{(n)}) = \mathcal{D}_{\text{Redundancy}\mathit{(d)}}\mathbf(X^{(n)})$.
+For clarity, let us now consider $\mathbf{Y}^{(N)}$ to be a copy of  $\mathbf{X}^{(N)}$ such that they are independent, identical in distribution and in terms of the marks of \textit{arrival process and job-size draws} along with the queues parsed (as was similarly done in~\cite{bramson_asymptotic_2012} via Lemma 4.1 using Definition~\ref{coupled}).
+Effectively, the only difference being left between these copies is $r$ changing which queues receive clones and thus, too, the mark of queue-dependency.
+At time $T_{\xi_{1}}$, we clearly have $\mathcal{D}_{\text{Redundancy}\mathit{(d)}}\mathbf(X^{(n)}) = \mathcal{D}_{\text{Thresh}\mathit{(r,d)}}\mathbf(Y^{(n)})$ due to there being no existing jobs for which the threshold would preclude cloning in the case of Thresh($r,d$).
 As such, we also have $\mathcal{D}_{\text{Thresh}(r,d)}(Y^{(N)}(T_{\xi_{1}}))\leq_{st}\mathcal{D}_{\text{Red}(d)}(X^{(N)}(T_{\xi_{1}}))$.
 
-Now, assume $\rho < 1$, thereby giving us $ \# Y_{i}  < \infty \quad \forall t \in \mathbb{R}^{+}$ with probability 1~\cite{gardner_redundancy-d_2017}. As such, we have that $\forall r \in \mathbb{R}^{+}$ there exists $ \xi_{1}(r) $ such that $ \Pr(\mathbf{X}^{(N)} (t) = \mathbf{Y}^{(N)}(t) |t \in [0,T_{\xi_{1}})) = 1$.
-Furthermore $P_{r}(A) := P(\mathcal{D}_{M(r)}(A))$, wherein $M$ denotes the routing algorithm of process $A$. Note that $\xi_{1} (r)$ is monotone increasing in $r$. Letting $r \rightarrow \infty \Rightarrow \xi_{1} \rightarrow \infty$, and so we then have $\mathbf{X}^{(N)}(t) =  \mathbf{Y}^{(N)}(t) \quad \forall t \in \mathbb{R}^{+}$ in terms of distribution (i.e., as the result holds $\forall t \in \mathbb{R}^{+}$ as $r\rightarrow \infty$), implying the required weak convergence from below for $\mathcal{D}$ in law over system  $\mathbf{X}^{(N)}(t)$.  \qed
+Now, assume $\rho < 1$, thereby giving us $ \# Y_{i}  < \infty \quad \forall t \in \mathbb{R}^{+}$ with probability 1~\cite{gardner_redundancy-d_2017}.
+As such, we have that $\forall r \in \mathbb{R}^{+}$ there exists $ \xi_{1}(r) $ such that $ \Pr(\mathbf{X}^{(N)} (t) = \mathbf{Y}^{(N)}(t) |t \in [0,T_{\xi_{1}})) = 1$.
+Furthermore $P_{r}(A) := P(\mathcal{D}_{M(r)}(A))$, wherein $M$ denotes the routing algorithm of process $A$.
+Note that $\xi_{1} (r)$ is monotone increasing in $r$.
+Letting $r \rightarrow \infty \Rightarrow \xi_{1} \rightarrow \infty$, and so we then have $\mathbf{X}^{(N)}(t) =  \mathbf{Y}^{(N)}(t) \quad \forall t \in \mathbb{R}^{+}$ in terms of distribution (i.e., as the result holds $\forall t \in \mathbb{R}^{+}$ as $r\rightarrow \infty$), implying the required weak convergence from below for $\mathcal{D}$ in law over system  $\mathbf{X}^{(N)}(t)$.  \qed
 
 In order to actually test the hypothesized results with respect to independence, we employ the joint Hilbert-Schmidt Independence Criterion (HSIC)~\cite{jointindep} to test the independence of queue counting processes $\{\#X_{n}(t)\}_{n \in [N]}$ in a Monte Carlo-styled
 simulation consisting of $N_{\text{MC}}$ simulations for the queueing process $\mathbf{X}^{(N)}$.
@@ -163,14 +169,14 @@ implemented in the codebase used for our simulations as outlined in Appendix~\re
 Utilizing the procedure outlined in~\ref{subsec:methodology}, we test the following hypotheses:
 \begin{align*}
     \label{set 2}
-    H_{0}:& \text{ as } N\rightarrow \infty, \text{ queues in queueing system } \mathbf{X}_{t}^{(N)} \text{ become jointly independent.}  \\
-    H_{1}:& \text{ as } N\rightarrow \infty, \text{ queues in queueing system } \mathbf{X}_{t}^{(N)} \text{ do not become jointly independent.}
+    H_{0}:& \text{ as } N\rightarrow \infty, \text{ queues in queueing system } \mathbf{X}_{t}^{(N)} \text{ become jointly independent,}  \\
+    H_{a}:& \text{ as } N\rightarrow \infty, \text{ queues in queueing system } \mathbf{X}_{t}^{(N)} \text{ do not become jointly independent.}
 \end{align*}
 Moreover, we are also interested in the case of $t \rightarrow \infty$ and thus also analyze the hypotheses:
 \begin{align*}
     \label{set 1}
-    H_{0}:& \text{ as } t\rightarrow \infty, \text{ queues in queueing system } \mathbf{X}_{t}^{(N)} \text{ become jointly independent.}  \\
-    H_{1}:& \text{ as } t\rightarrow \infty, \text{ queues in queueing system } \mathbf{X}_{t}^{(N)} \text{ do not become jointly independent.}
+    H_{0}:& \text{ as } t\rightarrow \infty, \text{ queues in queueing system } \mathbf{X}_{t}^{(N)} \text{ become jointly independent,}  \\
+    H_{a}:& \text{ as } t\rightarrow \infty, \text{ queues in queueing system } \mathbf{X}_{t}^{(N)} \text{ do not become jointly independent.}
 \end{align*}
 
 Altogether, these hypotheses comprise the behaviour expected of the system outlined in Figure~\ref{fig:1} for the limits of $\mathbf{X}^{(N)}(t)$
@@ -185,7 +191,7 @@ In all, as Table~\ref{tab:reg} summarizes, the hypothesis was rejected only for 
 It is noteworthy that JSQ($d$) of course also exhibits this property~\cite{bramson_asymptotic_2012}.
 \begin{table}
     \centering
-    \caption{$d$HSIC for Varying $N$}
+    \caption{$d$HSIC for varying $N$}
     \label{tab:reg}
     \begin{tabular}{|c|c|c|c|}
         \hline
@@ -246,7 +252,7 @@ of what would be expected under the conjecture.
 $N=2$ is included in the results, however, as varying $r$ resulted in rejecting the hypothesis of independence only in the case where $r=1$ for the sampled times.
 \begin{table}
     \centering
-    \caption{$d$HSIC Test for Large $t$}
+    \caption{$d$HSIC test for large $t$}
     \label{tab:longtime}
     \begin{tabular}{|c|c|c|c|}
 \hline
@@ -299,12 +305,12 @@ $\rho$ & $N$ & $r$ & $\hat p(H_{a})$ \\
 Lastly, to test whether the system becomes asymptotically deterministic and reaches a fixed point, we concern ourselves with the hypotheses of:
 \begin{align*}
     \label{chi 1}
-    H_{0} :& \text{ }\mathbf{X}^{(N)}_{t} \overset{N,t \rightarrow \infty}{\rightarrow} \boldsymbol{\pi} \text{, a process which is degenerate in law.}  \\
-    H_{1} :& \text{ }\mathbf{X}^{(N)}_{t} \overset{N,t \rightarrow \infty}{\not \rightarrow} \boldsymbol{\pi} \text{, a process which is degenerate in law.}
+    H_{0} :& \text{ }\mathbf{X}^{(N)}_{t} \overset{N,t \rightarrow \infty}{\rightarrow} \boldsymbol{\pi} \text{, a process which is degenerate in law,}  \\
+    H_{a} :& \text{ }\mathbf{X}^{(N)}_{t} \overset{N,t \rightarrow \infty}{\not \rightarrow} \boldsymbol{\pi} \text{, a process which is degenerate in law.}
 \end{align*}
 We proceed in assessing the model by means of simulating a system at $N=500$ across $\rho \in \{0.8, 0.9 ,0.99\}$ and $r \in \{1,2\}$ for sampled times drawn from a uniform grid with a step size of $0.25$.
 After $20$ repetitions, we average the size of each queue at each sampled time across each run.
-From this, we calculate an ACF for the average queue size at each combination of parameters, for which results are summarized in Figure~\ref{fig:autocor}.
+From there, we calculate the autocorrelation function (ACF) for the average queue size at each combination of parameters, for which results are summarized in Figure~\ref{fig:autocor}.
 
 \begin{figure}
     \centering

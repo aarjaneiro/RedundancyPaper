@@ -8,36 +8,36 @@ Warning--entry type for "noauthor_ciwpythonciw_nodate" isn't style-file defined
 You've used 13 entries,
             1876 wiz_defined-function locations,
             553 strings with 5685 characters,
-and the built_in function-call counts, 3144 in all, are:
-= -- 305
+and the built_in function-call counts, 3154 in all, are:
+= -- 306
 > -- 132
 < -- 0
 + -- 49
 - -- 36
-* -- 222
-:= -- 463
+* -- 225
+:= -- 468
 add.period$ -- 14
 call.type$ -- 13
 change.case$ -- 12
 chr.to.int$ -- 0
 cite$ -- 13
-duplicate$ -- 153
-empty$ -- 304
+duplicate$ -- 158
+empty$ -- 303
 format.name$ -- 36
 if$ -- 761
 int.to.chr$ -- 0
 int.to.str$ -- 13
-missing$ -- 12
+missing$ -- 13
 newline$ -- 43
 num.names$ -- 13
-pop$ -- 42
+pop$ -- 39
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 96
+skip$ -- 93
 stack$ -- 0
 substring$ -- 186
-swap$ -- 57
+swap$ -- 58
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
@@ -45,5 +45,5 @@ type$ -- 0
 warning$ -- 0
 while$ -- 30
 width$ -- 15
-write$ -- 123
+write$ -- 124
 (There was 1 warning)
