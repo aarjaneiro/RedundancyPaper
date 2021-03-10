@@ -33,7 +33,7 @@ Prior studies have pointed towards certain redundancy policies as being ineffici
 Take for example \textit{Redundancy($d$)}, wherein $d$ servers are chosen per arrival;
 each is given a clone and upon completion of any one clone, all others are removed immediately without any cost.
 As such, implementing a threshold on when  to clone a job becomes useful for budgeting cancellation costs.
-In particular, \textit{Threshold(R,d)} has risen to prominence as a means to balance workload in queueing systems.
+In particular, \textit{Threshold(R,d)}, as will be formally defined shortly, has risen to prominence as a means to balance workload in queueing systems.
 \begin{definition}[Workload and System Load]
     \hfill \\
     \textbf{Workload} refers to the total amount of work remaining (in time) for a queue.
@@ -77,7 +77,7 @@ Moreover, accepting this set-index notation, $\mathbf{X}^{\psi}$ will refer to t
 
 \begin{definition}[Threshold$(R,d)$]
     \hfill \\
-    \textbf{Threshold(R,d)}, denoted by $\mathcal{D}_{\mathrm{Thresh}(R,d,Z)}$, selects $d$ queues upon a job arrival,
+    \textbf{Threshold(R,d)}, denoted by $\mathcal{D}_{\mathrm{Thresh}(R,d,Z)}$, selects $d$ queues upon a job arrival, following
     which:
     \begin{enumerate}
         \item For $i \leq d$ queues which have workload less than or equal to $R$, place copies in these $i$ queues.
@@ -94,7 +94,7 @@ It is unknown whether or not there exists sufficient arrival rate or service rat
 This leads us to the following conjecture for which this paper aims to demonstrate.
 \begin{conjecture}
     \hfill \\
-    As $N \longrightarrow \infty$, the system $\mathcal{D}_{\mathrm{Thresh}(R,d)}$ becomes $(\psi, \Gamma)$-exchangeable.
+    As $N \longrightarrow \infty$, the system $\mathcal{D}_{\mathrm{Threshold}(R,d)}$ becomes $(\psi, \Gamma)$-exchangeable.
     Moreover, as $t \longrightarrow \infty$, the system becomes deterministic.
     \label{conj}
 \end{conjecture}

@@ -82,7 +82,7 @@ the \textit{Dict} object as a reference.
 \subsection{Methodology}\label{subsec:methodology}
 First, we examine each model in terms of their respective performance in $E(T)$, the expected time each job spends in the system.
 As Figure~\ref{fig:img} shows, for a load $\rho \triangleq \frac{\lambda}{\mu} = 0.5$ by taking $\mu=1$ and $\lambda = 0.5$ (we will assume $\mu \equiv 1$ for the
-rest of the simulations), Redundancy(2)) and Threshold(2,2) policies are rather alike with low loads as $N \rightarrow \infty$ in terms .
+rest of the simulations), Redundancy(2) and Threshold(2,2) policies are rather alike with low loads as $N \rightarrow \infty$ in terms .
 This is to be expected, of course, given that even such a low threshold is unlikely to be exceeded with the processors acting faster than arrivals on average.
 Ignoring cancellation costs, this clearly demonstrates how utilizing otherwise dormant queues comes to benefit the system's performance.
 
@@ -93,7 +93,10 @@ Ignoring cancellation costs, this clearly demonstrates how utilizing otherwise d
     \label{fig:img}
 \end{figure}
 
-As shown in~\cite{gardner_redundancy-d_2017}, a Redundancy($d$) system is asymptotically stable if and only if $\rho < 1 $. Given that, in premise, Threshold($r,d$) models are more or less a superclass of Join-The-Shortest queue and Redundancy($d$) (trivially with rising $r$  implying no threshold exists and thus copies should always be made as in the case of Redundancy($d$)), it is perhaps most interesting to examine if threshold models are better able to handle high-load environments. Proving the superclass property in terms of redundancy is relatively easy and is done in Lemma~\ref{sup}. By contrast, after merely setting $r \equiv 0$, we get $ \mathcal{D}_{\text{Thresh(0,d)}} \overset{d}{=} \mathcal{D}_{\text{JSQ(d)}}$ by definition.
+As shown in~\cite{gardner_redundancy-d_2017}, a Redundancy($d$) system is asymptotically stable if and only if $\rho < 1 $.
+Given that, in premise, Threshold($r,d$) models are more or less a superclass of JSQ($d$) queue and Redundancy($d$) (trivially with rising $r$  implying no threshold exists and thus copies should always be made as in the case of Redundancy($d$)), it is perhaps most interesting to examine if threshold models are better able to handle high-load environments.
+Proving the superclass property in terms of redundancy is relatively easy and is done in Lemma~\ref{sup}.
+By contrast, after merely setting $r \equiv 0$, we get $ \mathcal{D}_{\mathrm{Threshold}(0,d)} \overset{d}{=} \mathcal{D}_{\mathrm{JSQ}(d)}$ by definition.
 To prove the lemma, we first must introduce the concepts of stochastic domination and coupling as defined in~\cite{bramson_asymptotic_2012}.
 \begin{definition}[Stochastic Domination]
     \\~\\
@@ -112,19 +115,19 @@ To prove the lemma, we first must introduce the concepts of stochastic dominatio
 \begin{lemma}
     \label{sup}
     For $\mathbf{X}^{(N)}$ being a system of queues such that $\rho < 1$,
-    \normalfont \[\mathcal{D}_{\text{Thresh}(r,d)}\mathbf(X^{(N)}) \overset{r \rightarrow \infty}{\rightsquigarrow} \mathcal{D}_{\text{Redundancy}(d)}\mathbf(X^{(N)}).\]
+     \[\mathcal{D}_{\mathrm{Threshold}(r,d)}\mathbf(X^{(N)}) \overset{r \rightarrow \infty}{\rightsquigarrow} \mathcal{D}_{\mathrm{Redundancy}(d)}\mathbf(X^{(N)}).\]
 \end{lemma}
 \textit{Proof}:
 
 To show the sequence of routing algorithms to be convergent, we will construct a coupling in such a manner that $\forall r \in \mathbb{R}^{+}$, the system is stochastically dominated by another which is made to be finite~\cite{baccelli_elements_2003} .
-To do so, for $\mathbf{X}_{1}^{(N)}$ under $\text{Thresh}(r,d)$, let us denote the first arrival as $T_{\xi_{1}}$, at which time it is the case that a selection set, $\nu \subset [N] $, is prescribed wherein there exists $\hat X \in \{X_{i}\}_{i \in \nu} $ such that $ \# (\hat X) > r $.
-Thus, for  $ t \in [0,T_{\xi_{1}})$, we have $\mathcal{D}_{\text{Thresh}\mathit{(r,d)}}\mathbf(X^{(n)}) = \mathcal{D}_{\text{Redundancy}\mathit{(d)}}\mathbf(X^{(n)})$.
+To do so, for $\mathbf{X}_{1}^{(N)}$ under $\text{Threshold}(r,d)$, let us denote the first arrival as $T_{\xi_{1}}$, at which time it is the case that a selection set, $\nu \subset [N] $, is prescribed wherein there exists $\hat X \in \{X_{i}\}_{i \in \nu} $ such that $ \# (\hat X) > r $.
+Thus, for  $ t \in [0,T_{\xi_{1}})$, we have $\mathcal{D}_{\text{Threshold}\mathit{(r,d)}}\mathbf(X^{(n)}) = \mathcal{D}_{\text{Redundancy}\mathit{(d)}}\mathbf(X^{(n)})$.
 For clarity, let us now consider $\mathbf{Y}^{(N)}$ to be a copy of  $\mathbf{X}^{(N)}$ such that they are independent, identical in distribution and in terms of the marks of \textit{arrival process and job-size draws} along with the queues parsed (as was similarly done in~\cite{bramson_asymptotic_2012} via Lemma 4.1 using Definition~\ref{coupled}).
 Effectively, the only difference being left between these copies is $r$ changing which queues receive clones and thus, too, the mark of queue-dependency.
-At time $T_{\xi_{1}}$, we clearly have $\mathcal{D}_{\text{Redundancy}\mathit{(d)}}\mathbf(X^{(n)}) = \mathcal{D}_{\text{Thresh}\mathit{(r,d)}}\mathbf(Y^{(n)})$ due to there being no existing jobs for which the threshold would preclude cloning in the case of Thresh($r,d$).
-As such, we also have $\mathcal{D}_{\text{Thresh}(r,d)}(Y^{(N)}(T_{\xi_{1}}))\leq_{st}\mathcal{D}_{\text{Redundancy}(d)}(X^{(N)}(T_{\xi_{1}}))$.
+At time $T_{\xi_{1}}$, we clearly have $\mathcal{D}_{\text{Redundancy}\mathit{(d)}}\mathbf(X^{(n)}) = \mathcal{D}_{\text{Threshold}\mathit{(r,d)}}\mathbf(Y^{(n)})$ due to there being no existing jobs for which the threshold would preclude cloning in the case of Threshold($r,d$).
+As such, we also have $\mathcal{D}_{\text{Threshold}(r,d)}(Y^{(N)}(T_{\xi_{1}}))\leq_{st}\mathcal{D}_{\text{Redundancy}(d)}(X^{(N)}(T_{\xi_{1}}))$.
 
-Now, assume $\rho < 1$, thereby giving us $ \# Y_{i}  < \infty \quad \forall t \in \mathbb{R}^{+}$ with probability 1~\cite{gardner_redundancy-d_2017}.
+Now, assume $\rho < 1$, thereby giving us $ \# Y_{i}  < \infty$ for all $t \in \mathbb{R}^{+}$ with probability 1~\cite{gardner_redundancy-d_2017}.
 As such, we have that $\forall r \in \mathbb{R}^{+}$ there exists $ \xi_{1}(r) $ such that
 \[P_{r}(\mathbf{X}^{(N)} (t) = \mathbf{Y}^{(N)}(t) |t \in [0,T_{\xi_{1}})) = 1\]
 using the notation $P_{r}(A) := P(\mathcal{D}_{M(r)}(A))$, wherein $M$ denotes the routing algorithm of process $A$.
@@ -311,7 +314,7 @@ Lastly, to test whether the system becomes asymptotically deterministic and reac
 \end{align*}
 We proceed in assessing the model by means of simulating a system at $N=500$ across $\rho \in \{0.8, 0.9 ,0.99\}$ and $r \in \{1,2\}$ for sampled times drawn from a uniform grid with a step size of $0.25$.
 After $20$ repetitions, we average the size of each queue at each sampled time across each run.
-From there, we calculate the autocorrelation function (ACF) for the average queue size at each combination of parameters, for which results are summarized in Figure~\ref{fig:autocor}.
+From there, we calculate the autocorrelation function for the average queue size at each combination of parameters, for which results are summarized in Figure~\ref{fig:autocor}.
 
 \begin{figure}
     \centering
